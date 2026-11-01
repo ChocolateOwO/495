@@ -1,0 +1,1502 @@
+<meta charset="utf-8">
+<title>ติวหุ่นยนต์ 271494</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=IBM+Plex+Mono:wght@500;600&family=IBM+Plex+Sans+Thai:wght@400;500;600&display=swap">
+<style>
+/* Layout: single 880px study column on graph paper (light) / blueprint (dark); sticky chapter rail on top; sticky submit bar under the quiz */
+:root{
+  --paper:#f3f6f9; --grid:#e0e8f0; --card:#ffffff; --ink:#15233a; --muted:#56677e; --line:#cfdbe6;
+  --blue:#1d5fc4; --blue-soft:#e3ecfa; --hi:#ffd43b; --on-hi:#17140a;
+  --ok:#1b7a45; --ok-bg:#e2f3e8; --bad:#c23a2e; --bad-bg:#fbe6e3; --pad-bg:#fbfcfe;
+  --f-display:"Chakra Petch","IBM Plex Sans Thai",system-ui,sans-serif;
+  --f-body:"IBM Plex Sans Thai","Noto Sans Thai",Tahoma,system-ui,sans-serif;
+  --f-mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
+  --r:10px;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#0d1828; --grid:#14283f; --card:#12223a; --ink:#e3ebf5; --muted:#98aac1; --line:#284462;
+    --blue:#78b4ff; --blue-soft:#17304f; --hi:#f5c842; --on-hi:#17140a;
+    --ok:#63d394; --ok-bg:#123527; --bad:#ff8577; --bad-bg:#3b1b1a; --pad-bg:#0f1d31;
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#0d1828; --grid:#14283f; --card:#12223a; --ink:#e3ebf5; --muted:#98aac1; --line:#284462;
+  --blue:#78b4ff; --blue-soft:#17304f; --hi:#f5c842; --on-hi:#17140a;
+  --ok:#63d394; --ok-bg:#123527; --bad:#ff8577; --bad-bg:#3b1b1a; --pad-bg:#0f1d31;
+  color-scheme:dark;
+}
+*,*::before,*::after{box-sizing:border-box}
+[hidden]{display:none!important}
+body{margin:0;background-color:var(--paper);background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);background-size:24px 24px;color:var(--ink);font-family:var(--f-body);font-size:16px;line-height:1.65;-webkit-text-size-adjust:100%}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--paper)}
+a{color:var(--blue)}
+code{font-family:var(--f-mono);font-size:.875em;background:var(--blue-soft);padding:0 4px;border-radius:4px}
+:focus-visible{outline:2px solid var(--blue);outline-offset:2px}
+
+/* top rail */
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--paper);border-bottom:1px solid var(--line)}
+.top-in{max-width:960px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:10px;display:flex;align-items:center;gap:14px}
+.brand{font-family:var(--f-display);font-weight:700;font-size:1.05rem;white-space:nowrap;text-decoration:none;color:var(--ink);display:flex;align-items:baseline;gap:6px}
+.brand span{font-family:var(--f-mono);font-size:.7rem;color:var(--muted);font-weight:500}
+.chips{display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;min-width:0;flex:1;padding-block:2px}
+.chips::-webkit-scrollbar{display:none}
+.chip{font-family:var(--f-mono);font-size:.8rem;padding:5px 11px;border:1px solid var(--line);border-radius:999px;color:var(--ink);text-decoration:none;white-space:nowrap;background:var(--card)}
+.chip b{font-weight:600}
+.chip small{font-family:var(--f-body);font-size:.75rem;color:var(--muted);margin-left:4px}
+.chip[aria-current="page"]{background:var(--hi);color:var(--on-hi);border-color:var(--hi)}
+.chip[aria-current="page"] small{color:var(--on-hi)}
+@media (max-width:720px){.chip small{display:none}}
+
+.wrap{max-width:880px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:28px 150px}
+
+/* type */
+h1,h2,h3{font-family:var(--f-display);text-wrap:balance;line-height:1.2}
+h1{font-size:clamp(1.9rem,5.5vw,2.75rem);margin:0 0 10px}
+h2{font-size:1.4rem;margin:0 0 10px}
+.eyebrow{font-family:var(--f-mono);font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin:0 0 6px}
+.lead{color:var(--muted);font-size:1.0625rem;margin:0 0 18px;max-width:62ch}
+.muted{color:var(--muted)}
+mark{background:var(--hi);color:var(--on-hi);padding:0 5px;border-radius:3px;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+.ext{font-family:var(--f-mono);font-size:.68rem;border:1px dotted var(--muted);color:var(--muted);border-radius:4px;padding:0 5px;vertical-align:middle;white-space:nowrap}
+.dtag{font-family:var(--f-mono);font-size:.68rem;background:var(--blue);color:var(--card);border-radius:4px;padding:0 5px;white-space:nowrap}
+
+/* buttons */
+.btn{font-family:var(--f-display);font-weight:600;font-size:1rem;background:var(--ink);color:var(--paper);border:1.5px solid var(--ink);border-radius:8px;padding:9px 18px;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:6px;line-height:1.2}
+.btn.alt{background:transparent;color:var(--ink)}
+.btn.sm{font-size:.9rem;padding:6px 12px}
+.btn.hi{background:var(--hi);border-color:var(--hi);color:var(--on-hi)}
+.ghost{font:inherit;font-size:.8125rem;background:transparent;border:1px dashed var(--muted);color:var(--muted);border-radius:6px;padding:4px 10px;cursor:pointer}
+.ghost[aria-pressed="true"]{border-style:solid;border-color:var(--ok);color:var(--ok)}
+@media (prefers-reduced-motion:no-preference){.btn,.chip,.ghost{transition:background-color .15s,color .15s}}
+
+/* home */
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin:0 0 26px;padding:0;list-style:none;counter-reset:st}
+.steps li{counter-increment:st;background:var(--card);border:1px solid var(--line);border-radius:8px;padding:10px 12px;font-size:.9rem;min-width:0}
+.steps li::before{content:counter(st,decimal-leading-zero);display:block;font-family:var(--f-mono);font-size:.72rem;color:var(--muted)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:14px}
+@media (max-width:420px){.grid{grid-template-columns:1fr}}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:16px;display:flex;flex-direction:column;gap:6px;min-width:0}
+.card-top{display:flex;justify-content:space-between;align-items:center}
+.card .no{font-family:var(--f-display);font-weight:700;font-size:2.4rem;line-height:1}
+.term{font-family:var(--f-mono);font-size:.7rem;letter-spacing:.06em;text-transform:uppercase;border:1px solid var(--line);border-radius:999px;padding:2px 8px;color:var(--muted)}
+.card h3{margin:2px 0 0;font-size:1.15rem}
+.card .th{margin:0;color:var(--muted);font-size:.92rem}
+.card .meta{margin:0;font-family:var(--f-mono);font-size:.72rem;color:var(--muted)}
+.card-act{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-top:auto;padding-top:8px}
+.best{font-family:var(--f-mono);font-size:.75rem;background:var(--ok-bg);color:var(--ok);border-radius:999px;padding:2px 8px}
+.mixcard{margin-top:14px;display:flex;gap:16px;align-items:center;justify-content:space-between;flex-wrap:wrap;background:var(--ink);color:var(--paper);border-radius:var(--r);padding:18px}
+.mixcard h3{margin:0 0 4px;font-size:1.2rem}
+.mixcard p{margin:0;opacity:.85;font-size:.92rem}
+.mixcard .btn{background:var(--hi);border-color:var(--hi);color:var(--on-hi)}
+
+/* chapter header + tabs */
+.tabs{display:flex;gap:4px;border-bottom:2px solid var(--ink);margin:18px 0 6px}
+.tabs a{font-family:var(--f-display);font-weight:600;text-decoration:none;color:var(--muted);padding:8px 14px;border-radius:8px 8px 0 0}
+.tabs a[aria-current="page"]{background:var(--ink);color:var(--paper)}
+
+/* summary */
+.sec{margin-block:30px}
+.sec h3{font-size:1.25rem;margin:0 0 10px;display:flex;gap:10px;align-items:baseline;flex-wrap:wrap}
+.ref{font-family:var(--f-mono);font-size:.72rem;font-weight:500;color:var(--muted);border:1px solid var(--line);border-radius:4px;padding:0 6px;white-space:nowrap}
+.sec ul,.sec ol{margin:0;padding-left:1.25em}
+.sec li{margin-block:5px}
+.sec p{margin:6px 0;max-width:72ch}
+.tbl{overflow-x:auto;border:1px solid var(--line);border-radius:8px;background:var(--card);margin-block:12px}
+table{border-collapse:collapse;width:100%;font-size:.92rem;min-width:540px}
+th,td{text-align:left;vertical-align:top;padding:8px 10px;border-bottom:1px solid var(--line)}
+tr:last-child td{border-bottom:0}
+th{font-family:var(--f-display);font-weight:600;background:var(--blue-soft)}
+td small{color:var(--muted)}
+.num{font-family:var(--f-mono);font-variant-numeric:tabular-nums;text-align:center}
+.num.best5{background:var(--hi);color:var(--on-hi);font-weight:600}
+.fig{margin:14px 0;padding:12px;background:var(--card);border:1px solid var(--line);border-radius:8px;overflow-x:auto}
+.fig svg{width:100%;height:auto;max-width:560px;display:block;margin-inline:auto}
+.calc{border:1px solid var(--line);border-radius:8px;background:var(--card);padding:10px 14px;margin-block:12px;font-variant-numeric:tabular-nums}
+.calc p{margin:3px 0}
+.stamp{font-family:var(--f-mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--blue);margin:0 0 4px}
+.dt{border:1.5px dashed var(--blue);border-radius:var(--r);padding:14px 16px;background:var(--card);margin-block:30px}
+.dt ul{margin:6px 0;padding-left:1.25em}
+.dt p{margin:6px 0}
+.cta{display:flex;gap:10px;flex-wrap:wrap;margin-top:6px}
+.cta.end{margin-top:34px;padding-top:18px;border-top:1px solid var(--line)}
+
+/* figures */
+.fig .s{fill:none;stroke:var(--ink);stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.fig .b{fill:none;stroke:var(--blue);stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.fig .r{fill:none;stroke:var(--bad);stroke-width:2;stroke-linecap:round}
+.fig .d{stroke-dasharray:6 5}
+.fig .lk{fill:none;stroke:var(--blue);stroke-width:9;stroke-linecap:round}
+.fig .fb{fill:var(--blue-soft);stroke:var(--blue);stroke-width:1.5}
+.fig .fc{fill:var(--card);stroke:var(--ink);stroke-width:2}
+.fig .fh{fill:var(--hi);stroke:var(--ink);stroke-width:1.5}
+.fig .fr{fill:var(--bad-bg);stroke:var(--bad);stroke-width:2}
+.fig .fi{fill:var(--ink)}
+.fig .vn{fill:var(--blue);fill-opacity:.12;stroke:var(--ink);stroke-width:1.5}
+.fig text{fill:var(--ink);font-family:var(--f-body);font-size:13px}
+.fig .tb{fill:var(--blue)}
+.fig .tr{fill:var(--bad)}
+.fig .tm{font-family:var(--f-mono);font-size:12px}
+.fig .tl{font-size:15px;font-weight:600}
+.fig .ts{font-size:11.5px}
+.fig .th{fill:var(--on-hi)}
+.fig .mid{text-anchor:middle}
+.mk-ink{fill:var(--ink)} .mk-blue{fill:var(--blue)} .mk-bad{fill:var(--bad)}
+
+/* quiz */
+.qsec h2{font-size:1.25rem;margin:34px 0 10px;padding-bottom:6px;border-bottom:2px solid var(--ink);display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;align-items:baseline}
+.qsec h2 small{font-family:var(--f-mono);font-size:.72rem;color:var(--muted);font-weight:500}
+.q{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:14px 16px;margin-block:12px;min-width:0}
+.qno{font-family:var(--f-mono);font-size:.75rem;color:var(--muted);display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-bottom:4px}
+.tag{border:1px solid var(--line);border-radius:4px;padding:0 5px}
+.qt{margin:0;line-height:2.15}
+input.blank{font:inherit;color:var(--ink);background:transparent;border:0;border-bottom:2px solid var(--ink);padding:0 4px;margin:0 4px;max-width:100%;border-radius:0;line-height:1.5}
+input.blank:focus{outline:none;background:var(--blue-soft);border-bottom-color:var(--blue)}
+input.blank.ok{border-bottom-color:var(--ok);color:var(--ok);background:var(--ok-bg)}
+input.blank.bad{border-bottom-color:var(--bad);color:var(--bad);background:var(--bad-bg);text-decoration:line-through}
+input.blank.bad.ov{color:var(--ok);background:var(--ok-bg);border-bottom-color:var(--ok);text-decoration:none}
+.reveal{margin-top:10px;padding-top:10px;border-top:1px dashed var(--line);font-size:.94rem}
+.reveal p{margin:4px 0}
+.reveal .ex{color:var(--muted)}
+.reveal .src{font-family:var(--f-mono);font-size:.72rem;color:var(--muted)}
+.alt{color:var(--muted);font-size:.85rem}
+.okc{color:var(--ok)} .badc{color:var(--bad)}
+.mgrid{display:grid;gap:0;margin-top:8px}
+.mrow{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.25fr);gap:6px 12px;align-items:center;padding:9px 0;border-top:1px solid var(--line)}
+.ml{font-weight:500}
+.mfix{grid-column:1/-1;font-size:.88rem}
+select{font:inherit;font-size:.92rem;color:var(--ink);background:var(--paper);border:1px solid var(--line);border-radius:8px;padding:8px;width:100%;min-width:0}
+select.ok{border-color:var(--ok);background:var(--ok-bg)}
+select.bad{border-color:var(--bad);background:var(--bad-bg)}
+@media (max-width:560px){.mrow{grid-template-columns:1fr}}
+.pad{margin-top:10px;border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.tools{display:flex;flex-wrap:wrap;gap:6px;padding:8px;background:var(--paper);border-bottom:1px solid var(--line)}
+.tools button{font:inherit;font-size:.85rem;background:var(--card);color:var(--ink);border:1px solid var(--line);border-radius:6px;padding:4px 10px;cursor:pointer}
+.tools button[aria-pressed="true"]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.tools .sp{flex:1}
+.pad canvas{display:block;width:100%;max-width:100%;aspect-ratio:1000/620;touch-action:none;cursor:crosshair;background-color:var(--pad-bg);background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);background-size:20px 20px}
+.pad.locked canvas{cursor:default}
+.pad.locked .tools button{opacity:.45;cursor:not-allowed}
+.chk{border:1px solid var(--line);border-radius:8px;padding:6px 12px 10px;margin:10px 0}
+.chk legend{font-family:var(--f-mono);font-size:.75rem;color:var(--muted);padding:0 4px}
+.chk label{display:flex;gap:10px;align-items:flex-start;padding:5px 0;cursor:pointer}
+.chk input{margin-top:.35em;width:18px;height:18px;flex:none;accent-color:var(--ok)}
+.scorebox{display:flex;gap:18px;align-items:center;flex-wrap:wrap;background:var(--card);border:2px solid var(--ink);border-radius:var(--r);padding:16px;margin-block:16px;scroll-margin-top:90px}
+.scorebox .big{font-family:var(--f-display);font-size:3rem;font-weight:700;line-height:1;font-variant-numeric:tabular-nums}
+.scorebox .big small{font-size:1.2rem}
+.scorebox p{margin:2px 0}
+.qbar{position:fixed;left:0;right:0;bottom:0;z-index:6;background:var(--card);border-top:1px solid var(--line);padding-bottom:env(safe-area-inset-bottom,0px)}
+.qbar-in{max-width:880px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:10px;display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.qprog{font-family:var(--f-mono);font-size:.8rem;color:var(--muted);flex:1;min-width:0}
+.qbtns{display:flex;gap:8px;flex-wrap:wrap}
+</style>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <marker id="ah" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="mk-ink"/></marker>
+    <marker id="ahb" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="mk-blue"/></marker>
+    <marker id="ahr" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="mk-bad"/></marker>
+  </defs>
+</svg>
+
+<header class="top"><div class="top-in"><a class="brand" href="#"><span>271494</span>ติวหุ่นยนต์</a><nav class="chips" id="chips" aria-label="เลือกบท"></nav></div></header>
+<main class="wrap" id="main"></main>
+
+<script>
+/* ===== ค่าคงที่ ===== */
+const CONFIG = {
+  QUIZ: { fill: 6, match: 2, draw: 1 },
+  MIX: { fillPerChapter: 2, match: 3, draw: 1 },
+  STORE_KEY: "q271494.best.v1",
+  PEN: { pen: 4, blue: 4, eraser: 30 },
+  CANVAS: { w: 1000, h: 620 }
+};
+const BANK = [];
+const FIG = {};
+</script>
+
+<script>
+/* ===== รูปเฉลย (SVG) ===== */
+FIG.rpy = `<svg viewBox="0 0 360 250" role="img" aria-label="ระบบพิกัดมือขวา X Y Z พร้อม Roll Pitch Yaw">
+<line class="s" x1="150" y1="160" x2="150" y2="34" marker-end="url(#ah)"/>
+<line class="s" x1="150" y1="160" x2="306" y2="160" marker-end="url(#ah)"/>
+<line class="s" x1="150" y1="160" x2="66" y2="225" marker-end="url(#ah)"/>
+<circle cx="150" cy="160" r="4" class="fi"/>
+<text x="144" y="24" class="tl">Z</text><text x="314" y="165" class="tl">Y</text><text x="48" y="242" class="tl">X</text>
+<path class="b" d="M150,81 A26,9 0 1 0 124,72" marker-end="url(#ahb)"/>
+<text x="184" y="66" class="tb">Yaw (ψ) รอบแกน Z</text>
+<path class="b" d="M255,138 A8,22 0 1 0 263,160" marker-end="url(#ahb)"/>
+<text x="214" y="204" class="tb">Pitch (θ) รอบแกน Y</text>
+<path class="b" d="M100,207 A24,8 0 1 0 76,199" transform="rotate(52 100 199)" marker-end="url(#ahb)"/>
+<text x="6" y="174" class="tb">Roll (φ) รอบแกน X</text>
+<text x="196" y="240" class="tm">มือขวา: X × Y = Z</text>
+</svg>`;
+
+FIG.linkjoint = `<svg viewBox="0 0 360 260" role="img" aria-label="การนับเลข Link และ Joint ของแขนกล">
+<rect x="40" y="232" width="220" height="10" class="fb"/><text x="266" y="242">Ground</text>
+<rect x="85" y="205" width="110" height="27" class="fc"/><text x="122" y="223">Base</text>
+<line class="lk" x1="140" y1="205" x2="140" y2="112"/>
+<line class="lk" x1="140" y1="112" x2="226" y2="60"/>
+<line class="lk" x1="226" y1="60" x2="300" y2="140"/>
+<circle cx="140" cy="112" r="10" class="fh"/><circle cx="226" cy="60" r="10" class="fh"/>
+<text x="150" y="175">Link 0</text>
+<text x="40" y="116">Joint 1</text><line class="s" x1="92" y1="112" x2="128" y2="112"/>
+<text x="140" y="70">Link 1</text>
+<text x="240" y="40">Joint 2</text>
+<text x="278" y="94">Link 2</text>
+<text x="262" y="164">End of arm</text>
+</svg>`;
+
+FIG.quadx = `<svg viewBox="0 0 300 275" role="img" aria-label="Quad-rotor แบบ X และทิศการหมุนของใบพัด">
+<line class="s" x1="85" y1="65" x2="215" y2="195" style="stroke-width:6"/>
+<line class="s" x1="215" y1="65" x2="85" y2="195" style="stroke-width:6"/>
+<circle cx="85" cy="65" r="32" class="fb"/><circle cx="215" cy="65" r="32" class="fb"/>
+<circle cx="85" cy="195" r="32" class="fb"/><circle cx="215" cy="195" r="32" class="fb"/>
+<rect x="132" y="112" width="36" height="36" rx="6" class="fc"/>
+<line class="s" x1="150" y1="108" x2="150" y2="22" marker-end="url(#ah)"/><text x="158" y="30">Front (หัว)</text>
+<path class="b" d="M85,45 A20,20 0 1 1 65,65" marker-end="url(#ahb)"/><text x="74" y="70" class="tm">CW</text>
+<path class="r" d="M215,45 A20,20 0 1 0 235,65" marker-end="url(#ahr)"/><text x="200" y="70" class="tm tr">CCW</text>
+<path class="r" d="M85,175 A20,20 0 1 0 105,195" marker-end="url(#ahr)"/><text x="70" y="200" class="tm tr">CCW</text>
+<path class="b" d="M215,175 A20,20 0 1 1 195,195" marker-end="url(#ahb)"/><text x="204" y="200" class="tm">CW</text>
+<text x="12" y="252" class="ts">คู่ทแยงหมุนทิศเดียวกัน · คู่ติดกันหมุนสวนทาง</text>
+<text x="12" y="268" class="ts">→ แรงบิดรวมหักล้างกันเมื่อความเร็วเท่ากัน</text>
+</svg>`;
+
+FIG.tof = `<svg viewBox="0 0 380 200" role="img" aria-label="หลักการ Time of Flight ของ LiDAR">
+<rect x="20" y="60" width="72" height="80" rx="10" class="fc"/><text x="56" y="105" class="tl mid">LiDAR</text>
+<rect x="290" y="55" width="70" height="90" class="fb"/><text x="325" y="105" class="mid">วัตถุ</text>
+<line class="b" x1="96" y1="82" x2="284" y2="82" marker-end="url(#ahb)"/><text x="110" y="72" class="tb">ปล่อยพัลส์เลเซอร์ (t = 0)</text>
+<line class="r d" x1="284" y1="118" x2="96" y2="118" marker-end="url(#ahr)"/><text x="110" y="138" class="tr">รับพัลส์สะท้อน (เวลาไป-กลับ t)</text>
+<text x="20" y="180" class="tl">d = c × t / 2</text><text x="160" y="180" class="tm">c ≈ 3×10⁸ m/s (ความเร็วแสง)</text>
+</svg>`;
+
+FIG.extr = `<svg viewBox="0 0 380 300" role="img" aria-label="การ calibrate ภายนอกระหว่าง LiDAR กับกล้อง">
+<text x="10" y="22" class="tm">Pᶜ = R·Pᵈ + T</text><text x="10" y="42" class="tm">Z·I = K(R·Pᵈ + T)</text>
+<circle cx="190" cy="40" r="6" class="fh"/><text x="200" y="36" class="tl">P</text>
+<line class="b" x1="70" y1="215" x2="186" y2="45"/><text x="96" y="140" class="tb">Pᵈ</text>
+<line class="b" x1="290" y1="215" x2="194" y2="45"/>
+<polygon points="215,105 275,95 272,155 212,165" class="fb" style="fill-opacity:.6"/>
+<circle cx="240" cy="130" r="4" class="fi"/><text x="246" y="128" class="ts">I</text>
+<text x="280" y="98" class="ts">Image plane</text><text x="276" y="190" class="tb">Pᶜ</text>
+<line class="s" x1="70" y1="215" x2="70" y2="165" marker-end="url(#ah)"/><line class="s" x1="70" y1="215" x2="118" y2="226" marker-end="url(#ah)"/><line class="s" x1="70" y1="215" x2="44" y2="240" marker-end="url(#ah)"/>
+<text x="12" y="200">LiDAR Oᵈ</text>
+<line class="s" x1="290" y1="215" x2="312" y2="172" marker-end="url(#ah)"/><line class="s" x1="290" y1="215" x2="338" y2="222" marker-end="url(#ah)"/><line class="s" x1="290" y1="215" x2="290" y2="258" marker-end="url(#ah)"/>
+<text x="318" y="250">กล้อง Oᶜ</text>
+<path class="r" d="M84,236 Q180,300 276,236" marker-end="url(#ahr)"/><text x="166" y="292" class="tr tl">R, T</text>
+</svg>`;
+
+FIG.slight = `<svg viewBox="0 0 380 260" role="img" aria-label="หลักการกล้อง depth แบบ structured light">
+<path class="s" d="M20,70 C100,30 160,105 230,62 S340,70 365,48"/>
+<text x="290" y="40" class="ts">ผิววัตถุ</text>
+<circle cx="190" cy="76" r="5" class="fh"/><text x="198" y="96" class="tl">Q</text>
+<rect x="62" y="205" width="56" height="28" rx="4" class="fc"/><rect x="262" y="205" width="56" height="28" rx="4" class="fc"/>
+<line class="b" x1="90" y1="205" x2="188" y2="80" marker-end="url(#ahb)"/>
+<line class="r" x1="192" y1="80" x2="288" y2="205" marker-end="url(#ahr)"/>
+<line class="s d" x1="190" y1="82" x2="190" y2="232"/><text x="196" y="160" class="tl">Z</text>
+<line class="s" x1="92" y1="246" x2="288" y2="246" marker-start="url(#ah)" marker-end="url(#ah)"/><text x="150" y="240" class="ts">b (baseline)</text>
+<text x="20" y="200" class="tb">IR Projector</text><text x="276" y="198" class="tr">IR Camera</text>
+<text x="34" y="150" class="ts tb">ฉายแพทเทิร์นจุด IR</text>
+<text x="226" y="140" class="ts tr">มองแพทเทิร์นที่เลื่อนไป</text>
+</svg>`;
+
+FIG.lever = `<svg viewBox="0 0 380 230" role="img" aria-label="Lever arm effect: เสาเซนเซอร์โก่ง 1 องศา">
+<rect x="20" y="168" width="84" height="34" rx="6" class="fc"/><circle cx="38" cy="208" r="10" class="fc"/><circle cx="86" cy="208" r="10" class="fc"/>
+<line class="s d" x1="60" y1="168" x2="60" y2="60"/>
+<path class="s" d="M60,168 Q62,110 72,62" style="stroke-width:4"/>
+<rect x="64" y="52" width="16" height="12" class="fh"/>
+<line class="s" x1="356" y1="30" x2="356" y2="200" style="stroke-width:3"/><text x="300" y="214" class="ts">เป้าที่ 100 m</text>
+<line class="b d" x1="72" y1="58" x2="352" y2="58" marker-end="url(#ahb)"/><text x="150" y="48" class="tb">แนวที่ตั้งใจ · L = 100 m</text>
+<line class="r" x1="72" y1="60" x2="352" y2="118" marker-end="url(#ahr)"/><text x="230" y="112" class="tr">แนวจริงเมื่อเสาโก่ง</text>
+<line class="r" x1="366" y1="58" x2="366" y2="118" marker-start="url(#ahr)" marker-end="url(#ahr)"/><text x="324" y="92" class="tr tl">e</text>
+<text x="80" y="92" class="tl">θ = 1°</text>
+<text x="120" y="160" class="tm">e = L·tanθ = 100 × tan1°</text>
+<text x="120" y="180" class="tm">  ≈ 1.75 m (สไลด์ ~2 m)</text>
+</svg>`;
+
+FIG.guarded = `<svg viewBox="0 0 360 320" role="img" aria-label="Flowchart ของ Guarded Move">
+<rect x="20" y="12" width="180" height="40" rx="6" class="fc"/><text x="110" y="37" class="mid">คำสั่งเคลื่อนที่</text>
+<line class="s" x1="110" y1="52" x2="110" y2="76" marker-end="url(#ah)"/>
+<rect x="20" y="78" width="180" height="40" rx="6" class="fc"/><text x="110" y="103" class="mid">หุ่นยนต์ขยับกลไก</text>
+<line class="s" x1="110" y1="118" x2="110" y2="144" marker-end="url(#ah)"/>
+<polygon points="110,146 196,200 110,254 24,200" class="fh"/>
+<text x="110" y="196" class="mid th">Force &gt; Threshold</text><text x="110" y="214" class="mid th">หรือเจอสิ่งกีดขวาง?</text>
+<line class="r" x1="196" y1="200" x2="228" y2="200" marker-end="url(#ahr)"/><text x="198" y="190" class="tr ts">Yes</text>
+<rect x="230" y="168" width="122" height="64" rx="6" class="fr"/><text x="291" y="194" class="mid tr" style="font-weight:700">IMMEDIATE</text><text x="291" y="214" class="mid tr" style="font-weight:700">HARDWARE HALT</text>
+<path class="s" d="M110,254 L110,292 L8,292 L8,98 L18,98" marker-end="url(#ah)"/><text x="118" y="286" class="ts">No → ทำงานต่อ และตรวจซ้ำตลอด</text>
+</svg>`;
+
+FIG.mcl = `<svg viewBox="0 0 380 255" role="img" aria-label="belief ของ Monte Carlo Localization ตามเวลา">
+<rect x="40" y="6" width="320" height="16" class="fb"/>
+<rect x="110" y="6" width="16" height="16" class="fi"/><rect x="160" y="6" width="16" height="16" class="fi"/><rect x="290" y="6" width="16" height="16" class="fi"/>
+<text x="4" y="19" class="ts">ประตู</text>
+<text x="40" y="44" class="ts">t = 0 : อาจอยู่ที่ใดก็ได้ (prior สม่ำเสมอ)</text>
+<line class="s" x1="40" y1="84" x2="360" y2="84"/><line class="b" x1="40" y1="70" x2="360" y2="70"/>
+<text x="40" y="118" class="ts">t = 1 : เห็นประตู → peak เท่ากันทุกประตู</text>
+<line class="s" x1="40" y1="164" x2="360" y2="164"/>
+<path class="b" d="M40,160 L100,160 Q118,118 136,160 L150,160 Q168,118 186,160 L280,160 Q298,118 316,160 L360,160"/>
+<text x="40" y="196" class="ts">t = 3 : เห็นประตูอีกครั้ง</text><text x="40" y="212" class="ts">→ peak เดียวที่ประตูที่ 2</text>
+<line class="s" x1="40" y1="246" x2="360" y2="246"/>
+<path class="b" d="M40,243 L150,243 Q168,160 186,243 L280,243 Q298,232 316,243 L360,243"/>
+</svg>`;
+
+FIG.backdrive = `<svg viewBox="0 0 380 220" role="img" aria-label="Backdrivability สูงและต่ำ">
+<text x="8" y="20" class="tl">สูง · อัตราทดต่ำ (&lt; 20:1)</text>
+<circle cx="62" cy="100" r="30" class="fb"/><circle cx="120" cy="100" r="28" class="fb"/>
+<circle cx="62" cy="100" r="4" class="fi"/><circle cx="120" cy="100" r="4" class="fi"/>
+<line class="r" x1="170" y1="52" x2="140" y2="76" marker-end="url(#ahr)"/><text x="132" y="44" class="tr ts">แรงภายนอก</text>
+<path class="b" d="M44,72 A34,34 0 0 0 30,112" marker-end="url(#ahb)"/>
+<text x="8" y="158" class="okc ts" style="fill:var(--ok)">✓ หมุนตามแรงได้ (backdrivable)</text>
+<text x="8" y="180" class="ts">ปลอดภัย นุ่มนวล รับรู้แรง</text><text x="8" y="200" class="ts">เช่น QDD hands</text>
+<line class="s d" x1="190" y1="10" x2="190" y2="210"/>
+<text x="198" y="20" class="tl">ต่ำ · อัตราทดสูง (&gt; 100:1)</text>
+<circle cx="232" cy="100" r="12" class="fb"/><circle cx="292" cy="100" r="46" class="fb"/>
+<circle cx="232" cy="100" r="3" class="fi"/><circle cx="292" cy="100" r="4" class="fi"/>
+<line class="r" x1="368" y1="40" x2="330" y2="68" marker-end="url(#ahr)"/>
+<path class="r" d="M300,70 l16,16 M316,70 l-16,16" style="stroke-width:3"/>
+<text x="198" y="158" class="tr ts">✗ ล็อก ไม่ขยับ</text>
+<text x="198" y="180" class="ts">จับแน่น แต่แข็งทื่อ อันตรายต่อคน</text><text x="198" y="200" class="ts">เช่น industrial gripper</text>
+</svg>`;
+
+FIG.toc = `<svg viewBox="0 0 320 330" role="img" aria-label="Theory of Change">
+<rect x="10" y="8" width="300" height="58" rx="8" class="fc"/><text x="22" y="30" class="tl">Inputs (ปัจจัยนำเข้า)</text><text x="22" y="52" class="ts">งบ R&amp;D · เวลาวิศวกร · ผู้เชี่ยวชาญ</text>
+<line class="s" x1="160" y1="66" x2="160" y2="88" marker-end="url(#ah)"/>
+<rect x="10" y="90" width="300" height="58" rx="8" class="fc"/><text x="22" y="112" class="tl">Outputs (ผลผลิต)</text><text x="22" y="134" class="ts">หุ่นบริการทำงานได้จริง (SLAM + HRI)</text>
+<line class="b" x1="160" y1="148" x2="160" y2="170" marker-end="url(#ahb)"/><text x="170" y="164" class="tb ts">value generation</text>
+<rect x="10" y="172" width="300" height="58" rx="8" class="fh"/><text x="22" y="194" class="tl th">Outcomes (ผลลัพธ์ที่เปลี่ยน)</text><text x="22" y="216" class="ts th">พยาบาลประหยัดเวลาเดิน 2 ชม./วัน · หกล้ม −30%</text>
+<line class="s" x1="160" y1="230" x2="160" y2="252" marker-end="url(#ah)"/>
+<rect x="10" y="254" width="300" height="58" rx="8" class="fc"/><text x="22" y="276" class="tl">Impact (ผลกระทบระยะยาว)</text><text x="22" y="298" class="ts">สวัสดิการสาธารณสุขดีขึ้น · แก้ขาดแคลนแรงงาน</text>
+</svg>`;
+
+FIG.pid = `<svg viewBox="0 0 420 190" role="img" aria-label="ระบบควบคุมป้อนกลับแบบปิด PID">
+<text x="4" y="74">Setpoint</text><line class="s" x1="64" y1="80" x2="96" y2="80" marker-end="url(#ah)"/>
+<circle cx="113" cy="80" r="15" class="fc"/><text x="107" y="85" class="tl">Σ</text><text x="88" y="72" class="ts">+</text><text x="120" y="112" class="ts">−</text>
+<line class="s" x1="128" y1="80" x2="164" y2="80" marker-end="url(#ah)"/><text x="140" y="72" class="tm">e</text>
+<rect x="166" y="58" width="88" height="44" rx="6" class="fh"/><text x="210" y="76" class="mid th">Controller</text><text x="210" y="94" class="mid th tm">(PID)</text>
+<line class="s" x1="254" y1="80" x2="284" y2="80" marker-end="url(#ah)"/>
+<rect x="286" y="58" width="88" height="44" rx="6" class="fc"/><text x="330" y="76" class="mid">Plant</text><text x="330" y="94" class="mid tm">(Motors)</text>
+<line class="s" x1="374" y1="80" x2="414" y2="80" marker-end="url(#ah)"/><text x="378" y="70" class="ts">Output</text>
+<path class="b" d="M396,80 L396,150 L322,150" marker-end="url(#ahb)"/>
+<rect x="232" y="132" width="88" height="36" rx="6" class="fb"/><text x="276" y="155" class="mid">Sensors</text>
+<path class="b" d="M232,150 L113,150 L113,98" marker-end="url(#ahb)"/>
+<text x="120" y="182" class="tm">Closed-loop feedback · e = setpoint − ค่าที่วัดได้</text>
+</svg>`;
+
+FIG.rcm = `<svg viewBox="0 0 360 260" role="img" aria-label="Remote Center of Motion ที่รอยเจาะ">
+<path class="b" d="M120,30 Q185,0 250,34" marker-end="url(#ahb)"/><text x="132" y="14" class="tb ts">แขนกลหมุนรอบจุดเดียว</text>
+<line class="b d" x1="120" y1="40" x2="216" y2="229"/><line class="b d" x1="250" y1="45" x2="138" y2="226"/>
+<path d="M10,150 Q180,130 350,150 L350,168 Q180,148 10,168 Z" class="fb"/>
+<line class="s" x1="180" y1="30" x2="180" y2="236" style="stroke-width:4"/>
+<circle cx="216" cy="229" r="4" class="fi"/><circle cx="138" cy="226" r="4" class="fi"/><circle cx="180" cy="236" r="4" class="fi"/>
+<circle cx="180" cy="149" r="7" class="fh"/>
+<text x="198" y="128" class="tl">RCM / Fulcrum</text><text x="198" y="146" class="ts">รอยเจาะ ~1 cm</text>
+<text x="12" y="190" class="ts">ผนังหน้าท้อง</text><text x="240" y="236" class="ts">ภายในร่างกาย</text>
+</svg>`;
+
+FIG.dtvenn = `<svg viewBox="0 0 340 300" role="img" aria-label="Design Thinking: Desirable Feasible Viable">
+<circle cx="170" cy="100" r="85" class="vn"/><circle cx="118" cy="188" r="85" class="vn"/><circle cx="222" cy="188" r="85" class="vn"/>
+<text x="170" y="48" class="tl mid">VIABLE</text><text x="170" y="66" class="ts mid">Business · อยู่รอดทางธุรกิจ</text>
+<text x="76" y="232" class="tl mid">DESIRABLE</text><text x="76" y="250" class="ts mid">Human · คนต้องการ</text>
+<text x="264" y="232" class="tl mid">FEASIBLE</text><text x="264" y="250" class="ts mid">Technology · ทำได้จริง</text>
+<rect x="122" y="146" width="96" height="26" rx="5" class="fh"/><text x="170" y="164" class="mid th" style="font-weight:600">INNOVATION</text>
+</svg>`;
+
+FIG.tripod = `<svg viewBox="0 0 340 310" role="img" aria-label="Tripod gait ของหุ่นยนต์หกขา">
+<polygon points="60,60 300,150 60,240" class="b d" style="fill:var(--blue);fill-opacity:.08"/>
+<line class="s" x1="140" y1="90" x2="60" y2="60"/><line class="s" x1="140" y1="150" x2="40" y2="150"/><line class="s" x1="140" y1="210" x2="60" y2="240"/>
+<line class="s" x1="200" y1="90" x2="280" y2="60"/><line class="s" x1="200" y1="150" x2="300" y2="150"/><line class="s" x1="200" y1="210" x2="280" y2="240"/>
+<rect x="140" y="60" width="60" height="180" rx="20" class="fc"/>
+<line class="s" x1="170" y1="56" x2="170" y2="20" marker-end="url(#ah)"/><text x="178" y="28" class="ts">หัว</text>
+<circle cx="170" cy="150" r="5" class="fi"/><text x="160" y="172" class="tm">CoG</text>
+<circle cx="60" cy="60" r="9" class="fh"/><circle cx="300" cy="150" r="9" class="fh"/><circle cx="60" cy="240" r="9" class="fh"/>
+<circle cx="280" cy="60" r="9" class="fc"/><circle cx="40" cy="150" r="9" class="fc"/><circle cx="280" cy="240" r="9" class="fc"/>
+<text x="30" y="52" class="tm">L1</text><text x="8" y="140" class="tm">L2</text><text x="30" y="262" class="tm">L3</text>
+<text x="290" y="52" class="tm">R1</text><text x="306" y="140" class="tm">R2</text><text x="290" y="262" class="tm">R3</text>
+<text x="8" y="286" class="ts">● กลุ่ม A (L1, R2, L3) ยืนรับน้ำหนัก — สามเหลี่ยมครอบ CoG</text>
+<text x="8" y="304" class="ts">○ กลุ่ม B (R1, L2, R3) ยกขาก้าว แล้วสลับกัน</text>
+</svg>`;
+
+FIG.slots = `<svg viewBox="0 0 380 225" role="img" aria-label="ภาพตัด T-slot เทียบ V-slot">
+<path class="fc" d="M30,40 L78,40 L78,54 L62,54 L62,74 L118,74 L118,54 L102,54 L102,40 L150,40 L150,160 L30,160 Z"/>
+<circle cx="90" cy="115" r="10" class="fc"/>
+<rect x="66" y="58" width="48" height="12" class="fh"/>
+<line class="s" x1="90" y1="20" x2="90" y2="64" style="stroke-width:4"/><text x="98" y="22" class="ts">T-bolt + T-nut</text>
+<text x="30" y="186" class="tl">T-slot = Static frame</text><text x="30" y="206" class="ts">ร่องตัว T ล็อก T-nut ให้ยึดนิ่ง</text>
+<path class="fc" d="M220,40 L258,40 L272,54 L272,74 L288,74 L288,54 L302,40 L340,40 L340,160 L220,160 Z"/>
+<circle cx="280" cy="115" r="10" class="fc"/>
+<polygon points="260,40 280,60 300,40 300,8 260,8" class="fh"/><text x="306" y="24" class="ts">V-wheel</text>
+<text x="226" y="62" class="tb ts">90°</text>
+<text x="220" y="186" class="tl">V-slot = Frame + ราง</text><text x="220" y="206" class="ts">ปีกเฉียง 90° ให้ล้อวิ่ง</text>
+</svg>`;
+
+FIG.hybrid = `<svg viewBox="0 0 420 300" role="img" aria-label="Hybrid robot anatomy">
+<rect x="50" y="246" width="160" height="30" class="fc" style="stroke-width:3"/>
+<rect x="64" y="204" width="70" height="40" rx="4" class="fb" style="fill-opacity:.5"/><rect x="76" y="216" width="30" height="18" class="fi" style="opacity:.6"/>
+<rect x="150" y="110" width="26" height="136" class="fc"/><line class="s" x1="158" y1="116" x2="158" y2="240" style="stroke-width:1"/><line class="s" x1="168" y1="116" x2="168" y2="240" style="stroke-width:1"/>
+<line class="lk" x1="163" y1="110" x2="296" y2="62" style="stroke:var(--ink);stroke-width:12"/>
+<circle cx="163" cy="110" r="10" class="fh"/>
+<path class="s" d="M298,58 l20,-14 l14,6 M298,64 l20,14 l14,-6" style="stroke-width:4;stroke:var(--blue)"/>
+<line class="b" x1="215" y1="76" x2="230" y2="36"/><text x="196" y="28" class="ts">Arm: Carbon fiber / กล่องอลู + Epoxy</text>
+<line class="b" x1="330" y1="80" x2="330" y2="104"/><text x="214" y="118" class="ts">End-effector: PLA + Heat-set inserts</text>
+<line class="b" x1="176" y1="170" x2="214" y2="170"/><text x="218" y="174" class="ts">Core frame: Al profile + Brackets</text>
+<line class="b" x1="134" y1="214" x2="214" y2="214"/><text x="218" y="218" class="ts">Shield: Polycarbonate/แก้ว + ปะเก็นยาง</text>
+<line class="b" x1="210" y1="262" x2="214" y2="262"/><text x="218" y="266" class="ts">Base: เหล็ก + เชื่อม → CoG ต่ำ</text>
+</svg>`;
+
+FIG.glass = `<svg viewBox="0 0 440 230" role="img" aria-label="การยึดแก้วด้วยปะเก็นยาง และการต่อท่อคาร์บอนด้วย epoxy">
+<path class="fc" d="M40,190 L40,110 L60,110 L60,175 L100,175 L100,110 L120,110 L120,190 Z"/>
+<rect x="62" y="110" width="12" height="51" class="fb" style="fill:var(--blue);fill-opacity:.35"/><rect x="86" y="110" width="12" height="51" class="fb" style="fill:var(--blue);fill-opacity:.35"/><rect x="62" y="161" width="36" height="12" class="fb" style="fill:var(--blue);fill-opacity:.35"/>
+<rect x="74" y="24" width="12" height="137" class="fb"/>
+<line class="s" x1="92" y1="50" x2="128" y2="50"/><text x="132" y="54" class="ts">แผ่นแก้ว</text>
+<line class="s" x1="98" y1="140" x2="128" y2="140"/><text x="132" y="136" class="ts">ปะเก็นยาง (Gasket)</text><text x="132" y="152" class="ts">โลหะไม่แตะแก้ว</text>
+<line class="s" x1="120" y1="185" x2="128" y2="185"/><text x="132" y="189" class="ts">รางอลูมิเนียม</text>
+<line class="s d" x1="236" y1="10" x2="236" y2="220"/>
+<rect x="330" y="50" width="80" height="50" rx="4" class="fc"/>
+<rect x="326" y="58" width="56" height="34" class="fh"/>
+<rect x="250" y="62" width="128" height="26" class="fi" style="opacity:.85"/>
+<text x="252" y="44" class="ts">ท่อคาร์บอน</text><text x="342" y="44" class="ts">ข้อต่อโลหะ</text>
+<text x="250" y="126" class="ts">Press-fit + กาว Epoxy (สีเหลือง)</text>
+<text x="250" y="146" class="ts">กระจายแรงทั่วผิวสัมผัส</text>
+<text x="250" y="176" class="tr ts">✗ ห้ามเจาะรูยึดน็อต</text>
+</svg>`;
+</script>
+
+<script>
+/* ===== ข้อมูลบทเรียน ===== */
+BANK.push({
+  id: "l07", no: "07", short: "โครงสร้าง 3D", term: "Midterm", slides: 39,
+  en: "3D Structural Design", th: "การออกแบบโครงสร้างหุ่นยนต์ 3 มิติ: DoF, โครงสร้าง 6 แบบ, Cobot, TCP และหุ่นยนต์เคลื่อนที่",
+  sum: `
+<section class="sec"><h3>Dimension กับ DoF <span class="ref">S4–5</span></h3>
+<ul>
+<li><b>Dimension (มิติ)</b> = มิติของ<b>พื้นที่ทำงาน</b> (สภาพแวดล้อม): 1D เคลื่อนตามแกน X · 2D เคลื่อนบนระนาบ XY · 3D เคลื่อนในปริมาตร XYZ</li>
+<li><b>DoF (Degree of Freedom, องศาอิสระ)</b> = จำนวน<b>แกนการเคลื่อนที่อิสระของตัวหุ่นยนต์</b> (กลไก)</li>
+<li>1 DoF = ข้อต่อหมุน 1 อัน · 3 DoF = ข้อต่อหมุน 2 + เลื่อน 1 (แขน 3 ข้อต่อทำงานบนระนาบ) · 6 DoF = ข้อต่อหมุน 6 แกน ได้ X, Y, Z, Roll, Pitch, Yaw จึงเคลื่อนที่อิสระใน 3D</li>
+<li>หุ่นยนต์ 4-DoF ที่ทำงานในพื้นที่ 2D เรียกว่า <b>Redundant robot</b></li>
+</ul>
+{{fig:rpy}}
+</section>
+<section class="sec"><h3>ทำไมต้องมีหุ่นยนต์หลายดีไซน์ <span class="ref">S6</span></h3>
+<p>แต่ละงานให้น้ำหนักต่างกัน: <b>ราคา · ความปลอดภัย · ศักยภาพ · ความแม่นยำ · ความเร็ว · ข้อจำกัดต่างๆ · ความคงทน/การดูแลรักษา · อะไหล่/ซ่อมบำรุง</b></p>
+</section>
+<section class="sec"><h3>โครงสร้างหุ่นยนต์ 3 มิติ 6 แบบ <span class="ref">S7–15</span></h3>
+<div class="tbl"><table><thead><tr><th>โครงสร้าง</th><th>Workspace</th><th>ข้อดี</th><th>ข้อเสีย</th><th>งานที่ใช้</th></tr></thead><tbody>
+<tr><td><b>Cartesian</b><br><small>Rectangular</small></td><td>กล่อง</td><td>เคลื่อนเชิงเส้น 3 แกน เข้าใจง่าย ชิ้นส่วนง่าย แข็งแรงตลอดการเคลื่อนที่</td><td>ใช้พื้นที่ติดตั้งมาก พื้นที่ทำงานเล็กกว่าตัวหุ่น เข้าถึงวัตถุจากด้านล่างไม่ได้</td><td>หัวพิมพ์เครื่องพิมพ์ 3D</td></tr>
+<tr><td><b>Cylindrical</b></td><td>ทรงกระบอก</td><td>ไม่ซับซ้อน เข้าใจง่าย เข้าช่อง/โพรงเครื่องจักรง่าย (โหลดชิ้นงานเข้า CNC)</td><td>พื้นที่ทำงานจำกัด แกนเชิงเส้น Seal กันฝุ่น/ของเหลวยาก</td><td>Assembly, machine tool, die-cast, spot welding</td></tr>
+<tr><td><b>Spherical</b></td><td>ทรงกลม</td><td>ปริมาตรทำงานเพิ่มจากการหมุนแกนที่ 2 (ไหล่) ก้มจับชิ้นงานบนพื้นได้สะดวก</td><td>ระบบพิกัด/ชิ้นส่วนซับซ้อน การเคลื่อนที่และควบคุมซับซ้อน</td><td>Die casting, injection molding, welding, material handling</td></tr>
+<tr><td><b>SCARA</b><br><small>Selective Compliance Articulated Robot Arm</small></td><td>ทรงกระบอกบางส่วน</td><td>เคลื่อนในระนาบและขึ้นลงได้เร็ว แม่นยำสูง</td><td>พื้นที่จำกัด หมุนเปลี่ยนมุม (orientation) หลายแบบไม่ได้ Payload น้อย</td><td>Assembly, palletizing, bio-medical</td></tr>
+<tr><td><b>Delta</b><br><small>parallel link manipulator</small></td><td>แคบ ใต้ฐาน</td><td>แข็งแรงเพราะโครงสร้างปิด · แม่นยำเพราะปลายแขนต่อกับต้นกำลังทุกตัวที่ฐาน · เร็วเพราะมวลอยู่ที่ฐาน ปลายแขนเบา · ออกแรงได้มากเทียบขนาด</td><td>พื้นที่ทำงานแคบ การคำนวณควบคุมซับซ้อน</td><td>Omron delta, Rostock delta (3D printer), Stewart platform</td></tr>
+<tr><td><b>Articulated</b></td><td>ทรงกลมขนาดใหญ่</td><td>ทุกแกนหมุน ยืดหยุ่นในการเข้าถึง · Seal ข้อต่อกันฝุ่น/ความชื้น/น้ำง่าย · พื้นที่ทำงานมาก · เข้าถึงได้ทั้งบนและล่าง · เหมาะกับมอเตอร์ไฟฟ้า</td><td>ระบบพิกัด/กลศาสตร์ซับซ้อน · คุมให้เคลื่อนเป็นเส้นตรงยาก · ขอบ Work envelope ปลายแขนสั่น ความแม่นยำลดลง</td><td>Assembly, arc welding, material handling, machine tending, packaging</td></tr>
+</tbody></table></div>
+<p>Delta แบบ 3-RRR วางแขน 3 ชุดห่างกัน 120° <span class="ref">S13</span></p>
+</section>
+<section class="sec"><h3>Link และ Joint <span class="ref">S15–16</span></h3>
+<ul><li>ฐานและส่วนที่ต่อกับข้อต่อแรก = <b>Link-0</b> · ข้อต่อแรก = <b>Joint-1</b></li>
+<li>Link-0 เป็น input link ของ Joint-1 · output ของ Joint-1 คือ Link-1 ซึ่งเป็น input ของ Joint-2 ไล่เลขแบบนี้ไปจนปลายแขน</li></ul>
+{{fig:linkjoint}}
+<div class="tbl"><table style="min-width:420px"><thead><tr><th>ข้อต่อ</th><th>การเคลื่อนที่</th></tr></thead><tbody>
+<tr><td>(a) Linear (L)</td><td>เลื่อน · input/output link อยู่แนวเดียวกัน</td></tr>
+<tr><td>(b) Orthogonal (O)</td><td>เลื่อน · output link ตั้งฉากกับ input link</td></tr>
+<tr><td>(c) Rotational (R)</td><td>หมุน · แกนหมุนตั้งฉากกับ link</td></tr>
+<tr><td>(d) Twisting (T)</td><td>หมุน · แกนหมุนขนานกับ link ทั้งสอง (บิดรอบแกนตัวเอง)</td></tr>
+<tr><td>(e) Revolving (V)</td><td>หมุน · input link ขนานแกนหมุน ส่วน output link ตั้งฉากและหมุนรอบ</td></tr>
+</tbody></table></div>
+</section>
+<section class="sec"><h3>บริษัทหุ่นยนต์ตามภูมิภาค <span class="ref">S17</span></h3>
+<ul><li><b>ญี่ปุ่น</b>: FANUC, Yaskawa, Kawasaki, Denso, Epson, Mitsubishi Electric, Nachi-Fujikoshi, OTC Daihen (กลุ่มทั่วไป: Sony, Honda, Toyota, Toshiba)</li>
+<li><b>อเมริกา</b>: Boston Dynamics, iRobot, Intuitive Surgical, Rethink Robotics, Barrett Technology, Kiva Systems</li>
+<li><b>ยุโรป</b>: ABB, KUKA, Stäubli, Comau, Dürr, IGM, Schunk</li></ul>
+</section>
+<section class="sec"><h3>Industrial Robot vs Collaborative Robot (Cobot) <span class="ref">S18–21</span></h3>
+<div class="tbl"><table style="min-width:420px"><thead><tr><th>หัวข้อ</th><th>Industrial Robot</th><th>Cobot</th></tr></thead><tbody>
+<tr><td>ขนาด</td><td>ใหญ่</td><td>เล็ก</td></tr>
+<tr><td>พื้นที่</td><td>ต้องการพื้นที่กว้าง</td><td>ทำงานในพื้นที่จำกัดได้</td></tr>
+<tr><td>การติดตั้ง</td><td>ยาก ถาวร ต้องมีรั้วกั้น</td><td>ง่าย เคลื่อนย้ายง่าย ไม่ต้องมีรั้วกั้น</td></tr>
+<tr><td>น้ำหนัก</td><td>มาก (≈ 50 กก.)</td><td>เบากว่า ≈ 40%</td></tr>
+<tr><td>ความปลอดภัย</td><td>อันตรายต่อคน (ไม่มีเซนเซอร์ภายใน)</td><td>ปลอดภัย หยุดเมื่อพบสิ่งกีดขวาง (มีเซนเซอร์ภายใน)</td></tr>
+</tbody></table></div>
+<p><b>Tactile Skin (T-Skin)</b>: ติดผิวสัมผัสให้หุ่นอุตสาหกรรม (เช่น Kawasaki + Touché) เพื่อปกป้องความปลอดภัยของคนงาน</p>
+</section>
+<section class="sec"><h3>อุปกรณ์ของ Cobot (Universal Robots) <span class="ref">S22–23</span></h3>
+<ul><li><b>Teach Pendant</b>: Emergency button, Power button, Free Drive button (ด้านหลัง)</li>
+<li><b>Control Box (CB)</b>: Input/Output</li>
+<li><b>Robot</b> ไล่จากฐาน: Base → Shoulder → Elbow → Wrist 1 → Wrist 2 → Wrist 3</li></ul>
+</section>
+<section class="sec"><h3>พิกัด Base/Tool และการเปลี่ยน TCP <span class="ref">S24–28</span></h3>
+<ul><li><b>Base coordinate</b> อ้างอิงที่ฐาน · <b>Tool coordinate</b> อ้างอิงที่เครื่องมือ แต่ละระบบมี X, Y, Z และการหมุน RX, RY, RZ</li>
+<li>Mobile manipulator มีหลายเฟรม: O<sub>W</sub> (World), O<sub>B</sub> (ฐานรถ), O<sub>M</sub> (ฐานแขน), O<sub>E</sub> (ปลายแขน), O<sub>S</sub> (เซนเซอร์ f/t)</li>
+<li><b>เปลี่ยน TCP (Tool Center Point)</b>: ย้ายจุดอ้างอิงจาก “จุดเดิม” ที่หน้าแปลนไป “จุดใหม่” ที่ปลายเครื่องมือ · ใน UR ทำ 4 ขั้น: เปิดหน้า TCP → Set point → พาปลายเครื่องมือไปแตะจุดเดียวกันจากหลายมุม → ระบบคำนวณค่า TCP</li>
+<li><b>External TCP</b> (Denso): เมื่อเครื่องมืออยู่กับที่ เช่น เครื่องลบคม ให้ตั้ง TCP ที่เครื่องมือภายนอก ลดจำนวนจุดที่ต้องสอน (ตัวอย่างเหลือ 3 จุด) ทำงานมีประสิทธิภาพขึ้น</li></ul>
+</section>
+<section class="sec"><h3>แขน 7 DoF และ 8 DoF <span class="ref">S29–31</span></h3>
+<ul><li>7 DoF: มีทั้งแขนเดี่ยวและแขนคู่ ใช้งานประกอบที่ต้องแม่นยำ</li>
+<li>8 DoF (anthropomorphic dual-arm): <b>Shoulder 4 DoF</b> (เพิ่ม shoulder joint) + <b>Elbow 1</b> + <b>Wrist 3</b></li>
+<li>ภายใน joint assembly: Harmonic drive, BLDC motor, Absolute encoder, Motor controller</li></ul>
+</section>
+<section class="sec"><h3>DoF ของวัตถุเคลื่อนที่และหุ่นยนต์เคลื่อนที่ <span class="ref">S32–38</span></h3>
+<ul><li><b>Roll</b> หมุนรอบแกน X (φ) · <b>Pitch</b> หมุนรอบแกน Y (θ) · <b>Yaw</b> หมุนรอบแกน Z (ψ) ใช้ได้ทั้งรถและเครื่องบิน</li>
+<li><b>UAV</b>: Motor, Pixhawk flight controller, GPS module, Remote control, Onboard computer, Digital/Image transmission module, PTZ camera, Sonar module</li>
+<li>รูปแบบโรเตอร์: Quad (I, X), Hexa (I, V, IY, Y), Octo (X, I, V) · ใบพัดที่อยู่ติดกันหมุนสวนทาง และปรับความเร็วแต่ละตัวเพื่อเคลื่อนที่</li>
+<li><b>AUV</b>: Echo sounder, Water sample extraction, Acoustic modem, Visual feedback, Environmental monitoring, Distance sensor, CTD (เช่น REMUS 100)</li>
+<li><b>Legged</b>: สัตว์เลี้ยงลูกด้วยนม 2 หรือ 4 ขา · สัตว์เลื้อยคลาน 4 ขา · แมลง 6 ขา · มุมขา: hip abduction (θ), hip flexion (ψ), knee flexion (φ)</li>
+<li><b>Humanoid</b> (Loong): Head pitch/yaw, Arm joint 1–7, Waist pitch/roll/yaw, Hip yaw/roll/pitch, Knee pitch, Ankle pitch/roll</li></ul>
+{{fig:quadx}}
+</section>
+<section class="dt"><p class="stamp">Design Thinking</p>
+<p>การเลือกโครงสร้างคือการชั่งน้ำหนัก 3 วง:</p>
+<ul><li><b>Desirable</b>: ต้องทำงานข้างคนไหม → Cobot หรือเพิ่ม T-Skin</li>
+<li><b>Feasible</b>: ความแม่นยำ ความเร็ว workspace → Delta เร็วแต่แคบ, Articulated กว้างแต่คุมซับซ้อน</li>
+<li><b>Viable</b>: ราคา อะไหล่ การซ่อมบำรุง → Cartesian ชิ้นส่วนง่าย</li></ul>
+<p>ฝึก: เขียนโจทย์ (Define) เช่น “หยิบชิ้นงานเล็กจากสายพานให้เร็วที่สุด” แล้ว Ideate ว่าโครงสร้างไหนตอบทั้ง 3 วงได้ดีที่สุด (คำใบ้: Delta หรือ SCARA)</p>
+</section>`,
+  fill: [
+    { q: "___ คือมิติของพื้นที่ทำงาน (สภาพแวดล้อม) ส่วน ___ คือจำนวนแกนการเคลื่อนที่อิสระของตัวหุ่นยนต์ (กลไก)", a: [["Dimension", "มิติ"], ["DoF", "Degree of Freedom", "Degrees of Freedom", "องศาอิสระ"]], s: "S5" },
+    { q: "แขนกลอุตสาหกรรม 6 DoF ใช้ข้อต่อหมุน ___ แกน ให้การเคลื่อนที่ X, Y, Z, Roll, Pitch และ ___", a: [{ n: 6 }, ["Yaw", "ยอว์"]], s: "S5" },
+    { q: "หุ่นยนต์ 4-DoF ที่ทำงานในพื้นที่ 2D เรียกว่า ___ robot", a: [["Redundant"]], s: "S5", ex: "DoF มากกว่าจำนวนมิติที่งานต้องการ" },
+    { q: "SCARA ย่อมาจาก Selective ___ Articulated Robot Arm", a: [["Compliance"]], s: "S7" },
+    { q: "Delta robot เป็นแขนหุ่นยนต์โครงสร้างแบบ ___ (parallel link manipulator) และเคลื่อนที่เร็วเพราะมวลส่วนใหญ่อยู่ที่ ___", a: [["ขนาน", "parallel"], ["ฐาน", "base"]], s: "S12" },
+    { q: "หุ่นยนต์แบบ ___ มีพื้นที่ทำงานรูปกล่อง และใช้กับหัวพิมพ์ของเครื่องพิมพ์ 3D", a: [["Cartesian", "Rectangular", "คาร์ทีเซียน"]], s: "S7–8" },
+    { q: "หุ่นยนต์ Spherical มีปริมาตรทำงานมากขึ้นเพราะการหมุนของแกนที่ ___ (ไหล่)", a: [{ n: 2 }], s: "S10" },
+    { q: "ข้อเสียของ Articulated robot: บริเวณขอบ ___ ปลายแขนจะสั่น ทำให้ความแม่นยำลดลง", a: [["Work envelope", "Work envelop", "พื้นที่ทำงาน"]], s: "S14" },
+    { q: "ฐานและส่วนที่ต่อกับข้อต่อแรกเรียกว่า Link-___ ส่วนข้อต่อแรกเรียกว่า Joint-___", a: [{ n: 0 }, { n: 1 }], s: "S15" },
+    { q: "ข้อต่อที่หมุนรอบแกนซึ่งขนานกับ link ทั้งสองข้าง เรียกว่า ___ joint", a: [["Twisting", "T"]], s: "S16" },
+    { q: "Cobot เบากว่าหุ่นยนต์อุตสาหกรรมประมาณ ___ % และหยุดเมื่อพบสิ่งกีดขวางเพราะมี ___ ภายใน", a: [{ n: 40 }, ["เซนเซอร์", "เซ็นเซอร์", "sensor", "sensors"]], s: "S19–20" },
+    { q: "การเปลี่ยน ___ (TCP) คือการย้ายจุดอ้างอิงจากหน้าแปลนไปที่ปลายเครื่องมือ", a: [["Tool Center Point", "Tool Centre Point"]], s: "S26" },
+    { q: "แขน 8-DoF ในสไลด์แบ่งเป็น Shoulder ___ DoF, Elbow 1 DoF และ Wrist ___ DoF", a: [{ n: 4 }, { n: 3 }], s: "S30–31" },
+    { q: "การหมุนรอบแกน Z ของรถยนต์หรือเครื่องบินเรียกว่า ___", a: [["Yaw", "ยอว์"]], s: "S32" },
+    { q: "แขน UR ไล่จากฐาน: Base → ___ → Elbow → Wrist 1 → Wrist 2 → Wrist 3", a: [["Shoulder", "ไหล่"]], s: "S23" },
+    { q: "หุ่นยนต์ขาที่เลียนแบบแมลงมี ___ ขา", a: [{ n: 6 }], s: "S36" },
+    { q: "การเลือก Cobot เพราะทำงานข้างคนได้โดยไม่ต้องมีรั้ว ตอบวง ___ (Human) ของ Design Thinking", a: [["Desirable", "Desirability"]], s: "S20 + บท 11 S15", dt: true }
+  ],
+  match: [
+    { q: "จับคู่โครงสร้างหุ่นยนต์กับลักษณะเด่น", pairs: [["Cartesian", "ใช้พื้นที่ติดตั้งมาก เข้าถึงจากด้านล่างไม่ได้"], ["Cylindrical", "Seal แกนเชิงเส้นยาก แต่โหลดชิ้นงานเข้า CNC ง่าย"], ["Spherical", "หมุนแกนไหล่ทำให้ก้มจับชิ้นงานบนพื้นได้"], ["SCARA", "เร็วและแม่นในระนาบ แต่ Payload ต่ำ"], ["Delta", "โครงสร้างปิด แข็งแรง เร็ว แต่พื้นที่แคบ"], ["Articulated", "ทุกแกนหมุน Seal ข้อต่อง่าย แต่คุมเส้นตรงยาก"]], s: "S8–14" },
+    { q: "จับคู่ชนิดข้อต่อกับการเคลื่อนที่", pairs: [["Linear (L)", "เลื่อน · input/output แนวเดียวกัน"], ["Orthogonal (O)", "เลื่อน · output ตั้งฉากกับ input"], ["Rotational (R)", "หมุน · แกนหมุนตั้งฉากกับ link"], ["Twisting (T)", "หมุน · แกนหมุนขนานกับ link ทั้งสอง"], ["Revolving (V)", "หมุน · input ขนานแกน output ตั้งฉากหมุนรอบ"]], s: "S16" },
+    { q: "ข้อความต่อไปนี้เป็นของหุ่นยนต์แบบใด", pairs: [["ต้องมีรั้วกั้น ติดตั้งถาวร", "Industrial Robot"], ["ติดตั้งง่าย เคลื่อนย้ายง่าย", "Cobot"], ["ไม่มีเซนเซอร์ภายใน อันตรายต่อคน", "Industrial Robot"], ["ทำงานในพื้นที่จำกัดได้", "Cobot"], ["น้ำหนักมาก ≈ 50 กก.", "Industrial Robot"]], s: "S19–20" },
+    { q: "จับคู่บริษัทหุ่นยนต์กับภูมิภาค", pairs: [["FANUC", "ญี่ปุ่น"], ["KUKA", "ยุโรป"], ["Boston Dynamics", "อเมริกา"], ["Yaskawa", "ญี่ปุ่น"], ["ABB", "ยุโรป"], ["Intuitive Surgical", "อเมริกา"]], s: "S17" },
+    { q: "จับคู่ชิ้นส่วนของ Cobot UR กับกลุ่มอุปกรณ์", pairs: [["Emergency button", "Teach Pendant"], ["Free Drive button", "Teach Pendant"], ["Input/Output", "Control Box (CB)"], ["Wrist 3", "Robot arm"], ["Shoulder", "Robot arm"]], s: "S23" },
+    { q: "จับคู่การหมุนกับแกน", pairs: [["Roll (φ)", "หมุนรอบแกน X"], ["Pitch (θ)", "หมุนรอบแกน Y"], ["Yaw (ψ)", "หมุนรอบแกน Z"]], extra: ["เลื่อนตามแกน Z"], s: "S32" }
+  ],
+  draw: [
+    { q: "วาดระบบพิกัด 3 มิติแบบมือขวา (X, Y, Z) แล้วแสดงการหมุน Roll, Pitch, Yaw ว่าหมุนรอบแกนใด", fig: "rpy", s: "S4, S32", check: ["แกน X, Y, Z ตั้งฉากกันและติดชื่อครบ", "เป็นระบบมือขวา (X × Y = Z)", "Roll = หมุนรอบแกน X", "Pitch = หมุนรอบแกน Y", "Yaw = หมุนรอบแกน Z"] },
+    { q: "วาดแขนกล 2 ข้อต่อจากฐาน แล้วระบุ Base, Link 0, Joint 1, Link 1, Joint 2, Link 2 และ End of arm ตามระบบการนับเลข", fig: "linkjoint", s: "S15", check: ["ฐาน + ส่วนที่ต่อข้อต่อแรก = Link 0", "ข้อต่อแรกนับเป็น Joint 1", "Link 1 เป็น output ของ Joint 1 และ input ของ Joint 2", "Joint 2 → Link 2 → End of arm"] },
+    { q: "วาดโดรน Quad-rotor แบบ X มองจากด้านบน ระบุทิศหัว และทิศการหมุนของใบพัดทั้ง 4 (CW/CCW)", fig: "quadx", s: "S34", check: ["ใบพัด 4 ตัวอยู่ปลายแขนทแยงแบบ X", "ระบุทิศหัว (Front)", "ใบพัดที่อยู่ติดกันหมุนสวนทาง", "ใบพัดคู่ทแยงหมุนทิศเดียวกัน"], ex: "เหตุผล (เสริม): แรงบิดจากใบพัด CW และ CCW หักล้างกัน ลำตัวจึงไม่หมุนเอง หากเร่งคู่ทแยงหนึ่งให้เร็วกว่าอีกคู่ โดรนจะ Yaw" }
+  ]
+});
+BANK.push({
+  id: "l08", no: "08", short: "เซนเซอร์ 3D", term: "Midterm", slides: 38,
+  en: "3D Sensors and Calibrations", th: "เซนเซอร์ 3 มิติและการปรับเทียบ: Depth camera, LiDAR, Radar, IMU และ Sensor fusion",
+  sum: `
+<section class="sec"><h3>ทำไมต้องหลายเซนเซอร์: Camera / LiDAR / Radar <span class="ref">S4–5</span></h3>
+<div class="tbl"><table><thead><tr><th></th><th>Camera</th><th>LiDAR</th><th>Radar</th></tr></thead><tbody>
+<tr><td>วัดอะไร</td><td>สี (color)</td><td>ระยะ 3D (3D range)</td><td>ความเร็วตามแนวแกน (axial speed)</td></tr>
+<tr><td>ความยาวคลื่น</td><td>~380 nm (ม่วง) ถึง ~780 nm (แดง)</td><td>840/905 nm (ใกล้แสงที่มองเห็น) · 1550 nm (ปลอดภัยต่อตาที่สุด)</td><td>4 mm (77 GHz) ความละเอียดสูงกว่า · 12 mm (24 GHz) รุ่นแรก</td></tr>
+<tr><td>จุดแข็ง</td><td>ภาพความละเอียดสูง</td><td>ได้ข้อมูล 3D โดยตรง</td><td>ทนสภาพอากาศ</td></tr>
+</tbody></table></div>
+<p>LiDAR ทำงานเสถียรกว่าในแสงจ้าและหมอกซึ่งกล้องมักล้มเหลว · ความล้มเหลวของกล้อง RGB: สว่างจ้า, เบลอ, เลนส์แตก, ฝ้า (condensation), dead pixel, สกปรก, น้ำแข็ง, ไม่มี Bayer filter, chromatic aberration, ไม่มี demosaicing, ไม่มี noise reduction</p>
+</section>
+<section class="sec"><h3>Depth camera (Kinect) <span class="ref">S6–9</span></h3>
+<p>หลักการ <b>Structured light</b>: Projector ฉายแพทเทิร์นอินฟราเรด กล้อง IR ที่อยู่ห่างออกไปเป็นระยะ baseline <i>b</i> มองแพทเทิร์นบนวัตถุ แล้ว <b>triangulate</b> หาความลึก Z</p>
+{{fig:slight}}
+<div class="tbl"><table style="min-width:420px"><thead><tr><th>Kinect v1</th><th>ค่า</th></tr></thead><tbody>
+<tr><td>Spatial resolution (RGB/Depth/IR)</td><td class="num" style="text-align:left">640 × 480 pix</td></tr>
+<tr><td>Depth range</td><td>Default 0.8–4.0 m · Near 0.4–3.0 m</td></tr>
+<tr><td>Depth resolution</td><td>2–40 mm (ขึ้นกับระยะ)</td></tr>
+<tr><td>Frame rate</td><td>30 fps</td></tr>
+<tr><td>Field of view</td><td>43° แนวตั้ง × 57° แนวนอน</td></tr>
+<tr><td>Tilt range</td><td>±27° แนวตั้ง</td></tr>
+<tr><td>IR wavelength</td><td>830 nm</td></tr>
+</tbody></table></div>
+<ul><li><b>Calibrate depth value + distortion</b>: วางผนัง (target plane) หลายระยะบนรางปรับ แล้วแก้ point cloud ให้ผนังเรียบ ก่อนแก้เส้นโค้งเพี้ยน หลังแก้เป็นแนวตรง</li>
+<li>Intrinsic calibration ด้วยกล่องลูกบาศก์ (cuboids): ใช้ disparity map, normal map และ manual segmentation</li></ul>
+</section>
+<section class="sec"><h3>RGB-D cameras และการใช้งาน <span class="ref">S10–13</span></h3>
+<ul><li><b>Xtion</b>: IR emitter + RGB camera + IR camera หาความลึกด้วย triangulation จากจุดแสงที่ฉาย</li>
+<li>สาย 3D reconstruction: camera pose estimation → feature detection (RANSAC) → feature matching (SIFT/SURF/ORB) → align images (bundle adjustment) → sparse point cloud (SfM) → dense point cloud (ICP/MVS) → mesh → texture mesh → surface recognition</li>
+<li><b>Intel RealSense D435i</b>: โมดูล depth (DS) + RGB ต้องแปลงพิกัด depth → RGB ด้วย T<sub>cd</sub></li>
+<li><b>Kinect</b>: IR projector, RGB camera, IR camera, multi-array microphone, motorized tilt</li>
+<li>การใช้งาน: หาตำแหน่งวัตถุ 3D (particle filter), จับท่าทางคน real-time (Fusion4D)</li></ul>
+</section>
+<section class="sec"><h3>RGB-D extrinsic calibration <span class="ref">S14–16</span></h3>
+<ul><li>กล้องสี L<sub>c</sub> = {f<sub>cx</sub>, f<sub>cy</sub>, u<sub>c0</sub>, v<sub>c0</sub>, k<sub>1</sub>…k<sub>5</sub>} · กล้อง depth L<sub>d</sub> = {f<sub>dx</sub>, f<sub>dy</sub>, u<sub>d0</sub>, v<sub>d0</sub>}</li>
+<li>T<sub>c</sub> = pose ของกล้องสีเทียบ world (checkerboard) · T<sub>d</sub> = pose ของกล้อง depth · <b>T<sub>r</sub></b> = relative pose ระหว่างกล้อง depth กับกล้องสี</li>
+<li>กลยุทธ์: <b>Initialization</b> (corner-based calib จาก checkerboard corners → L<sub>c</sub>, T<sub>c</sub> และจาก plane corners → L<sub>d</sub>, T<sub>d</sub> → ประมาณ T<sub>r</sub>) → <b>Nonlinear optimization</b> (refine L<sub>d</sub> และ T<sub>r</sub> ด้วย depth points → global refinement)</li>
+<li>แก้ภาพ depth ของ RealSense ที่มีรู (unmeasured pixels): edge-preserving filter → color quantization → แปลงเป็นภาพเทา → หา pixel ที่วัดไม่ได้ → object matching → depth estimation วนจนครบทุก pixel</li></ul>
+</section>
+<section class="sec"><h3>LiDAR <span class="ref">S17–25</span></h3>
+<ul><li>หลัก Time of Flight: <b>d = c × t / 2</b> (t คือเวลาไป-กลับ ความเร็วแสง c คงที่)</li>
+<li>ภายใน: laser transmitter, photodetector, กระจกเอียง/หมุน (rotating rangefinder) · แบบ pulsed (ToF) หรือ FMCW · เก็บข้อมูลในพิกัดทรงกลม แสดงเป็น range view</li>
+<li>เซนเซอร์ไม่ตรงแนว (misalignment) ทำให้ข้อมูลผิด จึงต้อง calibrate</li>
+<li>2D LiDAR vs 3D LiDAR (เช่น Ouster) · งาน ADAS: blind spot detection, lane change assist, emergency braking, parking aid</li>
+<li><b>LIO-SAM</b>: รวม 3D LiDAR + IMU (+GPS ถ้ามี) ด้วย factor graph: IMU preintegration, LiDAR odometry, GPS factor, loop closure</li></ul>
+{{fig:tof}}
+<div class="calc"><p class="stamp">ตัวอย่างคำนวณ</p><p>วัดเวลาไป-กลับได้ t = 200 ns</p><p>d = c·t/2 = (3×10⁸ m/s × 200×10⁻⁹ s) / 2 = 60 m / 2 = <b>30 m</b></p></div>
+</section>
+<section class="sec"><h3>Camera–LiDAR extrinsic calibration <span class="ref">S19–23</span></h3>
+<ul><li>หา <b>R</b> (rotation) และ <b>T</b> (translation) จากพิกัด LiDAR ไปพิกัดกล้อง: <b>P<sup>c</sup> = R·P<sup>d</sup> + T</b></li>
+<li>ฉายลงภาพ: <b>Z·I = K(R·P<sup>d</sup> + T)</b> โดย K คือเมทริกซ์ intrinsic ของกล้อง <span class="ext">เสริม</span></li>
+<li>เป้าที่ใช้: planar chessboard 2 แผ่น + auxiliary calibration object หรือ polygonal planar board (ใช้ RANSAC เลือก inlier)</li>
+<li>ประมวลผล point cloud: raw → threshold cut → k-means cluster → planar fit → hull extract (convex hull) → line detect → corners</li>
+<li>มี calibration: จุด LiDAR ทับวัตถุในภาพพอดี · ไม่มี: จุดเลื่อนออกจากวัตถุ</li></ul>
+{{fig:extr}}
+</section>
+<section class="sec"><h3>Radar <span class="ref">S26–30</span></h3>
+<ul><li>ส่งคลื่นแม่เหล็กไฟฟ้า (emitted wave) แล้วรับคลื่นสะท้อน (reflected wave) จากเป้าหมาย</li>
+<li><b>3D radar</b>: azimuth (มุมแนวนอน), distance, velocity · <b>4D imaging radar</b>: เพิ่ม <b>elevation</b> (มุมแนวดิ่ง)</li>
+<li>mmWave อยู่ช่วงประมาณ 30–300 GHz (ความยาวคลื่น 1 cm – 1 mm)</li></ul>
+<div class="tbl"><table><thead><tr><th>ชนิด</th><th>ระยะ</th><th>ย่านความถี่</th><th>งาน</th></tr></thead><tbody>
+<tr><td>LRR (long range)</td><td>≤ 250 m · มุมแคบ ~18°</td><td>76–77 GHz</td><td>ACC, collision avoidance</td></tr>
+<tr><td>MRR (mid range)</td><td>≤ 100 m</td><td>77–81 GHz</td><td>Lane monitoring, blind spot, lane-change assist, rear-traffic-crossing alert</td></tr>
+<tr><td>SRR (short range)</td><td>≤ 50 m · มุมกว้าง &gt; 80°</td><td>77–81 GHz</td><td>Parking aid, pedestrian detection, emergency braking at low speed</td></tr>
+</tbody></table></div>
+<ul><li>Calibrate mmWave radar ด้วย corner reflector และลูกดิ่งจัดแนว</li>
+<li>Radar-to-camera fusion 3 ขั้น: <b>Point alignment → Region searching for target detection → Real obstacle determination</b></li></ul>
+</section>
+<section class="sec"><h3>Sensor fusion ในรถอัตโนมัติ <span class="ref">S31–33</span></h3>
+<div class="tbl"><table style="min-width:380px"><thead><tr><th>ปัจจัย</th><th>เซนเซอร์ที่ดีที่สุด</th></tr></thead><tbody>
+<tr><td>Range</td><td>Radar</td></tr><tr><td>Resolution</td><td>Camera</td></tr><tr><td>Distance accuracy</td><td>LiDAR</td></tr><tr><td>Velocity</td><td>Radar</td></tr>
+<tr><td>Color perception (ไฟจราจร)</td><td>Camera</td></tr><tr><td>Object detection</td><td>LiDAR</td></tr><tr><td>Object classification</td><td>Camera</td></tr><tr><td>Lane detection</td><td>Camera</td></tr><tr><td>Obstacle edge detection</td><td>Camera + LiDAR</td></tr>
+</tbody></table></div>
+<div class="tbl"><table><thead><tr><th>เซนเซอร์</th><th>ข้อดี</th><th>ข้อเสีย</th></tr></thead><tbody>
+<tr><td>Camera</td><td>FOV กว้าง ความละเอียดสูง</td><td>ขึ้นกับสภาพอากาศ/แสง ภาระประมวลผลสูง</td></tr>
+<tr><td>Ultrasonic</td><td>ใช้ได้ทุกสภาพอากาศ/แสง ราคาต่ำมาก</td><td>ระยะสั้นมาก</td></tr>
+<tr><td>Infrared</td><td>ใช้ในที่แสงน้อยได้</td><td>ระยะตรวจจับสั้น</td></tr>
+<tr><td>LiDAR</td><td>แม่นยำสูง (ระยะ ความละเอียด ตำแหน่ง)</td><td>ขึ้นกับสภาพอากาศ (หมอก หิมะ) ไม่ได้ความเร็วโดยตรง</td></tr>
+<tr><td>Radar</td><td>ไม่ไวต่อสภาพอากาศ ระยะไกล ประมาณตำแหน่งได้ดี</td><td>วัดมุมซับซ้อน จำแนกเป้าหมายยาก ยังไม่พร้อมสำหรับขับขี่อัตโนมัติเต็มรูปแบบ</td></tr>
+</tbody></table></div>
+<p>จำนวนเซนเซอร์ตามระดับอัตโนมัติ: Level 2 → กล้อง 2, Radar 1, Ultrasonic 8–12 · Level 3 → กล้อง 6, Radar 5, Ultrasonic 8–12 · Level 4–5 → กล้อง 12, Radar 9, LiDAR 1, Ultrasonic 8–12</p>
+</section>
+<section class="sec"><h3>IMU และ Multi-sensor calibration <span class="ref">S34–37</span></h3>
+<ul><li><b>IMU</b> = Accelerometer + Gyroscope + Magnetometer + Microcontroller · ใช้ทำ gesture recognition, step counter, indoor positioning, predictive maintenance</li>
+<li><b>OpenCalib</b>: Sensors (Camera, Radar, LiDAR, GNSS, IMU) → <b>Time synchronization</b> → calibration (manual / auto / factory / online) → <b>Space synchronization</b> → Data fusion → Perception, Localization, Mapping, Controller</li>
+<li>Factory calibration boards: chessboard, circle board, vertical board, ArUco marker board, round hole board</li>
+<li>เครื่องมือเดิมส่วนใหญ่ calibrate ทีละคู่ (pairwise) · Domhof et al. (2021) ทำ <b>joint extrinsic calibration</b> ของ Radar–Camera–LiDAR พร้อมกัน ใช้เป้าที่มีรูวงกลม 4 รู + trihedral corner reflector ด้านหลัง</li></ul>
+</section>
+<section class="dt"><p class="stamp">Design Thinking</p>
+<ul><li><b>Empathize กับสภาพจริง</b>: กล้องล้มเหลวในแสงจ้า หมอก ฝ้า ถ้าทดสอบแค่ในแล็บจะไม่เห็นปัญหานี้</li>
+<li><b>Feasible</b>: เลือกเซนเซอร์ตามจุดแข็ง (ตาราง Best sensor) แล้วชดเชยกันด้วย fusion</li>
+<li><b>Prototype → Test</b>: calibration คือการทดสอบซ้ำจนข้อมูลเชื่อถือได้ ก่อนนำไปใช้จริง</li></ul>
+</section>`,
+  fill: [
+    { q: "LiDAR วัดระยะด้วย Time of Flight: d = ___ × t / 2", a: [["c", "ความเร็วแสง", "speed of light"]], s: "S17", ex: "c คือความเร็วแสง หาร 2 เพราะ t เป็นเวลาไป-กลับ" },
+    { q: "LiDAR วัดเวลาไป-กลับได้ t = 200 ns ระยะวัตถุ d = ___ m (c = 3×10⁸ m/s)", a: [{ n: 30, tol: 0.5 }], s: "S17", ex: "d = c·t/2 = (3×10⁸ m/s × 200×10⁻⁹ s) / 2 = 60 m / 2 = 30 m" },
+    { q: "LiDAR ที่ความยาวคลื่น ___ nm ปลอดภัยต่อดวงตามากที่สุด", a: [{ n: 1550 }], s: "S4" },
+    { q: "Radar ความถี่ ___ GHz (λ ≈ 4 mm) ให้ความละเอียดสูงกว่ารุ่นแรกที่ 24 GHz", a: [{ n: 77 }], s: "S4" },
+    { q: "Kinect v1 ให้ภาพ RGB/Depth/IR ขนาด ___ × 480 pixel ที่ ___ fps", a: [{ n: 640 }, { n: 30 }], s: "S6" },
+    { q: "Depth range แบบ Default ของ Kinect v1 คือ 0.8 – ___ m", a: [{ n: 4 }], s: "S6" },
+    { q: "กล้อง depth แบบ Kinect ใช้หลัก Structured ___ แล้ว triangulate หาความลึก", a: [["light", "แสง"]], s: "S6" },
+    { q: "สมการแปลงจุดจากพิกัด LiDAR ไปพิกัดกล้อง: Pᶜ = ___ · Pᵈ + ___", a: [["R", "rotation"], ["T", "translation"]], s: "S20" },
+    { q: "4D imaging radar วัด Azimuth, Distance, Velocity และเพิ่ม ___ (มุมแนวดิ่ง)", a: [["Elevation"]], s: "S26" },
+    { q: "Long Range Radar (LRR) ใช้กับระบบ ACC มีระยะทำงาน ≤ ___ m", a: [{ n: 250 }], s: "S28" },
+    { q: "เซนเซอร์ที่ดีที่สุดสำหรับวัด Velocity คือ ___ ส่วน Object classification คือ ___", a: [["Radar", "เรดาร์"], ["Camera", "กล้อง"]], s: "S31" },
+    { q: "LIO-SAM รวม 3D LiDAR กับ ___ (และ GPS ถ้ามี) ผ่าน factor graph", a: [["IMU"]], s: "S25" },
+    { q: "IMU ประกอบด้วย Accelerometer, ___ และ Magnetometer", a: [["Gyroscope", "Gyroscopes", "ไจโรสโคป", "gyro"]], s: "S34" },
+    { q: "OpenCalib: หลังรับข้อมูลเซนเซอร์ ขั้นแรกคือ Time ___ ก่อนเข้าสู่การ calibrate", a: [["Synchronization", "Synchronisation", "sync"]], s: "S35" },
+    { q: "Radar-to-camera fusion 3 ขั้น: Point ___ → Region searching → Real obstacle determination", a: [["Alignment"]], s: "S30" },
+    { q: "รถอัตโนมัติ Level 4–5 ในสไลด์ใช้กล้อง ___ ตัว และ LiDAR ___ ตัว", a: [{ n: 12 }, { n: 1 }], s: "S33" },
+    { q: "กล้องล้มเหลวเมื่อเจอแสงจ้า บทนี้จึงย้ำให้ ___ (ขั้นสุดท้ายของ Design Thinking) ในสภาพแวดล้อมจริง ไม่ใช่แค่ในแล็บ", a: [["Test", "ทดสอบ", "Testing"]], s: "S4–5", dt: true, x: true }
+  ],
+  match: [
+    { q: "จับคู่ปัจจัยกับเซนเซอร์ที่ดีที่สุด", pairs: [["Range", "Radar"], ["Resolution", "Camera"], ["Distance accuracy", "LiDAR"], ["Velocity", "Radar"], ["Color perception (ไฟจราจร)", "Camera"], ["Object detection", "LiDAR"], ["Obstacle edge detection", "Camera + LiDAR"]], s: "S31" },
+    { q: "จับคู่เซนเซอร์กับข้อเสีย", pairs: [["Camera", "ขึ้นกับสภาพอากาศ/แสง ภาระประมวลผลสูง"], ["Ultrasonic", "ระยะสั้นมาก"], ["Infrared", "ระยะตรวจจับสั้น"], ["LiDAR", "แย่ในหมอก/หิมะ ไม่ได้ความเร็วโดยตรง"], ["Radar", "วัดมุมซับซ้อน จำแนกเป้าหมายยาก"]], s: "S32" },
+    { q: "จับคู่ชนิด Radar กับงาน", pairs: [["LRR ≤ 250 m", "ACC / collision avoidance"], ["MRR ≤ 100 m", "Blind spot / lane-change assist"], ["SRR ≤ 50 m", "Parking aid / pedestrian detection"]], extra: ["Indoor positioning"], s: "S28" },
+    { q: "จับคู่ส่วนประกอบของ Kinect กับหน้าที่", pairs: [["IR projector", "ฉายแพทเทิร์นอินฟราเรด"], ["IR camera", "รับภาพแพทเทิร์นเพื่อคำนวณ depth"], ["RGB camera", "ถ่ายภาพสี"], ["Multi-array microphone", "รับเสียง"], ["Motorized tilt", "ปรับมุมก้ม-เงย ±27°"]], s: "S6, S12" },
+    { q: "จับคู่สัญลักษณ์ใน RGB-D calibration กับความหมาย", pairs: [["L<sub>c</sub>", "intrinsic ของกล้องสี (f, u0, v0, k1–k5)"], ["L<sub>d</sub>", "intrinsic ของกล้อง depth"], ["T<sub>c</sub>", "pose ของกล้องสีเทียบ world (checkerboard)"], ["T<sub>r</sub>", "relative pose ระหว่างกล้อง depth กับกล้องสี"]], s: "S14–15" },
+    { q: "เรียงขั้นตอนของ OpenCalib", pairs: [["ขั้นที่ 1", "Time synchronization"], ["ขั้นที่ 2", "Calibration (manual/auto/factory/online)"], ["ขั้นที่ 3", "Space synchronization"], ["ขั้นที่ 4", "Data fusion → Perception/Localization"]], s: "S35" }
+  ],
+  draw: [
+    { q: "วาดหลักการวัดระยะของ LiDAR (Time of Flight) แสดงพัลส์ขาไปและขากลับ แล้วเขียนสูตรหาระยะ", fig: "tof", s: "S17", check: ["LiDAR ปล่อยพัลส์เลเซอร์ไปยังวัตถุ", "พัลส์สะท้อนกลับมาที่ตัวรับ", "เขียนสูตร d = c × t / 2", "อธิบายว่าหาร 2 เพราะ t เป็นเวลาไป-กลับ"] },
+    { q: "วาดการ calibrate ภายนอก (extrinsic) ระหว่าง LiDAR กับกล้อง: พิกัดสองชุด จุด P ความสัมพันธ์ R, T และสมการ", fig: "extr", s: "S20", check: ["มีพิกัด LiDAR (Oᵈ) และพิกัดกล้อง (Oᶜ)", "ลูกศร R, T แปลงจาก LiDAR ไปกล้อง", "จุด P เห็นจากทั้งสองเซนเซอร์ (Pᵈ, Pᶜ)", "เขียน Pᶜ = R·Pᵈ + T", "เขียนการฉายลงภาพ Z·I = K(R·Pᵈ + T)"] },
+    { q: "วาดหลักการกล้อง depth แบบ Structured light (Kinect): projector, กล้อง IR, baseline และจุดบนวัตถุ", fig: "slight", s: "S6", check: ["Projector ฉายแพทเทิร์น IR ไปที่วัตถุ", "กล้อง IR อยู่ห่างจาก projector เป็นระยะ baseline b", "รังสีจาก projector และกล้องตัดกันที่จุดบนวัตถุ (triangulation)", "ระบุความลึก Z ที่ต้องการหา"] }
+  ]
+});
+BANK.push({
+  id: "l09", no: "09", short: "เกษตร/ทหาร", term: "Final", slides: 21,
+  en: "Agricultural and Military Robots Design", th: "ออกแบบโครงสร้างและเซนเซอร์สำหรับหุ่นยนต์เกษตรและทหาร ในสภาพแวดล้อมไร้โครงสร้าง",
+  sum: `
+<section class="sec"><h3>Robot-to-Everything (R2X) <span class="ref">S5</span></h3>
+<div class="tbl"><table style="min-width:420px"><thead><tr><th>ประเภท</th><th>ความหมาย / ตัวอย่าง</th></tr></thead><tbody>
+<tr><td><b>R2R</b> Robot-to-Robot</td><td>แลกเปลี่ยนข้อมูลระหว่างหุ่น เช่น จัดฝูงหุ่นในโกดังไม่ให้ชนกัน</td></tr>
+<tr><td><b>R2I</b> Robot-to-Infrastructure</td><td>สื่อสารกับโครงสร้าง เช่น สั่งเปิดประตูอัตโนมัติ เรียกลิฟต์ข้ามชั้น</td></tr>
+<tr><td><b>R2N / R2C</b> Network / Cloud</td><td>ควบคุมและประมวลผลระยะไกลผ่าน 5G หรือ AWS IoT</td></tr>
+<tr><td><b>R2P</b> Pedestrian</td><td>เน้นความปลอดภัยคนเดินถนน เช่น หุ่นส่งของบนทางเท้า</td></tr>
+<tr><td><b>R2D</b> Device / Docking</td><td>กลับเข้าแท่นชาร์จเอง หรือส่งข้อความเข้าแท็บเล็ต (เทคโนโลยีพื้นฐานที่มีมานาน)</td></tr>
+<tr><td><b>R2H</b> Robot-to-Human</td><td>โต้ตอบและทำงานร่วมกับคน เข้าใจภาษาธรรมชาติผ่าน LLM หรือ AI</td></tr>
+</tbody></table></div>
+<p>ตัวอย่างงานเกษตร: หุ่นดูแลไร่องุ่น (อิตาลี), หุ่น AI กำจัดวัชพืช, โดรนพ่นสาร, เรือรดน้ำไร้คนขับของเกษตรกรไทย · งานทหาร: หุ่นตีนตะขาบเก็บกู้ระเบิด, PIAP Fenix, โดรนรบ <span class="ref">S6–7</span></p>
+</section>
+<section class="sec"><h3>Uncontrolled environment <span class="ref">S8</span></h3>
+<p><b>ความเชื่อ (Myth)</b>: สภาพแวดล้อมควบคุมได้ (structured) แบบในโรงงาน · <b>ความจริง</b>: ไร้โครงสร้าง (unstructured) ในป่า ทุ่งนา สนามรบ ไม่มีจุดอ้างอิงที่สมบูรณ์ หุ่นยนต์ต้อง<b>เอาตัวรอดทางกายภาพให้ได้ก่อน</b>สมองกลจึงทำงานได้</p>
+<p><mark>Algorithms cannot fix bad physical design.</mark></p>
+</section>
+<section class="sec"><h3>ระบบขับเคลื่อน (Locomotion) <span class="ref">S9</span></h3>
+<div class="tbl"><table><thead><tr><th>แบบ</th><th>ข้อดี</th><th>ข้อเสีย</th><th>สรุป</th></tr></thead><tbody>
+<tr><td><b>ล้อมาตรฐาน</b><br><small>Ackermann / Diff drive</small></td><td>สร้างง่าย รับน้ำหนักได้ดี (high payload) วิ่งเร็ว</td><td>ลื่นไถลง่ายในโคลน · Non-holonomic (เดินข้างไม่ได้)</td><td>เหมาะพื้นแข็ง ขนส่งทางเรียบ</td></tr>
+<tr><td><b>ล้อ Mecanum / Omni</b></td><td>เคลื่อนที่อิสระ (holonomic)</td><td>พื้นที่สัมผัสน้อย ลื่นไถลสูงบนพื้นขรุขระ</td><td>ห้ามใช้ในพื้นที่เกษตรหรือสนามรบดินโคลน</td></tr>
+<tr><td><b>ตีนตะขาบ</b><br><small>Tracked drive</small></td><td>แรงกดหน้าดินต่ำ ยึดเกาะสูง</td><td>เลี้ยวแบบ skid-steering ทำให้ odometry คลาดเคลื่อนมาก</td><td>ทางเลือกหลักสำหรับสภาพแวดล้อมสุดขั้ว</td></tr>
+</tbody></table></div>
+</section>
+<section class="sec"><h3>Suspension และจุดศูนย์ถ่วง (CoG) <span class="ref">S10</span></h3>
+<ul><li><b>Mechanical filtering</b>: ระบบกันสะเทือนคือ “ฟิลเตอร์กรองข้อมูล” ด่านแรกของเซนเซอร์ ถ้าสั่นน้อย ภาพและ point cloud ก็คมชัด</li>
+<li><b>Center of Gravity</b>: ออกแบบ CoG ต่ำ ป้องกันพลิกคว่ำบนพื้นลาดชัน (เช่น rocker-bogie suspension, wheelbase กว้าง)</li>
+<li><b>Shock absorption</b>: ใช้โช้คอัพลดความล้าของวัสดุ (material fatigue) จากการทำงานต่อเนื่อง</li></ul>
+</section>
+<section class="sec"><h3>ความล้มเหลวของโครงสร้าง: Lever arm effect <span class="ref">S11</span></h3>
+<p>ถ้าแท่นยึดเซนเซอร์โก่งหรือสั่นแค่ 1–2 mm (ขาดความแข็งเกร็ง) พารามิเตอร์ของโครงสร้างจะคลาดเคลื่อน โปรแกรมคำนวณผิดทั้งหมด · <b>Rule of thumb: ซอฟต์แวร์ชดเชยโครงสร้างที่ยวบยาบไม่ได้</b></p>
+{{fig:lever}}
+<div class="calc"><p class="stamp">คำนวณ (ขยายจากสไลด์)</p><p>สูตร: e = L · tan θ · หน่วย: L เป็นเมตร, θ เป็นองศา</p><p>e = 100 m × tan(1°) = 100 m × 0.01746 = <b>1.75 m</b> ≈ 2 m ตามที่สไลด์ปัดไว้</p></div>
+</section>
+<section class="sec"><h3>วัสดุเพื่อความอยู่รอด <span class="ref">S12</span></h3>
+<ul><li><b>Carbon fiber</b>: เบาพิเศษ แข็งแรงเทียบเหล็ก แต่ราคาสูง → โดรน (UAV), แขนกลที่ต้องเร็ว (ลดแรงเฉื่อย)</li>
+<li><b>Stainless steel 316L</b>: ทนกัดกร่อนและสารเคมี ล้างทำความสะอาดได้ → หุ่นเกษตร (ปุ๋ย/ยาฆ่าแมลง), หุ่นการแพทย์</li>
+<li>การเลือกวัสดุไม่ใช่แค่เรื่องน้ำหนัก แต่คือการออกแบบสู้กับ<b>การกัดกร่อน</b>และ<b>ความเค็ม</b>ของสภาพแวดล้อม</li></ul>
+</section>
+<section class="sec"><h3>Perception error: เมื่อเซนเซอร์ถูกบดบัง <span class="ref">S13</span></h3>
+<ul><li><b>LiDAR</b>: พื้นที่โล่งกว้าง ทุ่งนา ทะเลทราย (geometric degeneracy: ไม่มีโครงสร้างให้สะท้อน) หรือฝุ่นควันจัด</li>
+<li><b>Camera</b>: แสงแดดส่องหน้าเลนส์ (glare), ภาพเบลอจากแรงสั่น, ความมืด</li>
+<li><b>IMU</b>: สะสมความคลาดเคลื่อน (drift) ตามเวลา หากไม่มีเซนเซอร์อื่นช่วยรีเซ็ต</li>
+<li><b>Wheel odometry</b>: ล้อลื่นไถลในโคลน สั่งวิ่ง 1 เมตรแต่ล้อฟรีอยู่กับที่</li></ul>
+</section>
+<section class="sec"><h3>แนวทางป้องกันความล้มเหลว <span class="ref">S14–15</span></h3>
+<ul><li><b>Physical defenses</b>: ป้องกันเซนเซอร์ก่อนแก้ด้วยซอฟต์แวร์ เช่น sun hood กันแสงแฟลร์ กันโคลนกระเด็น</li>
+<li><b>In-field calibration</b>: โครงสร้างบิดได้เมื่อเคลื่อนย้าย หุ่นต้องรีคาลิเบรตตัวเองหน้างาน เช่น หมุน 360° กลางแจ้งล้อมเป้า ChArUco เพื่อปรับแกน</li>
+<li><b>Guarded move</b>: เขียนคำสั่งให้ฮาร์ดแวร์และซอฟต์แวร์ทำงานร่วมกัน ถ้า perception ตรวจพบความผิดปกติ (force &gt; threshold หรือสิ่งกีดขวาง) กลไกต้องหยุดทันที ป้องกันมอเตอร์ไหม้หรือพัง · ในสภาพแวดล้อมคาดเดาไม่ได้ ห้ามไว้ใจการเคลื่อนที่ 100%</li></ul>
+{{fig:guarded}}
+</section>
+<section class="sec"><h3>Calibration และ Sensor fusion <span class="ref">S16–17</span></h3>
+<ul><li><b>Hand-Eye calibration</b> (AX = XB หรือ AX = YB): หา transformation matrix ว่ากล้องอยู่ตรงไหนเมื่อเทียบกับปลายแขน เพื่อหยิบจับได้แม่น</li>
+<li><b>Robot-World calibration</b>: ปรับเทียบพิกัดฐานหุ่น (mobile base) กับพิกัดโลก โดยหมุนตัวอยู่กับที่ (rotation-in-place) หาจุดอ้างอิง</li>
+<li><b>Sensor fusion & EKF</b> (Error-State Kalman Filter): ระบบไม่ไว้ใจทุกเซนเซอร์เท่ากันตลอดเวลา เมื่อกล้องเจอแสงจ้า (visual noise สูง) จะลด <b>Kalman gain weight</b> ของกล้อง (ตัวอย่าง 10%) แล้วพึ่ง IMU และ LiDAR (90%) เพื่อประมาณ pose, velocity, bias แบบ real-time</li></ul>
+</section>
+<section class="sec"><h3>Monte Carlo Localization (MCL) และ aMCL <span class="ref">S18–20</span></h3>
+<ol><li>t = 0: หุ่นอาจอยู่ที่ใดก็ได้ (prior สม่ำเสมอ)</li><li>t = 1: เห็นประตู → belief สูงเท่ากันที่ทุกประตู</li><li>t = 2: เคลื่อนที่ 1 ก้าว → belief เลื่อนตาม</li><li>t = 3: เห็นประตูอีกบาน → belief ที่ประตูที่สองสูงชัด</li><li>t = 4: เคลื่อนที่ต่อ</li></ol>
+<p>อัลกอริทึม: ทุก particle ทำ <code>motion_update</code> → <code>sensor_update</code> (ได้น้ำหนัก w) → สุ่ม particle ชุดใหม่ตามน้ำหนัก (resampling) · bel(x<sub>t</sub>) = p(x<sub>t</sub> | z<sub>1:t</sub>, u<sub>1:t</sub>)</p>
+<p><b>aMCL (Augmented MCL)</b>: เก็บค่าเฉลี่ยน้ำหนักระยะยาว w<sub>slow</sub> และระยะสั้น w<sub>fast</sub> แล้วเพิ่ม random particle ด้วยความน่าจะเป็น max(0, 1 − w<sub>fast</sub>/w<sub>slow</sub>) → แก้ <b>kidnapped robot problem</b> · ลดจำนวน laser beam ช่วยลดการคำนวณ · ลดความแรงของการอัปเดตน้ำหนักทำให้ช้าลงแต่เสถียรกว่า · ใน ROS2 ใช้แพ็กเกจ AMCL</p>
+{{fig:mcl}}
+</section>
+<section class="dt"><p class="stamp">Design Thinking</p>
+<ul><li><b>Empathize</b>: “Myth vs Reality” คือบทเรียนว่าต้องลงพื้นที่จริง (โคลน ฝุ่น แสงจ้า) ก่อนออกแบบ</li>
+<li><b>Define</b>: เขียนข้อจำกัดให้ชัด เช่น “พื้นโคลน + ปุ๋ยเคมี + แดดจัด”</li>
+<li><b>Ideate</b>: ล้อ vs mecanum vs ตีนตะขาบ, carbon fiber vs 316L</li>
+<li><b>Test</b>: in-field calibration และ guarded move คือการออกแบบให้ “ทดสอบตัวเอง” ระหว่างใช้งาน</li></ul>
+</section>`,
+  fill: [
+    { q: "R2___ คือการสื่อสารกับโครงสร้างพื้นฐาน เช่น สั่งเปิดประตูอัตโนมัติหรือเรียกลิฟต์", a: [["I"]], s: "S5" },
+    { q: "R2H ทำให้หุ่นยนต์เข้าใจภาษาธรรมชาติของคนผ่าน ___ หรือ AI", a: [["LLM", "LLMs", "Large Language Model"]], s: "S5" },
+    { q: "“Algorithms cannot fix bad ___ design.”", a: [["physical", "กายภาพ"]], s: "S8" },
+    { q: "ล้อ Mecanum/Omni เคลื่อนที่อิสระแบบ ___ แต่ห้ามใช้ในพื้นที่เกษตรหรือดินโคลน", a: [["Holonomic", "โฮโลโนมิก"]], s: "S9" },
+    { q: "ล้อ Ackermann/Diff drive เป็นแบบ ___ คือเดินข้างไม่ได้", a: [["Non-holonomic", "nonholonomic"]], s: "S9" },
+    { q: "ตีนตะขาบเลี้ยวแบบ ___-steering ทำให้ odometry คลาดเคลื่อนมาก", a: [["Skid"]], s: "S9" },
+    { q: "เสาเซนเซอร์โก่ง 1° ขณะมองเป้าที่ระยะ 100 m จะคลาดเคลื่อน e ≈ ___ m", a: [{ n: 1.75, tol: 0.3, show: "1.75 (≈ 2)" }], s: "S11", ex: "e = L·tanθ = 100 m × tan(1°) = 100 × 0.01746 = 1.75 m ≈ 2 m (สไลด์ปัดเป็น 2 m)" },
+    { q: "ระบบกันสะเทือนเปรียบเสมือน ___ กรองข้อมูลด่านแรกของเซนเซอร์ (mechanical filtering)", a: [["ฟิลเตอร์", "filter", "ตัวกรอง"]], s: "S10" },
+    { q: "ออกแบบจุดศูนย์ถ่วง (CoG) ให้ ___ เพื่อป้องกันพลิกคว่ำบนพื้นลาดชัน", a: [["ต่ำ", "low"]], s: "S10" },
+    { q: "IMU ล้มเหลวเพราะสะสมความคลาดเคลื่อนตามเวลา เรียกว่า ___", a: [["Drift", "ดริฟต์", "ดริฟท์"]], s: "S13" },
+    { q: "LiDAR ล้มเหลวในทุ่งโล่งเพราะไม่มีโครงสร้างให้สะท้อน เรียกว่า Geometric ___", a: [["Degeneracy"]], s: "S13" },
+    { q: "Guarded move: ถ้าเซนเซอร์รับรู้ Force > ___ ต้องตัดการทำงานฮาร์ดแวร์ทันที", a: [["Threshold", "เกณฑ์", "ค่าขีดจำกัด"]], s: "S15" },
+    { q: "Hand-Eye calibration แก้สมการ AX = ___ (หรือ AX = YB)", a: [["XB"]], s: "S16" },
+    { q: "เมื่อกล้องเจอแสงจ้า ระบบ sensor fusion จะลด ___ gain ของกล้อง แล้วพึ่ง IMU กับ LiDAR", a: [["Kalman"]], s: "S17" },
+    { q: "aMCL เพิ่ม random particle ด้วยความน่าจะเป็น max(0, 1 − w<sub>fast</sub>/w<sub>slow</sub>) เพื่อแก้ ___ robot problem", a: [["kidnapped", "kidnap"]], s: "S19" },
+    { q: "สแตนเลสเกรด ___L เหมาะกับหุ่นเกษตรที่สัมผัสปุ๋ย/ยาฆ่าแมลง และหุ่นการแพทย์", a: [{ n: 316 }], s: "S12" },
+    { q: "In-field calibration: หุ่นหมุน ___ องศากลางแจ้งรอบเป้า ChArUco เพื่อปรับแกน", a: [{ n: 360 }], s: "S14" },
+    { q: "“Myth vs Reality” ของสภาพแวดล้อมสอนว่าต้อง ___ (เข้าใจผู้ใช้และพื้นที่จริง ขั้นแรกของ Design Thinking) ก่อนออกแบบ", a: [["Empathize", "Empathise", "Empathy", "เข้าใจ"]], s: "S8", dt: true, x: true }
+  ],
+  match: [
+    { q: "จับคู่ R2X กับตัวอย่าง", pairs: [["R2R", "ฝูงหุ่นในโกดังแลกข้อมูลไม่ให้ชนกัน"], ["R2I", "สั่งเปิดประตูอัตโนมัติ/เรียกลิฟต์"], ["R2N / R2C", "ควบคุมผ่าน 5G หรือ AWS IoT"], ["R2P", "ระวังคนเดินถนนบนทางเท้า"], ["R2D", "กลับเข้าแท่นชาร์จเอง"], ["R2H", "คุยกับคนผ่าน LLM"]], s: "S5" },
+    { q: "จับคู่ระบบขับเคลื่อนกับข้อสรุปในสไลด์", pairs: [["ล้อ Ackermann / Diff drive", "เหมาะพื้นแข็ง ขนส่งทางเรียบ"], ["ล้อ Mecanum / Omni", "เคลื่อนที่อิสระ แต่ห้ามใช้ในโคลน"], ["ตีนตะขาบ (Tracked)", "ทางเลือกหลักในสภาพแวดล้อมสุดขั้ว"]], extra: ["เหมาะใต้น้ำลึก"], s: "S9" },
+    { q: "จับคู่เซนเซอร์กับสาเหตุที่ล้มเหลวในภาคสนาม", pairs: [["LiDAR", "ทุ่งโล่ง/ทะเลทราย หรือฝุ่นควันจัด"], ["Camera", "แสงจ้าเข้าเลนส์ ภาพสั่น ความมืด"], ["IMU", "Drift สะสมตามเวลา"], ["Wheel odometry", "ล้อลื่นไถลในโคลน"]], s: "S13" },
+    { q: "จับคู่ปัญหากับแนวทางป้องกัน", pairs: [["แสงแดดส่องหน้าเลนส์", "Physical defense: sun hood"], ["โครงสร้างบิดหลังขนย้าย", "In-field calibration หมุน 360° รอบเป้า"], ["แขนชนสิ่งกีดขวางไม่คาดคิด", "Guarded move: hardware halt"], ["กล้องเชื่อถือไม่ได้ชั่วคราว", "Sensor fusion ลด Kalman gain ของกล้อง"]], s: "S14–17" },
+    { q: "จับคู่วัสดุกับงาน", pairs: [["Carbon fiber", "โดรนและแขนที่ต้องเร็ว (ลดแรงเฉื่อย)"], ["Stainless steel 316L", "หุ่นเกษตรสัมผัสปุ๋ย/ยา และหุ่นการแพทย์"]], extra: ["โครงต้นแบบราคาถูก"], s: "S12" },
+    { q: "จับคู่เหตุการณ์ใน MCL กับรูปร่าง belief", pairs: [["t = 0 (ยังไม่รู้ตำแหน่ง)", "แบนเท่ากันทุกตำแหน่ง"], ["เห็นประตูครั้งแรก", "peak เท่ากันที่ทุกประตู"], ["เคลื่อนที่ 1 ก้าว", "peak เลื่อนตามการเคลื่อนที่"], ["เห็นประตูอีกบาน", "peak เดียวสูงชัดที่ประตูที่สอง"]], s: "S18" }
+  ],
+  draw: [
+    { q: "วาดอธิบาย Lever arm effect: เสาเซนเซอร์โก่ง 1° แล้วมองเป้าที่ 100 m พร้อมคำนวณระยะคลาดเคลื่อน", fig: "lever", s: "S11", check: ["เสาเซนเซอร์โก่งเป็นมุม θ = 1°", "ระยะเป้าหมาย L = 100 m", "คำนวณ e = L·tanθ ≈ 1.75 m (สไลด์ ~2 m)", "สรุป: ซอฟต์แวร์ชดเชยโครงสร้างที่ยวบยาบไม่ได้"] },
+    { q: "วาด flowchart ของ Guarded move ตั้งแต่สั่งเคลื่อนที่จนถึงการหยุดฉุกเฉิน", fig: "guarded", s: "S15", check: ["คำสั่งเคลื่อนที่ → หุ่นยนต์ขยับ", "มีจุดตัดสินใจ Force > Threshold หรือเจอสิ่งกีดขวาง", "Yes → Immediate hardware halt", "No → ทำงานต่อและตรวจซ้ำตลอด"] },
+    { q: "วาดกราฟ belief ของ MCL ในทางเดินที่มีประตู 3 บาน: ตอน t = 0, เมื่อเห็นประตูครั้งแรก และเมื่อเห็นประตูอีกครั้งหลังเดินไป", fig: "mcl", s: "S18", check: ["t = 0 belief แบนเท่ากัน", "เห็นประตูครั้งแรก → peak เท่ากันทุกประตู", "เห็นประตูอีกครั้ง → peak เดียวที่ประตูที่ 2", "อธิบายว่าแต่ละรอบทำ motion update → sensor update → resampling"] }
+  ]
+});
+BANK.push({
+  id: "l10", no: "10", short: "บริการ/สังคม", term: "Final", slides: 30,
+  en: "Service and Social Robots Design", th: "ออกแบบโครงสร้างหุ่นยนต์บริการและหุ่นยนต์สังคม: ความปลอดภัย, เซนเซอร์, อัลกอริทึม HRI, วิจัยในมนุษย์ และ SROI",
+  sum: `
+<section class="sec"><h3>Service robot vs Industrial robot <span class="ref">S5, S21</span></h3>
+<div class="tbl"><table><thead><tr><th>หัวข้อ</th><th>Service robot</th><th>Industrial robot</th></tr></thead><tbody>
+<tr><td>เป้าหมายหลัก</td><td>ช่วยเหลือและปฏิสัมพันธ์กับคน</td><td>เพิ่มผลผลิตและความแม่นยำ</td></tr>
+<tr><td>สภาพแวดล้อม</td><td>พื้นที่เปิด/พลุกพล่าน (บ้าน โรงแรม โรงพยาบาล)</td><td>พื้นที่ปิด/กำหนดเฉพาะ (โรงงาน)</td></tr>
+<tr><td>ความปลอดภัย</td><td>หัวใจสำคัญ: หยุดทันทีเมื่อพบคน</td><td>รั้วกั้น แยกคนออก</td></tr>
+<tr><td>ความแม่นยำ/ความเร็ว</td><td>ปานกลาง (เน้นปลอดภัย)</td><td>สูงมาก (ระดับไมครอน)</td></tr>
+<tr><td>ตัวอย่าง</td><td>ส่งอาหาร ทำความสะอาด ต้อนรับ</td><td>พ่นสี ประกอบ เชื่อม</td></tr>
+<tr><td>ตัวชี้วัด</td><td>รอยยิ้ม ความปลอดภัย ความเครียดที่ลดลง (ROI แบบเดิมวัดไม่ได้)</td><td>ต้นทุนต่อชิ้นงานที่ลดลง (ROI ใช้ได้ดี)</td></tr>
+</tbody></table></div>
+</section>
+<section class="sec"><h3>หลักการออกแบบโครงสร้าง Service robot <span class="ref">S6–9</span></h3>
+<ol><li><b>Safety first</b>: ขอบมน ไม่มีช่องหนีบ เซนเซอร์ตรวจจับการชน → ลดความรุนแรง หยุดทันทีเมื่อสัมผัส</li>
+<li><b>Friendly motion</b>: ข้อต่อ Quasi-Direct Drive (QDD) ที่ backdrivable (ขยับกลับด้วยแรงภายนอกได้) kinematics ธรรมชาติ → เคลื่อนไหวเป็นธรรมชาติ เงียบ ไม่น่ากลัว</li>
+<li><b>Energy efficiency</b>: actuator ประสิทธิภาพสูง เกียร์ทดต่ำ ใช้พลังงานน้อย → ทำงานนานขึ้นต่อการชาร์จ แบตฯ เล็กลง จัดการความร้อนได้</li>
+<li><b>Cable management & environment</b>: เดินสายภายใน (internal routing), integrated joints, มาตรฐานกันน้ำ/ฝุ่น (IP rating) → สายไม่เกี่ยว ลดฝุ่น/เศษอาหาร ทำความสะอาดง่าย</li></ol>
+<p>มุมมองการออกแบบอีกชุด: Human-centered & friendly design (รูปทรง สีสัน วัสดุไม่น่ากลัว) · Physical safety & ergonomics (ไม่มีมุมแหลมคม วัสดุเบาแต่ทน soft padding) · Architecture ตามภารกิจ (mobile base ส่งอาหาร/พัสดุ, desktop/interactive งานต้อนรับ, manipulator integration งานหยิบจับ) · Design for maintenance (modular ถอดเปลี่ยนแบตฯ/อัปเกรดเซนเซอร์ง่าย)</p>
+</section>
+<section class="sec"><h3>Backdrivability <span class="ref">S10</span></h3>
+<div class="tbl"><table style="min-width:440px"><thead><tr><th></th><th>Backdrivability สูง</th><th>Backdrivability ต่ำ</th></tr></thead><tbody>
+<tr><td>อัตราทด</td><td>ต่ำ เช่น &lt; 20:1</td><td>สูง เช่น &gt; 100:1</td></tr>
+<tr><td>พฤติกรรม</td><td>นิ้วขยับตามแรงกดภายนอกได้ง่าย</td><td>นิ้วแข็งทื่อ ไม่ขยับ</td></tr>
+<tr><td>ข้อดี</td><td>ปลอดภัย นุ่มนวล รับรู้แรงได้ ป้องกันการชน</td><td>จับแน่น ไม่ใช้พลังงานค้าง</td></tr>
+<tr><td>ข้อเสีย</td><td>(สไลด์ไม่ได้ระบุ)</td><td>อันตรายต่อคน แข็งทื่อ ควบคุมยาก</td></tr>
+<tr><td>ตัวอย่าง</td><td>Quasi-Direct Drive hands</td><td>Industrial grippers, tendon with high ratio</td></tr>
+</tbody></table></div>
+{{fig:backdrive}}
+</section>
+<section class="sec"><h3>เซนเซอร์และการจัดวาง <span class="ref">S11–12</span></h3>
+<ul><li><b>Environment & navigation</b>: LiDAR และ depth camera (RGB-D) สร้างแผนที่และหลบสิ่งกีดขวางที่เคลื่อนไหว · ultrasonic และ infrared ตรวจระยะประชิด</li>
+<li><b>HRI</b>: tactile/touch sensor, microphone array (รับเสียง หาทิศ ตัดเสียงรบกวน), vision sensor (จดจำใบหน้า ภาษากาย)</li>
+<li><b>Safety & state</b>: bumper + emergency stop, <b>cliff sensor</b> (ตรวจขอบโต๊ะ/บันได กันตก), IMU + wheel encoder (การทรงตัว/การเคลื่อนที่)</li>
+<li><b>Sensor fusion & processing</b>: รวมข้อมูลหลายเซนเซอร์ เพิ่มความแม่นยำ ตัดสินใจระดับระบบ</li>
+<li><b>Placement</b>: LiDAR ระดับต่ำแก้จุดบอดด้านล่าง (fixed low blind spot) + เซนเซอร์ระดับสายตามองไกล (long-range view)</li>
+<li>Use cases: Healthcare (ส่งยา/อาหาร โครงสร้างทำความสะอาดง่าย ปลอดเชื้อ) · Hospitality (เสิร์ฟ นำทาง โครงสร้างมั่นคง ไม่เกะกะในที่แคบ) · Elderly care (ตรวจจับการล้ม โครงสร้างช่วยพยุง)</li></ul>
+</section>
+<section class="sec"><h3>อัลกอริทึม <span class="ref">S7, S13–17</span></h3>
+<ul><li><b>Localization</b> ตอบ “ฉันอยู่ที่ไหน?” โดยต้องมีแผนที่อยู่แล้ว ใช้ AMCL (particle filter) เหมือนคนมีแผนที่และไฟฉาย · <b>SLAM</b> (Simultaneous Localization and Mapping) ไม่มีแผนที่ วาดเองพร้อมหาตำแหน่ง เหมือนนักสำรวจถ้ำ</li>
+<li><b>Decision-making</b>: Behavior Trees, Finite State Machine (FSM) · <b>Reinforcement Learning</b>: agent, state, action, reward, environment, policy</li>
+<li><b>Path planning</b>: A*, Dijkstra หาเส้นทางที่ดีที่สุด · <b>Local path planning</b>: Dynamic Window Approach, Artificial Potential Fields</li>
+<li><b>Motion control</b>: closed-loop feedback ด้วย PID controller</li>
+<li><b>Vision</b>: RGB-D/LiDAR/thermal camera → YOLO, CNN, semantic segmentation · Face recognition: detection → alignment → feature extraction (nodal points เช่น ระยะห่างตา) → recognition & classification</li>
+<li><b>HRI 5 หมวด</b>: Perception (person, face & gaze tracking, pose, emotion) · Communication & understanding (ASR, NLU & intent, multimodal fusion) · Social navigation (proxemics path planning, trajectory prediction, social expressive motion) · Physical interaction & safety (impedance/admittance control, collision reaction, handover) · Expressive feedback (gaze & attention, shared autonomy & non-verbal cues, expressive motion)</li></ul>
+{{fig:pid}}
+</section>
+<section class="sec"><h3>การวิจัยกับมนุษย์ <span class="ref">S18–19</span></h3>
+<ul><li>หลักจริยธรรม 3 ข้อ: <b>Respect for persons</b> (informed consent) · <b>Beneficence</b> (ประโยชน์สูงสุด ความเสี่ยงต่ำสุด) · <b>Justice</b> (คัดเลือกผู้เข้าร่วมและกระจายภาระ/ประโยชน์อย่างเป็นธรรม)</li>
+<li>ต้องผ่าน <b>IRB/EC</b> (คณะกรรมการพิจารณาจริยธรรม) ก่อนเริ่ม และถูกติดตามระหว่างทำ</li>
+<li>ขั้นตอน: วางแผนและขออนุมัติ (ออกแบบการทดลอง กำหนดกลุ่มเป้าหมาย) → ทดสอบ (โรงพยาบาล ที่สาธารณะ อุตสาหกรรม เก็บ sensor log และสัมภาษณ์) → วิเคราะห์ผล (ประสิทธิภาพ ความปลอดภัย ความพึงพอใจ จริยธรรม)</li>
+<li>ประเด็นสำคัญ: ความปลอดภัยทางกายภาพ · ความยินยอมและข้อมูลส่วนบุคคล · ความเหมาะสมทางสังคมและจิตวิทยา</li></ul>
+</section>
+<section class="sec"><h3>SROI: วัดคุณค่าที่วัดยาก <span class="ref">S20–29</span></h3>
+<ul><li><b>SROI (Social Return on Investment)</b> แปลงสิ่งที่ “ประเมินค่าไม่ได้” ให้เป็น “มูลค่าทางการเงินที่เทียบเคียงได้” · พัฒนาโดย <b>REDF</b> สหรัฐฯ ยุค 1990 · เปลี่ยนมุมมองงบ R&amp;D จาก “ต้นทุน” เป็น “การลงทุน”</li>
+<li>หลัก 7 ข้อ: Involve stakeholders · Understand what changes · Value the things that matter · Only include what is material · Do not overclaim · Be transparent · Verify the result</li>
+<li><b>Theory of Change</b>: Inputs → Outputs → Outcomes → Impact</li>
+<li>ตัวกรองกันเคลมเกินจริง: Gross social value → <b>Deadweight</b> (จะเกิดอยู่แล้วแม้ไม่มีหุ่นไหม) → <b>Attribution</b> (ปัจจัยอื่นช่วยกี่ %) → <b>Displacement</b> (แค่ย้ายปัญหาไปที่อื่นไหม) → <b>Drop-off</b> (ผลลดลงปีละเท่าไร) → Net social value</li>
+<li><b>SROI ratio = มูลค่าปัจจุบันของผลกระทบสังคมสุทธิ ÷ มูลค่าเงินลงทุน</b> · &gt; 1:1 คุ้มค่า · 1:1 คืนทุนพอดี · &lt; 1:1 ต้องปรับปรุง · ห้ามเทียบสัดส่วนข้ามองค์กร ให้เทียบภายในองค์กรเองตามเวลา</li>
+<li>ผู้ได้รับประโยชน์: Primary ผู้ใช้งาน (ผู้สูงอายุ ผู้ป่วย แขก) · Secondary ผู้ดูแล (พยาบาล ครอบครัว ลด burnout) · Tertiary ระบบ/รัฐ (ลดงบสาธารณสุข)</li>
+<li>Financial proxy: Hardware (QDD/วัสดุนุ่ม) → ค่ารักษาที่หลีกเลี่ยงได้ · Perception (LiDAR/SLAM) → ค่าจ้างเวลาบุคลากรที่นำไปทำงานอื่น · HRI (NLP/emotion) → ต้นทุนเทียบเท่าเซสชันจิตบำบัด</li>
+<li>คุณค่าของหุ่นบริการไม่ได้วัดที่ความซับซ้อนของอัลกอริทึม แต่วัดที่การยกระดับคุณภาพชีวิตคน · เชื่อมกับ ESG และ CSR</li></ul>
+{{fig:toc}}
+<div class="calc"><p class="stamp">ตัวอย่างคำนวณ (ตัวเลขสมมติ)</p><p>สูตร: SROI = PV ผลกระทบสังคมสุทธิ ÷ เงินลงทุน (หน่วยบาททั้งคู่)</p><p>PV สุทธิ 6,000,000 บาท ÷ ลงทุน 2,000,000 บาท = <b>3 : 1</b> → มากกว่า 1:1 จึงคุ้มค่า (ทุก 1 บาทสร้างมูลค่าทางสังคม 3 บาท)</p></div>
+</section>
+<section class="dt"><p class="stamp">Design Thinking</p>
+<ul><li><b>Desirable</b>: Human-centered design, รูปทรงไม่น่ากลัว, HRI ที่เข้าใจคน</li>
+<li><b>Feasible</b>: QDD, LiDAR + RGB-D, AMCL/SLAM ที่ทำได้จริงด้วยเทคโนโลยีปัจจุบัน</li>
+<li><b>Viable</b>: SROI แปลงรอยยิ้มและเวลาพยาบาลที่ประหยัดได้เป็นมูลค่า เพื่อให้โครงการได้ทุนต่อ</li>
+<li><b>Test</b>: วิจัยกับมนุษย์ต้องผ่าน IRB ก่อนทดสอบกับผู้ใช้จริง</li></ul>
+</section>`,
+  fill: [
+    { q: "หุ่นยนต์บริการทำงานในพื้นที่ ___ (บ้าน โรงแรม) ส่วนหุ่นอุตสาหกรรมทำงานในพื้นที่ปิด/โรงงาน", a: [["เปิด", "open", "เปิดเผย"]], s: "S5" },
+    { q: "ข้อต่อ ___-Direct Drive (QDD) มี backdrivability สูง เคลื่อนไหวเป็นธรรมชาติ ไม่น่ากลัว", a: [["Quasi"]], s: "S8" },
+    { q: "Backdrivability สูงใช้อัตราทดต่ำ เช่น < ___ :1 ส่วน backdrivability ต่ำใช้อัตราทดสูง เช่น > ___ :1", a: [{ n: 20 }, { n: 100 }], s: "S10" },
+    { q: "มาตรฐานกันน้ำ/กันฝุ่นของหุ่นยนต์เรียกว่า ___ rating", a: [["IP"]], s: "S8" },
+    { q: "เซนเซอร์ ___ ตรวจขอบโต๊ะหรือบันไดเพื่อป้องกันหุ่นตก", a: [["Cliff", "คลิฟ"]], s: "S12" },
+    { q: "Localization ต้องมี ___ อยู่แล้ว และหุ่นบริการนิยมใช้อัลกอริทึม ___ (particle filter)", a: [["แผนที่", "map"], ["AMCL"]], s: "S13" },
+    { q: "SLAM ย่อมาจาก Simultaneous Localization and ___", a: [["Mapping"]], s: "S7, S13" },
+    { q: "การวางแผนเส้นทางเฉพาะหน้าใช้ Dynamic ___ Approach หรือ Artificial Potential Fields", a: [["Window"]], s: "S14" },
+    { q: "หลักจริยธรรมการวิจัยในมนุษย์: Respect for persons, Beneficence และ ___", a: [["Justice", "ความยุติธรรม"]], s: "S18" },
+    { q: "คณะกรรมการพิจารณาจริยธรรมการวิจัยในมนุษย์เรียกย่อว่า ___ /EC", a: [["IRB"]], s: "S18–19" },
+    { q: "SROI ย่อมาจาก Social Return on ___", a: [["Investment"]], s: "S20" },
+    { q: "PV ผลกระทบสังคมสุทธิ 6 ล้านบาท เงินลงทุน 2 ล้านบาท → SROI = ___ : 1", a: [{ n: 3 }], s: "S26", ex: "SROI = 6,000,000 ÷ 2,000,000 = 3 → 3:1 มากกว่า 1:1 จึงคุ้มค่า (ตัวเลขสมมติ)" },
+    { q: "ตัวกรอง SROI ที่ถามว่า “การเปลี่ยนแปลงนี้จะเกิดขึ้นอยู่แล้วแม้ไม่มีหุ่นยนต์หรือไม่?” คือ ___", a: [["Deadweight"]], s: "S25" },
+    { q: "SROI พัฒนาโดยองค์กร ___ ในสหรัฐฯ ยุค 1990", a: [["REDF"]], s: "S22" },
+    { q: "Theory of Change: Inputs → Outputs → ___ → Impact", a: [["Outcomes", "Outcome"]], s: "S24" },
+    { q: "Face recognition: Face detection → Alignment → Feature ___ → Recognition & classification", a: [["Extraction"]], s: "S15" },
+    { q: "การนับ “รอยยิ้มและความเครียดที่ลดลง” เป็นคุณค่า สะท้อนวง ___ (Human) ส่วนการพิสูจน์ความคุ้มทุนด้วย SROI สะท้อนวง ___ (Business)", a: [["Desirable", "Desirability"], ["Viable", "Viability"]], s: "S21–22 + บท 11 S15", dt: true }
+  ],
+  match: [
+    { q: "จับคู่หลักการออกแบบโครงสร้างกับรายละเอียด", pairs: [["Safety first", "ขอบมน ไม่มีช่องหนีบ เซนเซอร์ตรวจการชน"], ["Friendly motion", "ข้อต่อ QDD แบบ backdrivable"], ["Energy efficiency", "actuator ประสิทธิภาพสูง เกียร์ทดต่ำ"], ["Cable management", "เดินสายภายใน + IP rating"]], s: "S8" },
+    { q: "จับคู่เซนเซอร์กับกลุ่มหน้าที่", pairs: [["LiDAR / RGB-D", "Environment & navigation"], ["Ultrasonic / Infrared", "Environment & navigation"], ["Microphone array", "HRI"], ["Tactile sensor", "HRI"], ["Bumper / E-stop", "Safety & state"], ["Cliff sensor", "Safety & state"]], s: "S12" },
+    { q: "จับคู่ตัวกรอง SROI กับคำถาม", pairs: [["Deadweight", "จะเกิดขึ้นอยู่แล้วแม้ไม่มีหุ่นยนต์ไหม?"], ["Attribution", "ปัจจัยหรือคนอื่นมีส่วนสร้างผลกี่ %?"], ["Displacement", "หุ่นแค่ย้ายปัญหาไปอีกที่หรือไม่?"], ["Drop-off", "ผลเชิงบวกเสื่อมลงปีละเท่าไร?"]], s: "S25" },
+    { q: "จับคู่ระดับผู้ได้รับประโยชน์", pairs: [["Primary", "ผู้สูงอายุ ผู้ป่วย แขก: ได้ความเป็นอิสระ"], ["Secondary", "พยาบาล ครอบครัว: ลด burnout และการบาดเจ็บ"], ["Tertiary", "โรงพยาบาล รัฐ: ลดงบสาธารณสุข"]], s: "S28" },
+    { q: "จับคู่สถาปัตยกรรมหุ่นกับ financial proxy", pairs: [["Hardware (QDD / วัสดุนุ่ม)", "ค่ารักษาพยาบาลที่หลีกเลี่ยงได้"], ["Perception (LiDAR / SLAM)", "ค่าจ้างเวลาบุคลากรที่นำไปทำงานอื่น"], ["HRI (NLP / Emotion)", "ต้นทุนเทียบเท่าเซสชันจิตบำบัด"]], s: "S27" },
+    { q: "จับคู่หมวด HRI กับอัลกอริทึม", pairs: [["Perception", "Person detection & tracking"], ["Communication & understanding", "ASR / NLU & intent"], ["Social navigation", "Proxemics path planning"], ["Physical interaction & safety", "Impedance / Admittance control"], ["Expressive feedback", "Gaze & attention control"]], s: "S17" },
+    { q: "จับคู่ค่า SROI ratio กับความหมาย", pairs: [["> 1:1", "คุ้มค่า ผลตอบแทนสังคมสูงกว่าต้นทุน"], ["1:1", "คืนทุนทางสังคมพอดี"], ["< 1:1", "ต้องปรับปรุงโครงการ"]], s: "S26" }
+  ],
+  draw: [
+    { q: "วาดเปรียบเทียบ backdrivability สูงกับต่ำ: อัตราทดเฟือง แรงภายนอก และผลที่เกิดกับข้อต่อ", fig: "backdrive", s: "S10", check: ["อัตราทดต่ำ (< 20:1) → แรงภายนอกดันกลับได้", "อัตราทดสูง (> 100:1) → ล็อก ไม่ขยับ", "ข้อดี: สูง = ปลอดภัย รับรู้แรง · ต่ำ = จับแน่น", "ตัวอย่าง: QDD hands vs industrial gripper"] },
+    { q: "วาด Theory of Change ของหุ่นยนต์บริการในโรงพยาบาล 4 ขั้น พร้อมยกตัวอย่างแต่ละขั้น", fig: "toc", s: "S24", check: ["Inputs: งบ R&D เวลาวิศวกร", "Outputs: หุ่นที่ทำงานได้จริง (SLAM, HRI)", "Outcomes: ผลเปลี่ยนแปลงที่วัดได้ เช่น ประหยัดเวลา 2 ชม./วัน หกล้มลด 30%", "Impact: ผลระยะยาว เช่น สวัสดิการสาธารณสุข แก้ขาดแคลนแรงงาน"] },
+    { q: "วาดแผนภาพระบบควบคุมแบบปิด (closed-loop) ด้วย PID สำหรับมอเตอร์ของหุ่นยนต์", fig: "pid", s: "S14", check: ["Setpoint เข้า summing point (Σ)", "Controller (PID) → Plant/Motors → Output", "Sensors ป้อนกลับไปลบที่ Σ", "ระบุ error e = setpoint − ค่าที่วัดได้"] }
+  ]
+});
+BANK.push({
+  id: "l11", no: "11", short: "แพทย์/ชีวภาพ", term: "Final", slides: 26,
+  en: "Medical and Bio-inspired Robots", th: "ออกแบบโครงสร้างหุ่นยนต์การแพทย์และหุ่นยนต์เลียนแบบสิ่งมีชีวิต รวม Design Thinking",
+  sum: `
+<section class="sec"><h3>3 เสาหลักที่แยกหุ่นแพทย์ออกจากหุ่นอุตสาหกรรม <span class="ref">S5</span></h3>
+<ul><li><b>Micro-precision</b>: เคลื่อนที่และสอบเทียบแม่นยำระดับเสี้ยวมิลลิเมตร เพื่อหลีกเลี่ยงความเสียหายต่ออวัยวะ</li>
+<li><b>Biocompatibility</b>: วัสดุทนสารเคมี ความร้อน และรังสีในการฆ่าเชื้อ (sterilization) โดยไม่เป็นพิษต่อเซลล์</li>
+<li><b>Absolute safety</b>: ระบบตรวจสอบตัวเอง (self-checking) และควบคุมแรงสัมผัส ปกป้องชีวิตคนทุกเสี้ยววินาที</li></ul>
+</section>
+<section class="sec"><h3>ระบบนิเวศหุ่นยนต์การแพทย์ <span class="ref">S6–7</span></h3>
+<div class="tbl"><table><thead><tr><th>หมวด</th><th>หลักออกแบบ</th><th>ตัวอย่าง</th></tr></thead><tbody>
+<tr><td><b>Surgical</b> (ศัลยกรรม)</td><td>High precision, Remote Center of Motion (RCM), backlash-free mechanisms</td><td>da Vinci, หุ่นยนต์ปลูกผม</td></tr>
+<tr><td><b>Rehabilitation</b> (ฟื้นฟู)</td><td>Exoskeleton structure, Series Elastic Actuators (SEA), impedance control</td><td>ARMin III</td></tr>
+<tr><td><b>Bio-inspired & Micro</b></td><td>Continuum/soft mechanics, Shape Memory Alloys (SMA), redundant/infinite DoF</td><td>หุ่นแคปซูล, หุ่นงูส่องกล้อง</td></tr>
+<tr><td><b>Social & Therapeutic</b></td><td>Soft shells, tactile sensors, เน้นดูแลจิตใจ</td><td>Paro (แมวน้ำ)</td></tr>
+</tbody></table></div>
+<p><b>Blueprint for clinical success</b>: Rigid & compliant structures + Micron-level perception + Uncompromising safety → Patient outcomes · หุ่นแพทย์ที่ดีไม่ได้มาจากกลไกซับซ้อนที่สุด แต่มาจากการผสานโครงสร้าง สายตา และความปลอดภัยให้ทำงานเป็นหนึ่งเดียว</p>
+</section>
+<section class="sec"><h3>RCM และกลไกไร้ระยะรุน <span class="ref">S8–9</span></h3>
+<ul><li><b>Remote Center of Motion (RCM)</b>: จุดหมุนถูก “ล็อก” ไว้ที่รอยเจาะหน้าท้อง (~1 cm, fulcrum) ป้องกันแผลฉีกขาดขณะแขนกลขยับ</li>
+<li><b>Backlash-free mechanisms</b>: กำจัดช่องว่างระหว่างเฟือง (zero backlash) ให้การขยับนิ้วของแพทย์ส่งไปยังหุ่นได้สมบูรณ์ ไร้ความหน่วง</li>
+<li>RCM แบบ Parallelogram-based (PB): clearance เล็ก แต่ footprint ใหญ่ · แบบ Dual-triangular (DT): footprint ลดได้ถึง 35% ลิงก์เบาลงถึง 80% และอยู่ห่างรอยเจาะมากขึ้น</li></ul>
+{{fig:rcm}}
+</section>
+<section class="sec"><h3>Surgery, Endoscopy, Exoskeleton <span class="ref">S10–14</span></h3>
+<ul><li><b>Capsule endoscopy</b>: LED light source + battery + transmitter + color video camera ส่งภาพให้ตัวรับที่ติดหน้าท้อง</li>
+<li><b>Exoskeleton ขา</b>: backpack, hip/knee/ankle joint, thigh link, shank link, hydraulic actuators, foot module · มีทั้ง passive joint และ active joint</li>
+<li>อีกแบบ: spring-actuated hip/ankle, hip & knee actuator, clutch สลับโหมด, angular sensor, foot plate, backpack ใส่คอมพิวเตอร์และแบตฯ, ไม้ค้ำ (crutches) มีปุ่มควบคุม</li>
+<li><b>Exoskeleton แขน/ข้อเท้า</b>: sliding support structure, local CAN-bus motor driver, harmonic drive, 3D-compliant support, hydraulic cylinder + passive return element, load cell</li></ul>
+</section>
+<section class="sec"><h3>Design Thinking <span class="ref">S15–16</span></h3>
+{{fig:dtvenn}}
+<ul><li>นวัตกรรม = จุดตัดของ <b>Desirable</b> (Human: คนต้องการ) · <b>Feasible</b> (Technology: ทำได้ทางเทคโนโลยี) · <b>Viable</b> (Business: อยู่รอดและเติบโตทางธุรกิจ)</li>
+<li>Design → Design Thinking: individuals → <b>teams</b> · products → <b>experiences</b> · eng + art → <b>tech + biz + human</b> (Corey Ford, Stanford d.school)</li>
+<li>ตัวอย่างโปรเจกต์: <b>Nightingale Bot</b> หุ่นยนต์อัจฉริยะสำหรับการดูแลแผลแบบบูรณาการในระบบบริการสุขภาพ</li></ul>
+</section>
+<section class="sec"><h3>Bio-inspired robotics <span class="ref">S17–21</span></h3>
+<ul><li>ปรัชญาหลัก: <b>Morphological computation & biomimetics</b> โครงสร้างร่างกายแก้ปัญหาทางกลเอง จึงออกแบบรูปทรงและการจัดข้อต่อตามระบบชีวภาพ เช่น การสะบัดหางปลา การเลื้อยของงู การเคลื่อนไหวของงวงช้าง</li>
+<li><b>Soft & continuum mechanics</b>: วัสดุยืดหยุ่นหรือข้อต่อจำนวนมาก (redundant/infinite DoF) โค้งงอปรับตามสิ่งกีดขวาง</li>
+<li><b>Compliant actuation</b>: SEA (สปริงอนุกรม ซับแรงกระแทก) · Tendon-driven (ดึงสายสลิงเหมือนกล้ามเนื้อ) · Pneumatic (ใช้แรงดันอากาศเพื่อความนุ่มนวล)</li></ul>
+<div class="tbl"><table><thead><tr><th>หัวข้อ</th><th>Medical (rigid)</th><th>Bio-inspired (soft)</th></tr></thead><tbody>
+<tr><td>เป้าหมายทางกล</td><td>เที่ยงตรงสูง backlash-free stiffness สูง</td><td>ยืดหยุ่น ปรับรูปทรงได้ (compliance & adaptability)</td></tr>
+<tr><td>โครงสร้างข้อต่อ</td><td>RCM, closed-loop, DoF จำกัดและคุมได้แม่น</td><td>Continuum, redundant DoF, soft structures</td></tr>
+<tr><td>วัสดุหลัก</td><td>โลหะเกรดการแพทย์ (316L, Titanium), biocompatible plastics</td><td>อีลาสโตเมอร์, SMA, สายสลิงสังเคราะห์</td></tr>
+<tr><td>ระบบขับเคลื่อน</td><td>เซอร์โวมอเตอร์แม่นยำสูง, harmonic drives</td><td>Tendon-driven, pneumatic, SEA</td></tr>
+<tr><td>โจทย์ท้าทาย</td><td>มาตรฐานความปลอดภัยและการสอบเทียบ</td><td>แบบจำลองคณิตศาสตร์ซับซ้อน สูญเสียความแม่นยำ</td></tr>
+</tbody></table></div>
+<p>สรุป: <b>Form is function</b> (รูปทรงลดภาระการคำนวณ) · <b>Compliance over rigidity</b> (แลกความแม่นยำกับความยืดหยุ่นเพื่อทำงานกับสิ่งเปราะบาง) · <b>Beyond limits</b> (เข้าถึงพื้นที่ที่หุ่นแข็งเข้าไม่ได้ เช่น ใต้ทะเลลึก ร่างกายมนุษย์)</p>
+</section>
+<section class="sec"><h3>4 Archetypes <span class="ref">S22–25</span></h3>
+<ul><li><b>Swimmers</b> (ปลา): หางใช้ revolute joints 3–5 แกน (yaw) เรียงต่อกัน สร้าง undulatory motion ผลักน้ำไปด้านหลัง · ครีบข้าง 2–4 DoF (pitch/roll) คุมการดำ/ลอยเหมือน aileron · เงียบ ไร้ใบพัด ไม่ทำลายแนวปะการัง</li>
+<li><b>Slitherers</b> (งู/continuum): หลายปล้องหรือแกนต่อเนื่อง ขับด้วย tendon (pulleys & cables) · redundant DoF เลื้อยหรือปรับรูปตามช่องว่าง · ใช้ในท่อเล็ก ซากตึกถล่ม ร่างกายคน (endoscope)</li>
+<li><b>Walkers</b>: Quadruped เลียนสัตว์เลี้ยงลูกด้วยนม (hip abduction, hip flexion, knee flexion) เน้น <b>dynamic balance</b> · Hexapod เลียนแมลง เดินแบบ <b>tripod gait</b> สลับรับน้ำหนักทีละ 3 ขา มี <b>static stability</b> สูงตลอดเวลา</li>
+<li><b>Humanoids</b>: รูปร่างคนเพื่อทำงานในพื้นที่ที่สร้างมาเพื่อคน (เปิดประตู ขึ้นบันได) เช่น NASA Robonaut, ASIMO · มือ high-DoF + tactile/force sensor ที่ปลายนิ้ว คุมแรงบีบไม่ให้ทำลายวัตถุหรือทำร้ายคน</li></ul>
+{{fig:tripod}}
+</section>
+<section class="dt"><p class="stamp">Design Thinking</p>
+<ul><li><b>Empathize</b>: ผู้ป่วยกลัวแผลใหญ่ แพทย์ต้องการความแม่นยำ → <b>Define</b>: “ผ่าตัดผ่านรู ~1 cm โดยแผลไม่ฉีก”</li>
+<li><b>Ideate</b>: RCM แบบ parallelogram vs dual-triangular vs RCM ด้วยซอฟต์แวร์</li>
+<li><b>Feasible + Viable</b>: DT RCM ลด footprint 35% ลิงก์เบา 80% ห้องผ่าตัดใช้พื้นที่น้อยลง</li>
+<li>Bio-inspired คือการ Ideate โดยยืมคำตอบจากธรรมชาติ (ปลา งู แมลง)</li></ul>
+</section>`,
+  fill: [
+    { q: "3 เสาหลักของหุ่นยนต์การแพทย์: Micro-precision, ___ และ Absolute safety", a: [["Biocompatibility", "ความเข้ากันได้ทางชีวภาพ"]], s: "S5" },
+    { q: "Biocompatibility: วัสดุต้องทนสารเคมี ความร้อน และรังสีในการ ___ (sterilization) โดยไม่เป็นพิษต่อเซลล์", a: [["ฆ่าเชื้อ", "sterilization", "sterilisation"]], s: "S5" },
+    { q: "RCM ย่อมาจาก Remote Center of ___", a: [["Motion"]], s: "S8" },
+    { q: "RCM ล็อกจุดหมุนไว้ที่รอยเจาะหน้าท้องขนาดประมาณ ___ cm เพื่อป้องกันแผลฉีกขาด", a: [{ n: 1 }], s: "S8" },
+    { q: "กลไก Backlash-___ กำจัดช่องว่างระหว่างเฟือง ให้การขยับนิ้วแพทย์ส่งถึงหุ่นโดยไม่หน่วง", a: [["free"]], s: "S8" },
+    { q: "RCM แบบ Dual-triangular ลด footprint ได้ถึง ___ % และลิงก์เบาลงถึง ___ %", a: [{ n: 35 }, { n: 80 }], s: "S9" },
+    { q: "หุ่นฟื้นฟูใช้ Series ___ Actuators (SEA) และ impedance control เพื่อปฏิสัมพันธ์อย่างปลอดภัย", a: [["Elastic"]], s: "S6" },
+    { q: "หุ่นยนต์บำบัดรูปแมวน้ำในหมวด Social & Therapeutic ชื่อ ___", a: [["Paro"]], s: "S6" },
+    { q: "Design Thinking: นวัตกรรมเกิดที่จุดตัดของ Desirable (Human), Feasible (Technology) และ ___ (Business)", a: [["Viable", "Viability"]], s: "S15", dt: true },
+    { q: "Design → Design Thinking: จาก individuals เป็น ___ และจาก products เป็น ___", a: [["teams", "team", "ทีม"], ["experiences", "experience", "ประสบการณ์"]], s: "S15", dt: true },
+    { q: "ปรัชญา Bio-inspired: ___ computation ให้โครงสร้างร่างกายแก้ปัญหาทางกลเอง", a: [["Morphological"]], s: "S18" },
+    { q: "โลหะจำรูป (Shape Memory Alloys) เรียกย่อว่า ___", a: [["SMA"]], s: "S6, S20" },
+    { q: "ปลาหุ่นยนต์ใช้ revolute joints ___–5 แกน (yaw) ที่หาง เพื่อสร้าง undulatory motion", a: [{ n: 3 }], s: "S22" },
+    { q: "หุ่นหกขาเดินแบบ ___ gait (สลับรับน้ำหนักทีละ 3 ขา) จึงมี static stability สูง", a: [["Tripod"]], s: "S24" },
+    { q: "Compliance over ___: แลกความแม่นยำกับความยืดหยุ่น เพื่อทำงานกับสิ่งแวดล้อมที่เปราะบาง", a: [["Rigidity"]], s: "S21" },
+    { q: "แคปซูลส่องกล้องประกอบด้วย LED light source, battery, transmitter และ color video ___", a: [["camera", "กล้อง"]], s: "S11" },
+    { q: "หุ่นฮิวแมนนอยด์ตัวอย่างในสไลด์: NASA Robonaut และ ___", a: [["ASIMO"]], s: "S25" }
+  ],
+  match: [
+    { q: "จับคู่หมวดหุ่นยนต์การแพทย์กับตัวอย่าง", pairs: [["Surgical", "da Vinci / หุ่นปลูกผม"], ["Rehabilitation", "ARMin III / exoskeleton"], ["Bio-inspired & Micro", "หุ่นแคปซูล / หุ่นงูส่องกล้อง"], ["Social & Therapeutic", "Paro"]], s: "S6" },
+    { q: "คุณสมบัตินี้เป็นของหุ่นแบบใด", pairs: [["Backlash-free, high stiffness", "Medical (rigid)"], ["Continuum, redundant DoF", "Bio-inspired (soft)"], ["316L, Titanium", "Medical (rigid)"], ["Elastomer, SMA", "Bio-inspired (soft)"], ["Harmonic drive, servo แม่นยำสูง", "Medical (rigid)"], ["Tendon-driven, pneumatic", "Bio-inspired (soft)"]], s: "S20" },
+    { q: "จับคู่ Archetype กับจุดเด่น", pairs: [["Swimmers", "undulatory motion ไร้ใบพัด ไม่ทำลายปะการัง"], ["Slitherers", "tendon-driven หลายปล้อง ลอดท่อ/ซากตึก"], ["Quadruped", "dynamic balance ก้าวข้ามสิ่งกีดขวาง"], ["Hexapod", "tripod gait static stability สูง"], ["Humanoids", "ทำงานในพื้นที่ที่สร้างมาเพื่อคน"]], s: "S22–25" },
+    { q: "จับคู่ compliant actuation กับหลักการ", pairs: [["SEA", "สปริงอนุกรมซับแรงกระแทก"], ["Tendon-driven", "ดึงสายสลิงเหมือนกล้ามเนื้อ"], ["Pneumatic", "แรงดันอากาศเพื่อความนุ่มนวล"]], extra: ["เฟืองทดรอบสูงไร้ระยะรุน"], s: "S19" },
+    { q: "จับคู่วง Design Thinking กับคำถามที่ต้องตอบ", pairs: [["Desirable", "ผู้ป่วยและแพทย์อยากใช้ไหม?"], ["Feasible", "เทคโนโลยีที่มีทำได้จริงไหม?"], ["Viable", "โรงพยาบาลจ่ายไหว ธุรกิจอยู่รอดไหม?"]], s: "S15", dt: true },
+    { q: "จับคู่เสาหลักของหุ่นแพทย์กับความหมาย", pairs: [["Micro-precision", "แม่นยำระดับเสี้ยวมิลลิเมตร"], ["Biocompatibility", "ทนการฆ่าเชื้อ ไม่เป็นพิษต่อเซลล์"], ["Absolute safety", "self-checking + ควบคุมแรงสัมผัส"]], s: "S5" }
+  ],
+  draw: [
+    { q: "วาดหลักการ Remote Center of Motion (RCM) ในการผ่าตัดผ่านรู: ผนังหน้าท้อง รอยเจาะ และแกนเครื่องมือหลายตำแหน่ง", fig: "rcm", s: "S8", check: ["ผนังร่างกายและรอยเจาะ (~1 cm)", "จุดหมุน RCM อยู่ตรงรอยเจาะพอดี", "แกนเครื่องมือหลายตำแหน่งผ่านจุดเดียวกัน", "อธิบายว่าช่วยป้องกันแผลฉีกขาด"] },
+    { q: "วาดแผนภาพ Design Thinking 3 วง พร้อมชื่อวงและคำอธิบายสั้น และระบุจุดเกิดนวัตกรรม", fig: "dtvenn", s: "S15", check: ["วง Desirable (Human)", "วง Feasible (Technology)", "วง Viable (Business)", "จุดตัดตรงกลาง = Innovation"] },
+    { q: "วาดหุ่นยนต์หกขามองจากด้านบน แสดง tripod gait ว่าขาไหนรับน้ำหนักพร้อมกัน และทำไมจึงเสถียร", fig: "tripod", s: "S24", check: ["ตัวหุ่น + 6 ขา (L1–L3, R1–R3)", "กลุ่ม A = L1, R2, L3", "กลุ่ม B = R1, L2, R3", "สามเหลี่ยมรองรับครอบจุด CoG → static stability"] }
+  ]
+});
+BANK.push({
+  id: "l12", no: "12", short: "วัสดุ", term: "Final", slides: 26,
+  en: "Materials for Robot Design", th: "วัสดุศาสตร์และการประกอบโครงสร้างหุ่นยนต์: โลหะ พลาสติก วัสดุพิเศษ และ Hybrid robot",
+  sum: `
+<section class="sec"><h3>The ultimate trade-off <span class="ref">S4–5</span></h3>
+<p>โครงสร้างหุ่นต้อง <b>น้ำหนักเบา</b> (มวลต่ำ) เพื่อความเร็ว และ <b>แข็งเกร็งสูง</b> (stiffness) เพื่อความแม่นยำ แต่วัสดุที่เบาที่สุดมักไม่แข็งที่สุด (พลาสติก vs เหล็ก)</p>
+<p>เป้าหมาย: สร้างสมดุลเพื่อลดภาระมอเตอร์ (motor load) และโมเมนต์ความเฉื่อย โดยไม่เสียเสถียรภาพของโครงสร้าง · ตัวอย่างชุดประกอบ: อลูมิเนียมโปรไฟล์ 6063 + ฝาครอบ polycarbonate ใส + end-effector ไนลอนพิมพ์ 3D + integrated sensor array</p>
+</section>
+<section class="sec"><h3>Material taxonomy <span class="ref">S6</span></h3>
+<ul><li><b>Heavy metals</b> (โครงสร้างหลักรับแรง): เหล็ก, สแตนเลส</li>
+<li><b>Light metals</b> (โครงสร้างน้ำหนักเบา): อลูมิเนียมโปรไฟล์, กล่อง, ฉาก</li>
+<li><b>Polymers & plastics</b> (ชิ้นส่วนเฉพาะทาง ลดแรงเสียดทาน): พลาสติกวิศวกรรม, 3D print (PLA, PETG, ABS)</li>
+<li><b>Specialty</b> (ทางเลือกและสภาพแวดล้อมเฉพาะ): ไม้, แก้ว, คาร์บอนไฟเบอร์</li></ul>
+</section>
+<section class="sec"><h3>โลหะหนัก: เหล็ก vs สแตนเลส <span class="ref">S7–8</span></h3>
+<div class="tbl"><table><thead><tr><th></th><th>เหล็ก (Carbon/alloy steel)</th><th>สแตนเลส (304/316)</th></tr></thead><tbody>
+<tr><td>ข้อดี</td><td>แข็งแรงที่สุด รับแรงดึงและแรงกระแทกได้ดี ดัด ตัด ม้วน เชื่อมง่าย ราคาถูก รีไซเคิลได้ 100%</td><td>ผสมโครเมียมและนิกเกิล ทนกัดกร่อนดีเยี่ยม ทนสารเคมีและร้อน/เย็น ผิวเรียบไม่สะสมแบคทีเรีย (food/medical grade)</td></tr>
+<tr><td>ข้อจำกัด</td><td>หนักที่สุด (หนักกว่าอลูมิเนียม ~3 เท่า) สร้างภาระมอเตอร์ เป็นสนิมง่าย ต้องเคลือบหรือทาสี</td><td>หนักเท่าเหล็ก แปรรูปยากและแพงกว่าเหล็ก</td></tr>
+<tr><td>ใช้เมื่อ</td><td>ฐานรับน้ำหนักที่ต้องการ CoG ต่ำ</td><td>ชิ้นส่วนที่สัมผัสสารเคมีหรืออาหาร</td></tr>
+</tbody></table></div>
+</section>
+<section class="sec"><h3>อลูมิเนียม <span class="ref">S9–11</span></h3>
+<p>น้ำหนักและความแข็งเกร็งประมาณ <b>1/3 ของเหล็ก</b> ตัดและกลึงในโรงงานง่ายที่สุด ไม่เป็นสนิม</p>
+<div class="tbl"><table><thead><tr><th>รูปแบบ</th><th>จุดเด่น</th><th>เหมาะกับ</th></tr></thead><tbody>
+<tr><td><b>โปรไฟล์</b> (T-slot/V-slot)</td><td>Modular ปรับรูปทรงด้วยร่อง ไม่ต้องเชื่อม เกรด A6063-T5</td><td>โครงสร้างหลักและรางเลื่อน</td></tr>
+<tr><td><b>กล่อง</b> (Box)</td><td>โครงสร้างปิด รับแรงบิด (torsion) ได้ดีเยี่ยม เบากว่าโปรไฟล์ ผิวเรียบ</td><td>แขนกลที่ต้องลดมวล</td></tr>
+<tr><td><b>ฉาก</b> (Angle)</td><td>รูปตัว L ต้นทุนต่ำที่สุด</td><td>เสริมความแข็งแรงเข้ามุม ทำ bracket</td></tr>
+</tbody></table></div>
+<ul><li><b>T-slot (static frame)</b>: ร่องรูปตัว T ออกแบบมาเพื่อ “ยึดติดนิ่ง” ด้วย T-nut</li>
+<li><b>V-slot (linear motion + frame)</b>: ปีกตัดเฉียงทำมุม 90° (V-groove) เป็นทั้ง “โครงสร้าง” และ “รางเลื่อน” ให้ล้อ V-wheel วิ่งได้ราบลื่นและแม่นยำ</li>
+<li>T-nuts, brackets, end caps ใช้ร่วมกันได้ทั้งสองระบบ</li></ul>
+{{fig:slots}}
+</section>
+<section class="sec"><h3>พลาสติกวิศวกรรมและ 3D printing <span class="ref">S12–14</span></h3>
+<div class="tbl"><table><thead><tr><th>วัสดุ</th><th>คุณสมบัติ</th><th>งานที่เหมาะ</th></tr></thead><tbody>
+<tr><td>Nylon / MC Nylon</td><td>เหนียว ทนสึกหรอ ลดเสียงและแรงสั่น</td><td>เฟือง บูช ลูกกลิ้ง</td></tr>
+<tr><td>ABS</td><td>แข็งและเหนียวสมดุล ทนกระแทก ขึ้นรูปง่าย</td><td>เฟรมเครื่อง หุ่นขนาดเล็ก</td></tr>
+<tr><td>PC (Polycarbonate)</td><td>ใส ทนแรงกระแทกได้ดีกว่าอะคริลิค ทนความร้อน</td><td>ฝาครอบนิรภัย กระจกแว่นตาหุ่นยนต์</td></tr>
+<tr><td>Acrylic (PMMA)</td><td>ใส &gt; 90% แข็งแต่เปราะ</td><td>ฝาครอบนิรภัย หน้าปัด กล่องครอบทั่วไป</td></tr>
+<tr><td>PE (Polyethylene)</td><td>Food grade ไม่มีสารพิษ ทนสารเคมี</td><td>ชิ้นส่วนสัมผัสอาหาร ถังบรรจุสารเคมี</td></tr>
+<tr><td>Bakelite</td><td>ทนความร้อน เป็นฉนวนไฟฟ้า</td><td>แผงวงจร</td></tr>
+<tr><td>PLA / PETG (3D print)</td><td>ขึ้นรูปอิสระ ทำต้นแบบเร็ว แต่ความแข็งเกร็งเปลี่ยนตามอุณหภูมิ รับแรงจำกัด</td><td>ชิ้นส่วน custom, proof of concept, หุ่นการศึกษา</td></tr>
+</tbody></table></div>
+<ul><li>ขั้นตอน rapid prototyping: CAD concept → 3D print (ตัวอย่าง layer 0.2 mm, nozzle 210 °C, heated bed) → integration (heat-set insert M3 ยึดกับอลูมิเนียม 6061)</li>
+<li>ข้อจำกัด: ความแข็งเกร็งต่ำที่สุด คุณสมบัติเปลี่ยนตามเวลาและอุณหภูมิ ไม่เป็นไปตาม Hooke's law อย่างเคร่งครัด จึงต้องใช้ heat-set inserts เชื่อมกับโครงโลหะ</li></ul>
+</section>
+<section class="sec"><h3>วัสดุพิเศษ <span class="ref">S15–16</span></h3>
+<ul><li><b>ไม้/กระดาษแข็ง</b>: ถูกที่สุด ตัดแต่งง่าย เหมาะทำต้นแบบ · ข้อจำกัด: รับแรงได้น้อย ถ้าต้องการแข็งแรงต้องเพิ่มความหนาจนหนักมาก ดูดซับความชื้น</li>
+<li><b>แก้ว</b>: เฉื่อยทางเคมีสูง โปร่งใส ใช้กับพื้นที่อันตราย (glovebox robots) · ข้อจำกัด: เปราะ แตกง่าย ไม่รับแรงกระแทก</li>
+<li><b>คาร์บอนไฟเบอร์</b>: stiffness-to-weight ดีที่สุด ซ่อนสายไฟหรือมอเตอร์ในท่อได้ · ข้อจำกัด: แพง ตัดแต่งยาก ไม่เหมาะกับการเจาะรูยึดน็อต</li>
+<li><b>ยางและเคฟลาร์</b>: ยางสร้างผิวหนึบ ยืดหยุ่น ปลอดภัยต่อคน · เคฟลาร์ป้องกันอุณหภูมิสุดขั้ว แรงดัน และแรงกระแทก</li></ul>
+</section>
+<section class="sec"><h3>การประกอบ (Assembly mechanics) <span class="ref">S17–20</span></h3>
+<p>โครงสร้างจะแข็งเกร็งหรือไม่ ไม่ได้อยู่ที่วัสดุอย่างเดียว แต่อยู่ที่ <b>จุดเชื่อมต่อ (joints)</b></p>
+<div class="tbl"><table><thead><tr><th>วิธี</th><th>ใช้เมื่อ</th><th>ข้อควรระวัง</th></tr></thead><tbody>
+<tr><td><b>Welding</b> (ถาวร)</td><td>ต้องการโครงสร้างถาวรรับแรงสูง เช่น ฐานเหล็ก</td><td>ความร้อนทำโลหะเสียรูป (distortion) · อลูมิเนียมเชื่อมยากกว่าเหล็ก · รอยเชื่อมสแตนเลสต้องขัดเรียบกันแบคทีเรีย</td></tr>
+<tr><td><b>Bolting</b> (modular)</td><td>ต้องการถอดประกอบ ซ่อมบำรุง เปลี่ยนโมดูล เช่น อลูมิเนียมโปรไฟล์</td><td>แรงสั่นทำน็อตคลาย → ใช้น้ำยากันคลาย (threadlocker) หรือ Nyloc nut</td></tr>
+<tr><td><b>Quick joints</b></td><td>ประกอบท่อรวดเร็วโดยไม่ต้องเชื่อม ถอดแล้วประกอบใหม่ง่าย</td><td>—</td></tr>
+<tr><td><b>Riveting</b></td><td>แผ่นโลหะบาง/กล่องอลูมิเนียมที่ไม่ต้องถอด น้ำหนักเบา</td><td>ไม่รับแรงดึงหรือแรงบิดสูง</td></tr>
+<tr><td><b>T-nuts & T-bolts</b></td><td>สอดเข้าร่อง T/V-slot ล็อกตำแหน่ง ปรับได้ยืดหยุ่น</td><td>—</td></tr>
+<tr><td><b>Corner / Blind brackets</b></td><td>ฉากยึดมุม 90° เพิ่มความแข็งแรง / ฉากซ่อนในร่องให้ดูเรียบร้อย</td><td>—</td></tr>
+</tbody></table></div>
+<ul><li><b>พลาสติก/3D print</b>: ฝัง heat-set inserts (เกลียวทองเหลืองด้วยหัวแร้ง) เพื่อขันน็อตซ้ำได้โดยเกลียวไม่รูด หรือออกแบบข้อต่อสวมล็อก (snap-fit / dovetail)</li>
+<li><b>คาร์บอนไฟเบอร์</b>: ห้ามเจาะรูเด็ดขาด ใช้ข้อต่อสวมอัด (press-fit) ร่วมกับกาวโครงสร้าง (epoxy) กระจายแรงทั่วผิวสัมผัส</li>
+<li><b>แก้ว</b>: ห้ามน็อตหรือโลหะสัมผัสแก้วโดยตรง ยึดผ่านโครงโลหะที่บุด้วยปะเก็นยาง (gasket) ซับแรงสั่น หรือใช้กาว UV</li></ul>
+{{fig:glass}}
+</section>
+<section class="sec"><h3>เลือกวัสดุตามสภาพแวดล้อม และ Hybrid robot <span class="ref">S21–25</span></h3>
+<div class="tbl"><table><thead><tr><th>สภาพแวดล้อม</th><th>Focus</th><th>วัสดุ</th></tr></thead><tbody>
+<tr><td>Food / Medical / Chem</td><td>ความปลอดภัยทางชีวภาพ การกัดกร่อน</td><td>สแตนเลส (ขัดรอยเชื่อม), พลาสติก PE food grade, แก้ว (ตู้ปลอดเชื้อ)</td></tr>
+<tr><td>Heavy industrial</td><td>ทนความร้อน รับ payload มหาศาล</td><td>เหล็กโครงสร้าง, อลูมิเนียมซีรีส์ 40/80, รอยเชื่อม + น็อตขนาดใหญ่</td></tr>
+<tr><td>Agile / DIY / Education</td><td>น้ำหนักเบา ความเร็ว ปรับแต่งง่าย</td><td>อลูมิเนียม V-slot, คาร์บอนไฟเบอร์, ชิ้นส่วน 3D print, ไม้/กระดาษ</td></tr>
+</tbody></table></div>
+<p>หุ่นที่ดีที่สุดไม่ได้สร้างจากวัสดุชนิดเดียว ดึงข้อดีของแต่ละวัสดุมาใช้ในตำแหน่งที่เหมาะ:</p>
+{{fig:hybrid}}
+<p>สไลด์ S23 อีกแบบ: ฐานเหล็กกล้า (หนักเพื่อลด CoG) · แขนคาร์บอน/อลูมิเนียม (เบาและแข็ง ลดแรงเฉื่อย) · ข้อต่อพลาสติกวิศวกรรม (เฟืองไนลอนลดแรงเสียดทาน ยางซับแรงกระแทก) · มือจับสแตนเลส 304/316 (สัมผัสชิ้นงาน/สารเคมีโดยตรง ล้างฆ่าเชื้อได้)</p>
+<p class="muted" style="font-size:.88rem">Master Diagnostic Matrix (S24) คะแนน 1–5 · ช่องสีเหลือง = ดีที่สุดในหมวด</p>
+<div class="tbl"><table><thead><tr><th>วัสดุ</th><th>ความเบา</th><th>ความแข็งเกร็ง</th><th>การขึ้นรูป</th><th>ทนสารเคมี</th><th>ชิ้นส่วนแนะนำ</th></tr></thead><tbody>
+<tr><td>เหล็ก</td><td class="num">1</td><td class="num best5">5</td><td class="num">3</td><td class="num">1</td><td>ฐานล่าง โครงสร้างรับน้ำหนัก</td></tr>
+<tr><td>สแตนเลส</td><td class="num">1</td><td class="num best5">5</td><td class="num">3</td><td class="num best5">5</td><td>มือจับ งาน food/medical grade</td></tr>
+<tr><td>อลูมิเนียม</td><td class="num">4</td><td class="num">4</td><td class="num best5">5</td><td class="num">3</td><td>โครงสร้างแขน โปรไฟล์ T-slot</td></tr>
+<tr><td>คาร์บอนไฟเบอร์</td><td class="num best5">5</td><td class="num best5">5</td><td class="num">1</td><td class="num">5</td><td>โครงแขนกลที่ต้องการความเร็วสูง</td></tr>
+<tr><td>พลาสติก</td><td class="num best5">5</td><td class="num">2</td><td class="num best5">5</td><td class="num">3</td><td>เฟืองเกียร์ ข้อต่อรูปทรงซับซ้อน</td></tr>
+<tr><td>ไม้</td><td class="num">4</td><td class="num">3</td><td class="num best5">5</td><td class="num">1</td><td>ต้นแบบราคาถูก</td></tr>
+<tr><td>แก้ว</td><td class="num">3</td><td class="num">1</td><td class="num">1</td><td class="num best5">5</td><td>ผนังป้องกันตู้ทดลองกัมมันตรังสี/สารเคมี</td></tr>
+</tbody></table></div>
+<div class="tbl"><table><thead><tr><th>วัสดุ</th><th>จุดเด่น</th><th>จุดด้อย</th><th>วิธีประกอบที่แนะนำ</th></tr></thead><tbody>
+<tr><td>เหล็ก/สแตนเลส</td><td>แข็งเกร็งสุด ทนเคมี (SS)</td><td>หนักมาก สร้างภาระมอเตอร์</td><td>Welding, heavy bolting</td></tr>
+<tr><td>อลูมิเนียมโปรไฟล์</td><td>Modular, linear motion (V-slot)</td><td>รับแรงบิดหนักๆ ได้จำกัด</td><td>T-nuts, brackets</td></tr>
+<tr><td>อลูมิเนียมกล่อง/ฉาก</td><td>เบา ขึ้นรูปง่าย</td><td>อ่อนกว่าเหล็ก 3 เท่า</td><td>Rivets, bolting</td></tr>
+<tr><td>พลาสติกวิศวกรรม</td><td>ลดแรงเสียดทาน (nylon) ทนกระแทก</td><td>ไม่เหมาะทำโครงสร้างหลัก</td><td>Press-fit, bolting</td></tr>
+<tr><td>3D print (PLA)</td><td>สร้างรูปทรงซับซ้อน ต้นแบบเร็ว</td><td>แข็งเกร็งต่ำ เปลี่ยนตามอุณหภูมิ</td><td>Heat-set inserts, dovetail</td></tr>
+<tr><td>คาร์บอนไฟเบอร์</td><td>Stiffness-to-weight ดีที่สุด</td><td>แพง เจาะรูแล้วพังง่าย</td><td>Epoxy, press-fit</td></tr>
+<tr><td>ไม้</td><td>ถูก ตัดแต่งง่าย</td><td>หนักถ้าทำหนา ดูดความชื้น</td><td>Screws, glue</td></tr>
+<tr><td>แก้ว</td><td>เฉื่อยทางเคมี ใส</td><td>เปราะบาง</td><td>Gaskets, UV glue</td></tr>
+</tbody></table></div>
+<div class="calc"><p class="stamp">คำนวณ (เสริม: ค่าความหนาแน่นมาตรฐาน)</p><p>สูตร: m = ρ·V → ปริมาตรเท่ากัน อัตราส่วนมวล = ρ<sub>steel</sub> / ρ<sub>Al</sub></p><p>= 7.85 g/cm³ ÷ 2.70 g/cm³ = <b>2.9 เท่า</b> สอดคล้องกับสไลด์ที่ว่าเหล็กหนักกว่าอลูมิเนียม ~3 เท่า</p></div>
+</section>
+<section class="dt"><p class="stamp">Design Thinking</p>
+<ul><li><b>Prototype</b>: PLA, V-slot, ไม้ สร้างเร็ว ปรับแก้ง่าย เหมาะรอบทดลองแรกๆ</li>
+<li><b>Test → ปรับวัสดุ</b>: เมื่อต้นแบบผ่าน ค่อยเปลี่ยนชิ้นที่รับแรงเป็นอลูมิเนียม/เหล็ก หรือชิ้นสัมผัสอาหารเป็นสแตนเลส</li>
+<li><b>Viable</b>: Hybrid robot ใช้วัสดุแพง (คาร์บอน) เฉพาะจุดที่คุ้ม เช่น แขนที่ต้องเร็ว</li>
+<li><b>Desirable</b>: ยาง/ฝาครอบ PC ทำให้ผู้ใช้ปลอดภัยและไว้ใจ</li></ul>
+</section>`,
+  fill: [
+    { q: "The ultimate trade-off คือสมดุลระหว่าง ___ กับความแข็งเกร็ง (stiffness)", a: [["น้ำหนัก", "weight", "มวล", "mass"]], s: "S5" },
+    { q: "อลูมิเนียมมีน้ำหนักและความแข็งเกร็งประมาณ 1 ใน ___ ของเหล็ก", a: [{ n: 3 }], s: "S9–10" },
+    { q: "อลูมิเนียมโปรไฟล์ในสไลด์เป็นเกรด A___-T5", a: [{ n: 6063 }], s: "S10" },
+    { q: "ร่อง ___-slot ออกแบบมาเพื่อยึดติดนิ่ง ส่วน ___-slot เป็นทั้งโครงและรางเลื่อนให้ล้อวิ่ง", a: [["T"], ["V"]], s: "S11" },
+    { q: "สแตนเลสผสม ___ และนิกเกิล จึงทนการกัดกร่อนดีเยี่ยม", a: [["โครเมียม", "โครเมี่ยม", "Chromium", "Cr"]], s: "S7–8" },
+    { q: "Nylon/MC Nylon เหมาะทำ ___ บูช และลูกกลิ้ง เพราะทนสึกหรอและลดเสียง", a: [["เฟือง", "เกียร์", "gear", "gears"]], s: "S12–13" },
+    { q: "PC (Polycarbonate) ทนแรงกระแทกได้ดีกว่า ___ จึงใช้ทำฝาครอบนิรภัย", a: [["อะคริลิค", "อะคริลิก", "Acrylic", "PMMA"]], s: "S12–13" },
+    { q: "PE เป็นพลาสติก ___ grade ไม่มีสารพิษ ทนสารเคมี", a: [["Food", "อาหาร"]], s: "S13" },
+    { q: "ฝังเกลียวทองเหลืองด้วยหัวแร้งลงในชิ้น 3D print เรียกว่า Heat-set ___", a: [["Inserts", "Insert"]], s: "S20" },
+    { q: "ห้ามเจาะรูคาร์บอนไฟเบอร์ ให้ใช้ press-fit ร่วมกับกาวโครงสร้าง ___", a: [["Epoxy", "อีพ็อกซี", "อีพ็อกซี่"]], s: "S20" },
+    { q: "ยึดแก้วผ่านโครงโลหะที่บุด้วย ___ ยาง (gasket) หรือใช้กาว UV", a: [["ปะเก็น", "ประเก็น"]], s: "S20" },
+    { q: "แรงสั่นทำน็อตคลาย แก้ด้วยน้ำยากันคลาย (threadlocker) หรือน็อต ___", a: [["Nyloc", "ไนล็อค", "ไนล็อก"]], s: "S17–18" },
+    { q: "ความร้อนจากการเชื่อมทำให้โลหะ ___ (distortion) โดยเฉพาะอลูมิเนียม", a: [["เสียรูป", "บิดงอ", "บิดตัว", "distortion"]], s: "S17–18" },
+    { q: "คาร์บอนไฟเบอร์มีอัตราส่วน Stiffness-to-___ ดีที่สุด", a: [["weight", "น้ำหนัก"]], s: "S15–16" },
+    { q: "ตัวอย่างการพิมพ์ 3D ในสไลด์: layer height ___ mm, nozzle 210 °C", a: [{ n: 0.2 }], s: "S14" },
+    { q: "ความหนาแน่นเหล็ก ≈ 7.85 g/cm³ อลูมิเนียม ≈ 2.70 g/cm³ ชิ้นงานปริมาตรเท่ากัน เหล็กหนักกว่า ≈ ___ เท่า", a: [{ n: 2.9, tol: 0.15, show: "2.9 (≈ 3)" }], s: "S8–9", x: true, ex: "m = ρV, V เท่ากัน → 7.85 ÷ 2.70 = 2.91 เท่า สอดคล้องกับสไลด์ที่ว่าเหล็กหนักกว่าอลูมิเนียม ~3 เท่า" },
+    { q: "ฐานหุ่นใช้เหล็ก + เชื่อม เพื่อให้จุด ___ ต่ำและมั่นคง", a: [["ศูนย์ถ่วง", "CoG", "Center of Gravity", "ศูนย์กลางมวล"]], s: "S22–23" },
+    { q: "ขั้น ___ ของ Design Thinking เหมาะกับ PLA, V-slot และไม้ เพราะสร้างเร็ว ปรับแก้ง่าย", a: [["Prototype", "Prototyping", "ต้นแบบ"]], s: "S14–16, S21", dt: true, x: true }
+  ],
+  match: [
+    { q: "จับคู่วัสดุกับชิ้นส่วนแนะนำ (Master Diagnostic Matrix)", pairs: [["เหล็ก", "ฐานล่าง โครงรับน้ำหนัก"], ["สแตนเลส", "มือจับ งาน food/medical grade"], ["อลูมิเนียม", "โครงแขน โปรไฟล์ T-slot"], ["คาร์บอนไฟเบอร์", "แขนกลความเร็วสูง"], ["พลาสติก", "เฟือง ข้อต่อรูปทรงซับซ้อน"], ["ไม้", "ต้นแบบราคาถูก"], ["แก้ว", "ผนังป้องกันตู้ทดลองสารเคมี"]], s: "S24" },
+    { q: "จับคู่วัสดุกับวิธีประกอบที่แนะนำ", pairs: [["เหล็ก/สแตนเลส", "Welding, heavy bolting"], ["อลูมิเนียมโปรไฟล์", "T-nuts, brackets"], ["อลูมิเนียมกล่อง/ฉาก", "Rivets, bolting"], ["3D print (PLA)", "Heat-set inserts, dovetail"], ["คาร์บอนไฟเบอร์", "Epoxy, press-fit"], ["ไม้", "Screws, glue"], ["แก้ว", "Gaskets, UV glue"]], s: "S25" },
+    { q: "จับคู่พลาสติกกับงานที่เหมาะ", pairs: [["Nylon / MC Nylon", "เฟือง บูช ลูกกลิ้ง"], ["ABS", "เฟรมหุ่นขนาดเล็ก"], ["PC (Polycarbonate)", "ฝาครอบนิรภัย แว่นตา"], ["PE", "ชิ้นส่วนสัมผัสอาหาร ถังสารเคมี"], ["Bakelite", "แผงวงจร (ทนร้อน เป็นฉนวน)"]], extra: ["โครงสร้างหลักรับน้ำหนัก"], s: "S12–13" },
+    { q: "จับคู่สภาพแวดล้อมกับชุดวัสดุ", pairs: [["Food / Medical / Chem", "สแตนเลสขัดรอยเชื่อม, PE food grade, แก้ว"], ["Heavy industrial", "เหล็กโครงสร้าง, อลู 40/80, เชื่อม + น็อตใหญ่"], ["Agile / DIY / Education", "V-slot, คาร์บอน, 3D print, ไม้"]], s: "S21" },
+    { q: "จับคู่ส่วนของ Hybrid robot กับวัสดุ + วิธีประกอบ", pairs: [["Base", "เหล็ก + เชื่อม"], ["Core frame", "อลูมิเนียมโปรไฟล์ + brackets"], ["Arm / Boom", "คาร์บอนไฟเบอร์หรือกล่องอลู + epoxy"], ["End-effector", "PLA + heat-set inserts"], ["Shield", "Polycarbonate/แก้ว + ปะเก็นยาง"]], s: "S22" },
+    { q: "จับคู่วิธีประกอบโลหะกับเงื่อนไขการใช้", pairs: [["Welding", "โครงสร้างถาวรรับแรงสูง"], ["Bolting", "ต้องถอดประกอบและซ่อมบำรุง"], ["Quick joints", "ประกอบท่อรวดเร็ว ลุยงานทันที"], ["Riveting", "แผ่นโลหะบาง ไม่รับแรงบิดสูง"]], s: "S17" }
+  ],
+  draw: [
+    { q: "วาดภาพตัดขวาง (cross-section) เปรียบเทียบอลูมิเนียมโปรไฟล์ T-slot กับ V-slot และแสดงอุปกรณ์ที่สวมในร่องแต่ละแบบ", fig: "slots", s: "S11, S19", check: ["T-slot: ร่องรูปตัว T มี T-nut ล็อกในร่อง", "V-slot: ปีกตัดเฉียงทำมุม 90° (V-groove)", "ล้อ V-wheel วิ่งในร่อง V", "ระบุหน้าที่: T = static frame, V = frame + รางเลื่อน"] },
+    { q: "ออกแบบ (วาด) หุ่นยนต์แขนกลแบบ Hybrid ระบุวัสดุและวิธีประกอบของ ฐาน, โครงหลัก, แขน, มือจับ และฝาครอบ", fig: "hybrid", s: "S22–23", check: ["Base: เหล็ก + เชื่อม (CoG ต่ำ)", "Core frame: อลูมิเนียมโปรไฟล์ + brackets", "Arm: คาร์บอนไฟเบอร์/กล่องอลู + epoxy", "End-effector: PLA + heat-set inserts", "Shield: polycarbonate/แก้ว + ปะเก็นยาง"] },
+    { q: "วาดวิธียึดแผ่นกระจกเข้ากับรางอลูมิเนียม และวิธีต่อท่อคาร์บอนไฟเบอร์เข้ากับข้อต่อโลหะให้ถูกหลัก", fig: "glass", s: "S20", check: ["แก้วอยู่ในรางโลหะ", "มีปะเก็นยางกั้น โลหะไม่แตะแก้ว", "ท่อคาร์บอนสวมอัด (press-fit) ไม่เจาะรู", "มีชั้นกาว epoxy กระจายแรง"] }
+  ]
+});
+</script>
+
+<script>
+/* ===== คลาส ===== */
+const strip = s => String(s).replace(/<[^>]*>/g, "");
+
+/* เก็บคะแนนสูงสุดในเบราว์เซอร์ */
+class Store {
+  static all() { try { return JSON.parse(localStorage.getItem(CONFIG.STORE_KEY) || "{}") || {}; } catch (e) { return {}; } }
+  static best(id) { const v = Store.all()[id]; return typeof v === "number" ? v : null; }
+  static save(id, pct) {
+    try { const o = Store.all(); if (o[id] == null || pct > o[id]) { o[id] = pct; localStorage.setItem(CONFIG.STORE_KEY, JSON.stringify(o)); } } catch (e) { /* storage blocked */ }
+  }
+}
+
+/* ตรวจคำตอบเติมคำ */
+class Grader {
+  static norm(s) {
+    return String(s ?? "").normalize("NFC").replace(/ํา/g, "ำ").toLowerCase()
+      .replace(/[\s\-_.,:;'"“”‘’()\[\]\/·]/g, "");
+  }
+  static isNum(spec) { return !Array.isArray(spec); }
+  static toNum(s) { const m = String(s ?? "").replace(/,/g, "").match(/-?\d+(?:\.\d+)?/); return m ? parseFloat(m[0]) : NaN; }
+  static ok(input, spec) {
+    if (Grader.isNum(spec)) { const v = Grader.toNum(input); return Number.isFinite(v) && Math.abs(v - spec.n) <= (spec.tol || 1e-9); }
+    const n = Grader.norm(input);
+    return n !== "" && spec.some(a => Grader.norm(a) === n);
+  }
+  static label(spec) { return Grader.isNum(spec) ? (spec.show || String(spec.n)) : spec[0]; }
+  static alts(spec) { return (!Grader.isNum(spec) && spec.length > 1) ? ` <span class="alt">(รับ: ${spec.slice(1, 4).join(", ")})</span>` : ""; }
+}
+
+/* สุ่มและสลับลำดับ */
+class Picker {
+  static shuffle(a) { const b = a.slice(); for (let i = b.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [b[i], b[j]] = [b[j], b[i]]; } return b; }
+  static take(a, n) { return Picker.shuffle(a).slice(0, Math.min(n, a.length)); }
+}
+
+/* กระดานวาดรูป */
+class DrawPad {
+  constructor(root) {
+    this.root = root; this.cv = root.querySelector("canvas"); this.ctx = this.cv.getContext("2d");
+    this.cv.width = CONFIG.CANVAS.w; this.cv.height = CONFIG.CANVAS.h;
+    this.strokes = []; this.cur = null; this.tool = "pen"; this.locked = false;
+    this.cv.addEventListener("pointerdown", e => this.down(e));
+    this.cv.addEventListener("pointermove", e => this.move(e));
+    ["pointerup", "pointercancel"].forEach(t => this.cv.addEventListener(t, () => this.up()));
+    root.querySelectorAll("[data-tool]").forEach(b => b.addEventListener("click", () => this.setTool(b.dataset.tool)));
+    root.querySelector("[data-pad=undo]").addEventListener("click", () => this.undo());
+    root.querySelector("[data-pad=clear]").addEventListener("click", () => this.clear());
+    DrawPad.live.add(this);
+    this.setTool("pen");
+  }
+  setTool(t) { if (this.locked) return; this.tool = t; this.root.querySelectorAll("[data-tool]").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.tool === t))); }
+  pos(e) { const r = this.cv.getBoundingClientRect(); return [(e.clientX - r.left) * this.cv.width / r.width, (e.clientY - r.top) * this.cv.height / r.height]; }
+  style(tool) {
+    const cs = getComputedStyle(document.documentElement);
+    return { color: cs.getPropertyValue(tool === "blue" ? "--blue" : "--ink").trim(), width: CONFIG.PEN[tool], erase: tool === "eraser" };
+  }
+  seg(st, a, b) {
+    const x = this.ctx;
+    x.globalCompositeOperation = st.erase ? "destination-out" : "source-over";
+    x.strokeStyle = st.erase ? "#000" : st.color; x.lineWidth = st.width; x.lineCap = "round"; x.lineJoin = "round";
+    x.beginPath(); x.moveTo(a[0], a[1]); x.lineTo(b[0], b[1]); x.stroke();
+  }
+  down(e) {
+    if (this.locked) return;
+    e.preventDefault();
+    try { this.cv.setPointerCapture(e.pointerId); } catch (err) { /* ignore */ }
+    const p = this.pos(e);
+    this.cur = { tool: this.tool, pts: [p], st: this.style(this.tool) };
+    this.strokes.push(this.cur);
+    this.seg(this.cur.st, p, [p[0] + 0.01, p[1]]);
+    this.root.dispatchEvent(new CustomEvent("drawn", { bubbles: true }));
+  }
+  move(e) { if (!this.cur) return; const p = this.pos(e), pts = this.cur.pts; this.seg(this.cur.st, pts[pts.length - 1], p); pts.push(p); }
+  up() { this.cur = null; }
+  redraw() {
+    this.ctx.clearRect(0, 0, this.cv.width, this.cv.height);
+    for (const s of this.strokes) {
+      s.st = this.style(s.tool);
+      const p = s.pts; this.seg(s.st, p[0], [p[0][0] + 0.01, p[0][1]]);
+      for (let i = 1; i < p.length; i++) this.seg(s.st, p[i - 1], p[i]);
+    }
+    this.ctx.globalCompositeOperation = "source-over";
+  }
+  undo() { if (this.locked) return; this.strokes.pop(); this.redraw(); this.root.dispatchEvent(new CustomEvent("drawn", { bubbles: true })); }
+  clear() { if (this.locked) return; this.strokes = []; this.redraw(); this.root.dispatchEvent(new CustomEvent("drawn", { bubbles: true })); }
+  lock(v) { this.locked = v; this.root.classList.toggle("locked", v); }
+  get empty() { return this.strokes.length === 0; }
+  dispose() { DrawPad.live.delete(this); }
+}
+DrawPad.live = new Set();
+
+/* วาดเส้นใหม่เมื่อธีมเปลี่ยน */
+class ThemeWatch {
+  static start() {
+    const f = () => DrawPad.live.forEach(p => p.redraw());
+    const mq = matchMedia("(prefers-color-scheme: dark)");
+    if (mq.addEventListener) mq.addEventListener("change", f);
+    new MutationObserver(f).observe(document.documentElement, { attributes: true, attributeFilter: ["data-theme"] });
+  }
+}
+
+/* หน้าแรก */
+class HomeView {
+  constructor(el) { this.el = el; }
+  render() {
+    const cards = BANK.map(ch => {
+      const b = Store.best(ch.id);
+      return `<article class="card"><div class="card-top"><span class="no">${ch.no}</span><span class="term">${ch.term}</span></div>
+        <h3>${ch.en}</h3><p class="th">${ch.th}</p>
+        <p class="meta">${ch.slides} สไลด์ · คลังข้อ: เติมคำ ${ch.fill.length} · จับคู่ ${ch.match.length} · วาด ${ch.draw.length}</p>
+        <div class="card-act"><a class="btn sm alt" href="#${ch.id}">อ่านสรุป</a><a class="btn sm" href="#${ch.id}-quiz">ทำควิซ</a>${b != null ? `<span class="best">ดีที่สุด ${b}%</span>` : ""}</div></article>`;
+    }).join("");
+    const mb = Store.best("mix");
+    this.el.innerHTML = `
+      <p class="eyebrow">271494 Special Topics in Robotics Engineering 2 · บท 7–12</p>
+      <h1>ติวหุ่นยนต์: โครงสร้าง เซนเซอร์ วัสดุ</h1>
+      <p class="lead">อ่านสรุปทีละบท แล้วทำควิซ 3 แบบ คือเติมคำ จับคู่ และวาดรูป กดส่งเพื่อดูเฉลยทันที กดสุ่มชุดใหม่ได้ไม่จำกัด</p>
+      <ol class="steps"><li>อ่านสรุปของบท</li><li>ทำควิซ: เติมคำ จับคู่ วาดรูป</li><li>กด “ส่งคำตอบ” ดูเฉลยและคำอธิบาย</li><li>ข้อวาดรูป: เทียบภาพเฉลยแล้วติ๊กเช็กลิสต์</li><li>กด “สุ่มชุดใหม่” ทำซ้ำได้เรื่อยๆ</li></ol>
+      <div class="grid">${cards}</div>
+      <div class="mixcard"><div><h3>สุ่มรวมทุกบท</h3><p>เติมคำบทละ 2 ข้อ (12 ข้อ) · จับคู่ 3 ชุด · วาด 1 ข้อ เหมาะทบทวนก่อนสอบ${mb != null ? ` · ดีที่สุด ${mb}%` : ""}</p></div><a class="btn" href="#mix">เริ่มสุ่มรวม</a></div>
+      <section class="dt"><p class="stamp">Design Thinking · ใช้ได้ทุกบท</p>
+        <h2>คิดแบบนักออกแบบหุ่นยนต์</h2>
+        <p>สไลด์บท 11 (S15, อ้างอิง Corey Ford, Stanford d.school) ให้ภาพนวัตกรรมเป็นจุดตัดของ 3 วง และเปลี่ยนจาก Design → Design Thinking: individuals → teams, products → experiences, eng + art → tech + biz + human</p>
+        <figure class="fig">${FIG.dtvenn}</figure>
+        <p>กระบวนการ 5 ขั้นของ d.school <span class="ext">เสริม นอกสไลด์</span> ใช้คู่กับเนื้อหาแต่ละบทได้แบบนี้:</p>
+        <div class="tbl"><table><thead><tr><th>ขั้น</th><th>ทำอะไร</th><th>ตัวอย่างจากบทเรียน</th></tr></thead><tbody>
+          <tr><td><b>Empathize</b></td><td>ลงไปเข้าใจผู้ใช้และพื้นที่จริง</td><td>เกษตรกรในแปลงโคลน (09) · ผู้สูงอายุ/พยาบาล (10) · ผู้ป่วยผ่าตัด (11)</td></tr>
+          <tr><td><b>Define</b></td><td>เขียนโจทย์และข้อจำกัดให้ชัด</td><td>“ทำงานข้างคนโดยไม่มีรั้ว” → Cobot (07) · “ห้ามแผลฉีก” → RCM (11)</td></tr>
+          <tr><td><b>Ideate</b></td><td>คิดหลายทางเลือกแล้วเทียบ</td><td>Cartesian / SCARA / Delta (07) · ล้อ vs ตีนตะขาบ (09) · Hybrid materials (12)</td></tr>
+          <tr><td><b>Prototype</b></td><td>สร้างต้นแบบเร็ว ราคาถูก</td><td>3D print PLA, V-slot, ไม้ (12)</td></tr>
+          <tr><td><b>Test</b></td><td>ทดสอบในสภาพจริงแล้ววนกลับไปแก้</td><td>Calibration (08) · In-field test (09) · SROI วัดผลกระทบ (10)</td></tr>
+        </tbody></table></div>
+        <p>ท้ายสรุปทุกบทมีกล่อง Design Thinking และในคลังข้อสอบมีข้อที่ติดป้าย <span class="dtag">DT</span></p>
+      </section>`;
+  }
+}
+
+/* หน้าสรุปบทเรียน */
+class SummaryView {
+  constructor(el) { this.el = el; }
+  render(ch) {
+    const body = ch.sum.replace(/\{\{fig:(\w+)\}\}/g, (_, k) => `<figure class="fig">${FIG[k] || ""}</figure>`);
+    const i = BANK.indexOf(ch), next = BANK[i + 1];
+    this.el.innerHTML = `
+      <p class="eyebrow">บท ${ch.no} · ${ch.term} · ${ch.slides} สไลด์</p>
+      <h1>${ch.en}</h1><p class="lead">${ch.th}</p>
+      <nav class="tabs" aria-label="มุมมองบท"><a href="#${ch.id}" aria-current="page">สรุปเนื้อหา</a><a href="#${ch.id}-quiz">ควิซ</a></nav>
+      <p class="muted" style="font-size:.85rem">ป้าย <span class="ref">S12</span> = เลขหน้าสไลด์ต้นฉบับ · <span class="ext">เสริม</span> = ข้อมูลนอกสไลด์</p>
+      ${body}
+      <div class="cta end"><a class="btn" href="#${ch.id}-quiz">ไปทำควิซบท ${ch.no}</a>${next ? `<a class="btn alt" href="#${next.id}">สรุปบท ${next.no} →</a>` : `<a class="btn alt" href="#mix">สุ่มรวมทุกบท →</a>`}</div>`;
+  }
+}
+
+/* หน้าควิซ: สร้างชุดข้อ ตรวจ และแสดงเฉลย */
+class QuizView {
+  constructor(el) {
+    this.el = el; this.set = null; this.done = false; this.pads = [];
+    el.addEventListener("input", () => this.progress());
+    el.addEventListener("drawn", () => this.progress());
+    el.addEventListener("change", e => { if (e.target.matches("select[data-m]")) this.progress(); if (e.target.matches("input[data-c]")) this.score(); });
+    el.addEventListener("click", e => this.onClick(e));
+  }
+  makeSet(id) {
+    if (id === "mix") {
+      return {
+        id, title: "สุ่มรวมทุกบท (07–12)",
+        fill: BANK.flatMap(ch => Picker.take(ch.fill, CONFIG.MIX.fillPerChapter).map(q => ({ ...q, tag: ch.no }))),
+        match: Picker.take(BANK.flatMap(ch => ch.match.map(m => ({ ...m, tag: ch.no }))), CONFIG.MIX.match),
+        draw: Picker.take(BANK.flatMap(ch => ch.draw.map(d => ({ ...d, tag: ch.no }))), CONFIG.MIX.draw)
+      };
+    }
+    const ch = BANK.find(c => c.id === id);
+    return {
+      id, ch, title: `บท ${ch.no} · ${ch.en}`,
+      fill: Picker.take(ch.fill, CONFIG.QUIZ.fill).map(q => ({ ...q })),
+      match: Picker.take(ch.match, CONFIG.QUIZ.match).map(m => ({ ...m })),
+      draw: Picker.take(ch.draw, CONFIG.QUIZ.draw).map(d => ({ ...d }))
+    };
+  }
+  open(id, fresh) { if (fresh || !this.set || this.set.id !== id) this.set = this.makeSet(id); this.render(); }
+  leave() { this.pads.forEach(p => p.dispose()); this.pads = []; }
+  badges(q) { return `${q.tag ? `<span class="tag">บท ${q.tag}</span>` : ""}${q.dt ? `<span class="dtag">DT</span>` : ""}${q.x ? `<span class="ext">เสริม</span>` : ""}`; }
+  fillHTML(q, i) {
+    const parts = q.q.split("___");
+    let body = "";
+    parts.forEach((p, k) => {
+      body += p;
+      if (k < parts.length - 1) {
+        const spec = q.a[k], num = Grader.isNum(spec);
+        const w = num ? 7 : Math.min(16, Math.max(6, Grader.label(spec).length + 2));
+        body += `<input class="blank" id="f${i}_${k}" style="width:${w}ch" ${num ? 'inputmode="decimal"' : ""} autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="ข้อ A${i + 1} ช่องที่ ${k + 1}">`;
+      }
+    });
+    return `<article class="q" id="qf${i}"><div class="qno">A${i + 1} ${this.badges(q)}</div><p class="qt">${body}</p><div class="reveal" id="rf${i}" hidden></div></article>`;
+  }
+  matchHTML(m, i) {
+    const rows = m._rows.map(pi => `<div class="mrow" id="mr${i}_${pi}"><div class="ml">${m.pairs[pi][0]}</div>
+      <select id="m${i}_${pi}" data-m="${i}" aria-label="จับคู่กับ ${strip(m.pairs[pi][0])}"><option value="">— เลือกคำตอบ —</option>${m._opts.map((o, oi) => `<option value="${oi}">${o}</option>`).join("")}</select>
+      <div class="mfix" hidden></div></div>`).join("");
+    return `<article class="q"><div class="qno">B${i + 1} ${this.badges(m)}</div><p class="qt" style="line-height:1.6">${m.q}</p><div class="mgrid">${rows}</div></article>`;
+  }
+  drawHTML(d, i) {
+    return `<article class="q"><div class="qno">C${i + 1} ${this.badges(d)}</div><p class="qt" style="line-height:1.6">${d.q}</p>
+      <div class="pad" id="pad${i}"><div class="tools" role="toolbar" aria-label="เครื่องมือวาด">
+        <button type="button" data-tool="pen">ปากกา</button><button type="button" data-tool="blue">สีน้ำเงิน</button><button type="button" data-tool="eraser">ยางลบ</button>
+        <span class="sp"></span><button type="button" data-pad="undo">ย้อนกลับ</button><button type="button" data-pad="clear">ล้างทั้งหมด</button></div>
+        <canvas aria-label="พื้นที่วาดรูปข้อ C${i + 1}"></canvas></div>
+      <div class="reveal" id="rd${i}" hidden></div></article>`;
+  }
+  render() {
+    this.leave(); this.done = false;
+    const s = this.set;
+    s.fill.forEach(q => { q._over = false; q._res = null; });
+    s.match.forEach(m => { m._rows = Picker.shuffle(m.pairs.map((_, k) => k)); m._opts = Picker.shuffle([...new Set(m.pairs.map(p => p[1]).concat(m.extra || []))]); });
+    const head = s.ch
+      ? `<p class="eyebrow">บท ${s.ch.no} · ${s.ch.term}</p><h1>${s.ch.en}</h1><p class="lead">${s.ch.th}</p>
+         <nav class="tabs" aria-label="มุมมองบท"><a href="#${s.ch.id}">สรุปเนื้อหา</a><a href="#${s.ch.id}-quiz" aria-current="page">ควิซ</a></nav>`
+      : `<p class="eyebrow">ทบทวนรวม</p><h1>${s.title}</h1><p class="lead">สุ่มจากคลังข้อของทุกบท ป้ายสีเทาบอกว่ามาจากบทไหน</p>`;
+    this.el.innerHTML = `${head}
+      <p class="muted" style="font-size:.9rem">เติมคำพิมพ์ได้ทั้งไทยหรืออังกฤษตามศัพท์ในสไลด์ (ตัวพิมพ์เล็ก/ใหญ่ไม่มีผล) · ตัวเลขพิมพ์เฉพาะตัวเลข</p>
+      <div id="scorebox" class="scorebox" hidden></div>
+      <section class="qsec"><h2>ตอน A · เติมคำ <small>${s.fill.length} ข้อ</small></h2>${s.fill.map((q, i) => this.fillHTML(q, i)).join("")}</section>
+      <section class="qsec"><h2>ตอน B · จับคู่ <small>${s.match.length} ชุด</small></h2>${s.match.map((m, i) => this.matchHTML(m, i)).join("")}</section>
+      <section class="qsec"><h2>ตอน C · วาดรูปแสดงคำตอบ <small>${s.draw.length} ข้อ</small></h2><p class="muted" style="font-size:.9rem">วาดด้วยนิ้ว ปากกา หรือเมาส์ เมื่อส่งแล้วจะเห็นภาพเฉลยและเช็กลิสต์ให้ประเมินตัวเอง</p>${s.draw.map((d, i) => this.drawHTML(d, i)).join("")}</section>
+      <div class="qbar"><div class="qbar-in"><span id="qprog" class="qprog" aria-live="polite"></span><div class="qbtns" id="qbtns"></div></div></div>`;
+    this.el.querySelectorAll(".pad").forEach(r => this.pads.push(new DrawPad(r)));
+    this.buttons(); this.progress();
+  }
+  buttons() {
+    const b = this.el.querySelector("#qbtns");
+    b.innerHTML = this.done
+      ? `<button type="button" class="btn alt sm" data-q="retry">ทำชุดเดิมอีกครั้ง</button><button type="button" class="btn sm hi" data-q="fresh">สุ่มชุดใหม่</button>`
+      : `<button type="button" class="btn" data-q="submit">ส่งคำตอบ</button>`;
+  }
+  progress() {
+    if (this.done) return;
+    const blanks = [...this.el.querySelectorAll("input.blank")], sels = [...this.el.querySelectorAll("select[data-m]")];
+    const filled = blanks.filter(x => x.value.trim()).length + sels.filter(x => x.value !== "").length;
+    const drawn = this.pads.filter(p => !p.empty).length;
+    const p = this.el.querySelector("#qprog");
+    if (p) p.textContent = `ตอบแล้ว ${filled}/${blanks.length + sels.length} ช่อง · วาดแล้ว ${drawn}/${this.pads.length}`;
+  }
+  submit() {
+    if (this.done) return;
+    this.done = true;
+    const s = this.set;
+    s.fill.forEach((q, i) => {
+      q._res = q.a.map((spec, k) => {
+        const inp = this.el.querySelector(`#f${i}_${k}`); const ok = Grader.ok(inp.value, spec);
+        inp.classList.add(ok ? "ok" : "bad"); inp.readOnly = true; return ok;
+      });
+      const all = q._res.every(Boolean), rv = this.el.querySelector(`#rf${i}`);
+      rv.hidden = false;
+      rv.innerHTML = `<p>${all ? '<b class="okc">✓ ถูกทั้งหมด</b>' : '<b class="badc">เฉลย</b>'} ${q.a.map(spec => `<mark>${Grader.label(spec)}</mark>${Grader.alts(spec)}`).join(" · ")}</p>
+        ${q.ex ? `<p class="ex">${q.ex}</p>` : ""}${q.s ? `<p class="src">อ้างอิง: สไลด์ ${q.s}</p>` : ""}
+        ${all ? "" : `<button type="button" class="ghost" data-q="over" data-i="${i}" aria-pressed="false">คำตอบฉันความหมายเดียวกัน · นับให้</button>`}`;
+    });
+    s.match.forEach((m, i) => {
+      m._res = m.pairs.map((p, pi) => {
+        const sel = this.el.querySelector(`#m${i}_${pi}`), right = m._opts.indexOf(p[1]);
+        const ok = sel.value !== "" && Number(sel.value) === right;
+        sel.classList.add(ok ? "ok" : "bad"); sel.disabled = true;
+        const fx = this.el.querySelector(`#mr${i}_${pi} .mfix`); fx.hidden = false;
+        fx.innerHTML = ok ? '<span class="okc">✓ ถูก</span>' : `<span class="badc">✗ คำตอบที่ถูก:</span> <mark>${p[1]}</mark>`;
+        return ok;
+      });
+      if (m.s) this.el.querySelector(`#mr${i}_${m._rows[m._rows.length - 1]}`).insertAdjacentHTML("afterend", `<p class="src" style="font-family:var(--f-mono);font-size:.72rem;color:var(--muted);margin:8px 0 0">อ้างอิง: สไลด์ ${m.s}</p>`);
+    });
+    s.draw.forEach((d, i) => {
+      this.pads[i].lock(true);
+      const rv = this.el.querySelector(`#rd${i}`); rv.hidden = false;
+      rv.innerHTML = `<p><b>ภาพเฉลย</b> เทียบกับรูปของคุณ แล้วติ๊กข้อที่วาดหรืออธิบายได้ครบ</p>
+        <figure class="fig">${FIG[d.fig] || ""}</figure>
+        <fieldset class="chk"><legend>เช็กลิสต์ประเมินตัวเอง</legend>${d.check.map((c, k) => `<label><input type="checkbox" id="c${i}_${k}" data-c="${i}"><span>${c}</span></label>`).join("")}</fieldset>
+        ${d.ex ? `<p class="ex">${d.ex}</p>` : ""}<p class="src">อ้างอิง: สไลด์ ${d.s}</p>`;
+    });
+    this.score(); this.buttons();
+    const box = this.el.querySelector("#scorebox");
+    box.scrollIntoView({ behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth", block: "start" });
+  }
+  score() {
+    if (!this.done) return;
+    const s = this.set; let a = 0, at = 0, d = 0, dt = 0;
+    s.fill.forEach(q => { at += q.a.length; a += q._over ? q.a.length : q._res.filter(Boolean).length; });
+    s.match.forEach(m => { at += m.pairs.length; a += m._res.filter(Boolean).length; });
+    s.draw.forEach((x, i) => { dt += x.check.length; d += this.el.querySelectorAll(`input[data-c="${i}"]:checked`).length; });
+    const pct = Math.round(100 * (a + d) / Math.max(1, at + dt));
+    Store.save(s.id, pct);
+    const verdict = pct >= 80 ? "พร้อมสอบส่วนนี้แล้ว กดสุ่มชุดใหม่เพื่อเก็บข้อที่ยังไม่เจอ"
+      : pct >= 50 ? "อ่านเฉลยและคำอธิบายของข้อที่ผิด แล้วทำชุดเดิมอีกครั้ง"
+      : "กลับไปอ่านสรุปบทนี้ก่อน แล้วค่อยทำชุดเดิมอีกครั้ง";
+    const box = this.el.querySelector("#scorebox"); box.hidden = false;
+    box.innerHTML = `<div class="big">${pct}<small>%</small></div><div>
+      <p>เติมคำ + จับคู่ (ตรวจอัตโนมัติ): <b>${a}/${at}</b></p>
+      <p>วาดรูป (ประเมินตนเอง): <b>${d}/${dt}</b> <span class="muted">· ติ๊กเช็กลิสต์ใต้ภาพเฉลย</span></p>
+      <p class="muted">${verdict}</p>${s.ch ? `<p><a href="#${s.ch.id}">อ่านสรุปบท ${s.ch.no}</a></p>` : ""}</div>`;
+    const p = this.el.querySelector("#qprog"); if (p) p.textContent = `คะแนน ${a + d}/${at + dt} (${pct}%)`;
+  }
+  onClick(e) {
+    const b = e.target.closest("[data-q]"); if (!b) return;
+    const act = b.dataset.q;
+    if (act === "submit") this.submit();
+    else if (act === "retry") { this.render(); window.scrollTo(0, 0); }
+    else if (act === "fresh") { this.open(this.set.id, true); window.scrollTo(0, 0); }
+    else if (act === "over") {
+      const i = +b.dataset.i, q = this.set.fill[i]; q._over = !q._over;
+      b.setAttribute("aria-pressed", String(q._over));
+      b.textContent = q._over ? "นับให้แล้ว · กดอีกครั้งเพื่อยกเลิก" : "คำตอบฉันความหมายเดียวกัน · นับให้";
+      this.el.querySelectorAll(`#qf${i} input.blank.bad`).forEach(inp => inp.classList.toggle("ov", q._over));
+      this.score();
+    }
+  }
+}
+
+/* ตัวควบคุมหลัก: เส้นทาง (hash) และแถบเลือกบท */
+class App {
+  constructor() {
+    this.main = document.getElementById("main"); this.nav = document.getElementById("chips");
+    this.home = new HomeView(this.main); this.sum = new SummaryView(this.main); this.quiz = new QuizView(this.main);
+  }
+  start() { ThemeWatch.start(); this.renderNav(); addEventListener("hashchange", () => this.route()); this.route(); }
+  renderNav() {
+    this.nav.innerHTML = `<a class="chip" href="#" data-r="">หน้าแรก</a>` +
+      BANK.map(ch => `<a class="chip" href="#${ch.id}" data-r="${ch.id}"><b>${ch.no}</b><small>${ch.short}</small></a>`).join("") +
+      `<a class="chip" href="#mix" data-r="mix">สุ่มรวม</a>`;
+  }
+  route() {
+    const h = decodeURIComponent(location.hash.slice(1));
+    const id = h.replace(/-quiz$/, ""), ch = BANK.find(c => c.id === id);
+    this.quiz.leave();
+    if (h === "mix") this.quiz.open("mix");
+    else if (ch && h.endsWith("-quiz")) this.quiz.open(ch.id);
+    else if (ch) this.sum.render(ch);
+    else this.home.render();
+    const key = h === "mix" ? "mix" : (ch ? ch.id : "");
+    this.nav.querySelectorAll(".chip").forEach(c => { if (c.dataset.r === key) { c.setAttribute("aria-current", "page"); c.scrollIntoView({ block: "nearest", inline: "nearest" }); } else c.removeAttribute("aria-current"); });
+    window.scrollTo(0, 0);
+  }
+}
+
+const boot = () => { window.__app = new App(); window.__app.start(); };
+if (window.claude && window.claude.hot && window.claude.hot.ready) window.claude.hot.ready(boot); else boot();
+</script>
